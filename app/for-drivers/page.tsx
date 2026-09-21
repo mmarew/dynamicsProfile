@@ -165,7 +165,7 @@ export default function ForDriversPage() {
                   Grow Your Trucking Business with DTC
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                  Join thousands of drivers earning more with DTC. Get access to quality loads, fair pricing, and a platform built to support your success.
+                  Join the DTC driver network and get access to quality loads, fair pricing, and a platform built to support your success.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 px-8">
@@ -191,16 +191,16 @@ export default function ForDriversPage() {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-card border border-border rounded-2xl p-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2" style={{ fontFamily: 'var(--font-display)' }}>1000+</div>
-                  <div className="text-muted-foreground">Active Drivers</div>
+                  <div className="text-4xl font-bold text-primary mb-2" style={{ fontFamily: 'var(--font-display)' }}>Verified</div>
+                  <div className="text-muted-foreground">Drivers &amp; Vehicles</div>
                 </div>
                 <div className="bg-card border border-border rounded-2xl p-6 text-center">
-                  <div className="text-4xl font-bold text-secondary mb-2" style={{ fontFamily: 'var(--font-display)' }}>50K+</div>
-                  <div className="text-muted-foreground">Loads Delivered</div>
+                  <div className="text-4xl font-bold text-secondary mb-2" style={{ fontFamily: 'var(--font-display)' }}>GPS</div>
+                  <div className="text-muted-foreground">Live Load Tracking</div>
                 </div>
                 <div className="bg-card border border-border rounded-2xl p-6 text-center">
-                  <div className="text-4xl font-bold text-accent mb-2" style={{ fontFamily: 'var(--font-display)' }}>4.8</div>
-                  <div className="text-muted-foreground">Avg Driver Rating</div>
+                  <div className="text-4xl font-bold text-accent mb-2" style={{ fontFamily: 'var(--font-display)' }}>Rated</div>
+                  <div className="text-muted-foreground">Build Your Reputation</div>
                 </div>
                 <div className="bg-card border border-border rounded-2xl p-6 text-center">
                   <div className="text-4xl font-bold text-primary mb-2" style={{ fontFamily: 'var(--font-display)' }}>24/7</div>

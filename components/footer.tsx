@@ -60,7 +60,10 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3 text-sm text-primary-foreground/80">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <span>Call Center Available 24/7</span>
+                <a href="tel:+251983222221" className="hover:text-secondary transition-colors">
+                  +251 983 222 221
+                </a>
+                <span className="text-primary-foreground/60">| Call Center 24/7</span>
               </div>
             </div>
           </div>

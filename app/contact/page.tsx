@@ -30,9 +30,9 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Center",
-    description: "Phone-based assistance",
-    contact: "Available during business hours",
-    href: null,
+    description: "Phone-based assistance, 24/7",
+    contact: "+251 983 222 221",
+    href: "tel:+251983222221",
   },
   {
     icon: MessageSquare,
@@ -262,10 +262,17 @@ export default function ContactPage() {
                   </p>
                   <div className="flex items-center gap-2 text-secondary mb-4">
                     <Clock className="h-4 w-4" />
-                    <span className="text-sm">Available during business hours</span>
+                    <span className="text-sm">Available 24/7</span>
                   </div>
+                  <a
+                    href="tel:+251983222221"
+                    className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 transition-colors mb-4"
+                  >
+                    <Phone className="h-4 w-4" />
+                    <span className="font-medium">+251 983 222 221</span>
+                  </a>
                   <p className="text-sm text-primary-foreground/70">
-                    For urgent matters outside business hours, please use in-app support or email.
+                    For urgent matters, call us directly or use in-app support or email.
                   </p>
                 </div>
 

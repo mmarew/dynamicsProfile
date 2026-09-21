@@ -86,7 +86,7 @@ const faqCategories = [
       },
       {
         question: "What is the driver commission?",
-        answer: "DTC charges a commission (typically 10-15%) on each completed journey. For example, on a 45,000 ETB shipment with 10% commission, the driver receives 40,500 ETB and the platform receives 4,500 ETB.",
+        answer: "DTC is currently free — no commission is charged yet. We are launching with a free period and will introduce a transparent commission structure in the future. Any changes will be announced clearly.",
       },
       {
         question: "What payment methods are accepted?",

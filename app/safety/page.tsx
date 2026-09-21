@@ -344,7 +344,7 @@ export default function SafetyPage() {
               Ship with Confidence
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Our safety measures ensure your cargo is protected at every step. Join thousands of shippers and drivers who trust DTC.
+              Our safety measures ensure your cargo is protected at every step. Join shippers and drivers who trust DTC.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">

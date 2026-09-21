@@ -133,7 +133,7 @@ export function Benefits() {
               Grow Your Trucking Business
             </h2>
             <p className="text-lg text-muted-foreground">
-              Join thousands of drivers earning more with DTC. Get access to quality loads, fair pricing, and a platform that supports your success.
+              Join the DTC driver network and get access to quality loads, fair pricing, and a platform that supports your success.
             </p>
           </div>
 

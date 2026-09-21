@@ -44,12 +44,12 @@ export function Hero() {
             {/* Trust Indicators */}
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center sm:text-left">
-                <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-display)' }}>1000+</div>
-                <div className="text-sm text-muted-foreground">Verified Drivers</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-display)' }}>Verified</div>
+                <div className="text-sm text-muted-foreground">Drivers &amp; Vehicles</div>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-display)' }}>50K+</div>
-                <div className="text-sm text-muted-foreground">Shipments Delivered</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-display)' }}>GPS</div>
+                <div className="text-sm text-muted-foreground">Real-time Tracking</div>
               </div>
               <div className="text-center sm:text-left">
                 <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-display)' }}>24/7</div>

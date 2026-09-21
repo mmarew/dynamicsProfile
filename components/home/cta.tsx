@@ -11,7 +11,7 @@ export function CTA() {
             Ready to Move Your Cargo?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join thousands of businesses and drivers using DTC to move goods across Ethiopia and Djibouti. Get started today.
+            Join businesses and drivers using DTC to move goods across Ethiopia and Djibouti. Get started today.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">

@@ -396,7 +396,7 @@ export default function PricingPage() {
               Get Started Today
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-              Join thousands of shippers and drivers using DTC to move goods across Ethiopia and Djibouti.
+              Join shippers and drivers using DTC to move goods across Ethiopia and Djibouti.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
