@@ -96,7 +96,7 @@ export function Navigation() {
         </Link>
 
         {/* Desktop Navigation */}
-        <NavigationMenu className="hidden lg:flex">
+        <NavigationMenu viewport={false} className="hidden lg:flex">
           <NavigationMenuList>
             {navigation.main.map((item) => (
               <NavigationMenuItem key={item.name}>
