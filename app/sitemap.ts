@@ -10,6 +10,8 @@ const routes = [
   "/faq",
   "/for-drivers",
   "/for-shippers",
+  "/for-queue-orgs",
+  "/for-associations",
   "/how-it-works",
   "/pricing",
   "/safety",
