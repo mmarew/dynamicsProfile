@@ -40,6 +40,16 @@ const navigation = {
       description: "Find loads and grow your business",
     },
     {
+      name: "For Queue Orgs",
+      href: "/for-queue-orgs",
+      description: "Digitize your loading queue with FIFO dispatch",
+    },
+    {
+      name: "For Associations",
+      href: "/for-associations",
+      description: "Fleet bidding and driver assignment portal",
+    },
+    {
       name: "Pricing",
       href: "/pricing",
       description: "Transparent pricing and subscription plans",

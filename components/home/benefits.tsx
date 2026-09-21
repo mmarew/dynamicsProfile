@@ -61,8 +61,8 @@ const driverBenefits = [
   },
   {
     icon: Wallet,
-    title: "Fair Commission",
-    description: "Transparent commission structure with no hidden fees",
+    title: "Free During Launch",
+    description: "No commission, no hidden fees — keep 100% of your earnings",
   },
   {
     icon: Calendar,

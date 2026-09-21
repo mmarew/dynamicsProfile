@@ -46,7 +46,7 @@ const shipperPostSteps = [
   {
     icon: FileText,
     title: "Choose your vehicle",
-    description: "Pick the vehicle type you need, from Isuzu NPR to Euro Trackers, based on your cargo size.",
+    description: "Pick the vehicle you need — from light trucks up to 35 quintals to multi-container rigs up to 400 quintals — based on your cargo size.",
   },
   {
     icon: TruckIcon,

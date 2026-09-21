@@ -38,8 +38,8 @@ const benefits = [
   },
   {
     icon: Wallet,
-    title: "Fair Commission",
-    description: "Transparent commission structure with no hidden fees. Keep more of what you earn.",
+    title: "No Fees During Launch",
+    description: "Free to use right now — no commission, no hidden fees. Keep 100% of what you earn while the platform is free.",
   },
   {
     icon: Calendar,
@@ -75,7 +75,7 @@ const registrationSteps = [
     step: 3,
     icon: Truck,
     title: "Register Vehicle",
-    description: "Add your vehicle details: license plate, color, and vehicle type (Isuzu NPR, FSR, Sino, or Euro Tracker).",
+    description: "Add your vehicle details: license plate, color, and vehicle type — from light trucks (up to 35 quintals) to multi-container rigs (up to 400 quintals).",
   },
   {
     step: 4,

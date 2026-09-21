@@ -2,28 +2,52 @@ import Image from "next/image"
 
 const vehicles = [
   {
-    name: "Isuzu NPR",
+    name: "Light Truck (up to 35 q)",
+    capacity: "35 quintals",
+    bestFor: "Bulk cargo, small & light loads",
+    icon: "LT",
+  },
+  {
+    name: "Medium Truck (up to 50 q)",
     capacity: "50 quintals",
-    bestFor: "Small loads, urban delivery, short-haul",
-    icon: "NPR",
+    bestFor: "Bulk cargo, regional transport",
+    icon: "MT",
   },
   {
-    name: "Isuzu FSR",
+    name: "Medium Truck (up to 100 q)",
     capacity: "100 quintals",
-    bestFor: "Medium loads, regional transport",
-    icon: "FSR",
+    bestFor: "Bulk cargo, warehouse transfers",
+    icon: "M100",
   },
   {
-    name: "Sino Truck",
-    capacity: "150 quintals",
-    bestFor: "Heavy loads, inter-city freight",
-    icon: "SNO",
+    name: "Heavy Truck (125–175 q)",
+    capacity: "175 quintals",
+    bestFor: "Bulk cargo or 20ft container",
+    icon: "HT",
   },
   {
-    name: "Euro Tracker",
-    capacity: "430 quintals",
-    bestFor: "Maximum capacity, long-haul, cross-border",
-    icon: "EUR",
+    name: "Extra Heavy Truck (176–250 q)",
+    capacity: "250 quintals",
+    bestFor: "Bulk cargo or ISO containers",
+    icon: "EHT",
+  },
+  {
+    name: "20ft Container Truck (251–300 q)",
+    capacity: "300 quintals",
+    bestFor: "Bulk or 20ft container (cassoni)",
+    icon: "20FT",
+  },
+  {
+    name: "2×20ft / 40ft Low-Bed (301–350 q)",
+    capacity: "350 quintals",
+    bestFor: "2×20ft or 1×40ft ISO containers",
+    icon: "LB",
+  },
+  {
+    name: "2×20ft / 40ft Container (351–400 q)",
+    capacity: "400 quintals",
+    bestFor: "2×20ft or 1×40ft ISO containers",
+    icon: "40FT",
   },
 ]
 

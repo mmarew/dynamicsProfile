@@ -6,6 +6,8 @@ const footerNavigation = {
   platform: [
     { name: "For Shippers", href: "/for-shippers" },
     { name: "For Drivers", href: "/for-drivers" },
+    { name: "For Queue Orgs", href: "/for-queue-orgs" },
+    { name: "For Associations", href: "/for-associations" },
     { name: "Pricing", href: "/pricing" },
     { name: "Download App", href: "/download" },
   ],

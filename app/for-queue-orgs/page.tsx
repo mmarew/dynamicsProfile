@@ -164,9 +164,9 @@ export default function ForQueueOrgsPage() {
 
                   <div className="space-y-3 mb-6">
                     {[
-                      { plate: "AA 12345", type: "Isuzu FSR", state: "Waiting since 09:12", pos: 1 },
-                      { plate: "AA 98765", type: "Sino Truck", state: "Waiting since 09:20", pos: 2 },
-                      { plate: "AA 55667", type: "Euro Tracker", state: "Waiting since 09:27", pos: 3 },
+                      { plate: "AA 12345", type: "Medium Truck", state: "Waiting since 09:12", pos: 1 },
+                      { plate: "AA 98765", type: "Heavy Truck", state: "Waiting since 09:20", pos: 2 },
+                      { plate: "AA 55667", type: "40ft Container", state: "Waiting since 09:27", pos: 3 },
                     ].map((row) => (
                       <div key={row.plate} className="flex items-center gap-3 bg-muted rounded-lg p-3">
                         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent/20 text-accent text-sm font-bold">

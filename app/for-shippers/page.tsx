@@ -186,7 +186,7 @@ export default function ForShippersPage() {
                           />
                         </div>
                         <div>
-                          <div className="font-medium text-sm">Sino Truck</div>
+                          <div className="font-medium text-sm">Heavy Truck</div>
                           <div className="flex items-center gap-1">
                             <Star className="h-3 w-3 text-secondary fill-secondary" />
                             <span className="text-xs text-muted-foreground">4.8 rating</span>

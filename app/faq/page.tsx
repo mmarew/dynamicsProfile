@@ -59,7 +59,7 @@ const faqCategories = [
       },
       {
         question: "What vehicle types are supported?",
-        answer: "We support four vehicle types: Isuzu NPR (50 quintals), Isuzu FSR (100 quintals), Sino Truck (150 quintals), and Euro Tracker (430 quintals). Each vehicle must be registered with its license plate, color, and type.",
+        answer: "We support eight vehicle classes, from Light Trucks (up to 35 quintals) and Medium Trucks (up to 50 or 100 quintals) to Heavy Trucks (125–175 quintals), Extra Heavy Trucks (176–250 quintals), and multi-container rigs for 40ft ISO containers (up to 400 quintals). Each vehicle must be registered with its license plate, color, and type.",
       },
       {
         question: "Do I need to own the vehicle?",
@@ -82,7 +82,7 @@ const faqCategories = [
       },
       {
         question: "Are there any fees for shippers?",
-        answer: "No, shippers do not pay any platform fees. You only pay the agreed shipping cost directly to the driver. The platform charges drivers a commission and subscription fee.",
+        answer: "No, shippers do not pay any platform fees. You only pay the agreed shipping cost directly to the driver. Driver fees are being launched at zero — the platform is free during the launch period.",
       },
       {
         question: "What is the driver commission?",

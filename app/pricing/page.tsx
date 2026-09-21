@@ -15,8 +15,8 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Pricing - DTC | Transparent Pricing & Plans",
-  description: "Understand DTC's pricing model. Competitive bidding for shippers, transparent commission for drivers, and flexible subscription plans. No hidden fees.",
+  title: "Pricing - DTC | Free During Launch & Transparent Pricing",
+  description: "Understand DTC's pricing model. Free for drivers during launch, no hidden fees, competitive bidding for shippers, and optional driver subscription plans.",
 }
 
 const forShippers = [
@@ -30,7 +30,7 @@ const forShippers = [
   },
   {
     title: "Pay the Driver Directly",
-    description: "Payment goes to the driver; platform commission is separate",
+    description: "Payment goes straight to the driver, with no platform commission during launch",
   },
   {
     title: "Free to Post",
@@ -133,11 +133,11 @@ const faqs = [
   },
   {
     question: "What is the platform commission?",
-    answer: "DTC charges a commission (typically 10-15%) on each completed journey. This is deducted from the driver's earnings after the journey is completed. The exact rate is configured by admin and may vary.",
+    answer: "DTC is currently free — no commission is charged. Drivers keep 100% of their earnings during the launch period. We will announce a transparent commission structure before introducing any fees.",
   },
   {
     question: "Are there any hidden fees for shippers?",
-    answer: "No. Shippers do not pay any platform fees. You only pay the agreed shipping cost to the driver. The driver pays a subscription fee and commission to the platform.",
+    answer: "No. Shippers do not pay any platform fees. You only pay the agreed shipping cost to the driver. Driver subscriptions are optional during launch.",
   },
   {
     question: "Can I negotiate the price?",
@@ -232,10 +232,10 @@ export default function PricingPage() {
                 <div className="mb-6">
                   <div className="flex items-center gap-2 mb-2">
                     <Percent className="h-5 w-5 text-primary" />
-                    <h3 className="font-semibold text-foreground">Commission Model</h3>
+                    <h3 className="font-semibold text-foreground">Free During Launch</h3>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">
-                    DTC charges a commission (typically 10-15%) on each completed journey. Commission is automatically calculated when a journey is completed.
+                    DTC is currently free — no commission is deducted. Drivers keep 100% of their earnings while we launch. We will announce a transparent commission structure before any change.
                   </p>
                 </div>
 
@@ -247,18 +247,18 @@ export default function PricingPage() {
                       <span className="font-medium text-foreground">45,000 ETB</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Commission (10%)</span>
-                      <span className="text-destructive">-4,500 ETB</span>
+                      <span className="text-muted-foreground">Commission</span>
+                      <span className="font-bold text-accent">0 ETB (free now)</span>
                     </div>
                     <div className="border-t pt-2 flex justify-between">
                       <span className="font-medium text-foreground">Driver Receives</span>
-                      <span className="font-bold text-accent">40,500 ETB</span>
+                      <span className="font-bold text-accent">45,000 ETB</span>
                     </div>
                   </div>
                 </div>
 
                 <p className="text-sm text-muted-foreground">
-                  Plus a subscription fee to access the platform (see plans below). New drivers get a free 1-month trial.
+                  New drivers get a free 1-month trial of the full platform. Subscription plans are optional during launch.
                 </p>
 
                 <div className="mt-8">
