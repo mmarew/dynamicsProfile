@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Mail, Phone, MapPin } from "lucide-react"
+import { T } from "@/components/i18n/text"
 
 const footerNavigation = {
   platform: [
@@ -46,13 +47,15 @@ export function Footer() {
                 DTC
               </span>
             </Link>
-            <p className="text-primary-foreground/80 mb-6 max-w-sm">
-              Dynamics Transport Commission connects shippers with verified truck drivers across Ethiopia and Djibouti. Move goods. Move fast. Move smart.
-            </p>
+            <T
+              k="Footer.tagline"
+              as="p"
+              className="text-primary-foreground/80 mb-6 max-w-sm"
+            />
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm text-primary-foreground/80">
                 <MapPin className="h-4 w-4 flex-shrink-0" />
-                <span>Addis Ababa, Ethiopia | Djibouti City, Djibouti</span>
+                <span><T k="Footer.address" /></span>
               </div>
               <div className="flex items-center gap-3 text-sm text-primary-foreground/80">
                 <Mail className="h-4 w-4 flex-shrink-0" />
@@ -65,14 +68,14 @@ export function Footer() {
                 <a href="tel:+251983222221" className="hover:text-secondary transition-colors">
                   +251 983 222 221
                 </a>
-                <span className="text-primary-foreground/60">| Call Center 24/7</span>
+                <span className="text-primary-foreground/60"><T k="Footer.callCenter" /></span>
               </div>
             </div>
           </div>
 
           {/* Platform */}
           <div>
-            <h3 className="font-semibold mb-4">Platform</h3>
+            <T k="Footer.columns.platform" as="h3" className="font-semibold mb-4" />
             <ul className="space-y-3">
               {footerNavigation.platform.map((item) => (
                 <li key={item.name}>
@@ -89,7 +92,7 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold mb-4">Company</h3>
+            <T k="Footer.columns.company" as="h3" className="font-semibold mb-4" />
             <ul className="space-y-3">
               {footerNavigation.company.map((item) => (
                 <li key={item.name}>
@@ -106,7 +109,7 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold mb-4">Resources</h3>
+            <T k="Footer.columns.resources" as="h3" className="font-semibold mb-4" />
             <ul className="space-y-3">
               {footerNavigation.resources.map((item) => (
                 <li key={item.name}>

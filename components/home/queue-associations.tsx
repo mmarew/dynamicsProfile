@@ -1,32 +1,13 @@
 import Link from "next/link"
 import { MapPin, ListOrdered, RefreshCcw, BarChart3, Users, ArrowRight } from "lucide-react"
+import { T } from "@/components/i18n/text"
 
 const features = [
-  {
-    icon: MapPin,
-    title: "Geofenced driver check-in",
-    description: "Drivers confirm arrival by GPS before joining the queue.",
-  },
-  {
-    icon: ListOrdered,
-    title: "Automatic FIFO queue rotation",
-    description: "First in, first out — enforced by the system, not by the gate.",
-  },
-  {
-    icon: RefreshCcw,
-    title: "Refusal and rotation handling",
-    description: "Declines and timeouts rotate to the next driver automatically.",
-  },
-  {
-    icon: BarChart3,
-    title: "Queue performance dashboard",
-    description: "Turnaround times, wait times, and throughput at a glance.",
-  },
-  {
-    icon: Users,
-    title: "Bulk driver onboarding for associations",
-    description: "Register whole fleets at once with verified documents.",
-  },
+  { icon: MapPin, key: "geofencedCheckin" },
+  { icon: ListOrdered, key: "fifoRotation" },
+  { icon: RefreshCcw, key: "refusalHandling" },
+  { icon: BarChart3, key: "performanceDashboard" },
+  { icon: Users, key: "bulkOnboarding" },
 ]
 
 export function QueueAssociations() {
@@ -36,23 +17,29 @@ export function QueueAssociations() {
         <div className="grid lg:grid-cols-5 gap-12 items-start">
           <div className="lg:col-span-2">
             <span className="inline-flex items-center px-3 py-1 rounded-full bg-accent/20 text-accent text-sm font-medium mb-4">
-              For Queue Operators &amp; Transport Associations
+              <T k="QueueAssociations.badge" />
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              For Queue Operators &amp; Transport Associations
+              <T k="QueueAssociations.title" />
             </h2>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Digitize your loading queue. Drivers check in via GPS. Automatic FIFO rotation. No more paper, no more arguments.
-            </p>
+            <T
+              k="QueueAssociations.description"
+              as="p"
+              className="text-lg text-muted-foreground mb-6 leading-relaxed"
+            />
             <ul className="space-y-3 mb-8">
               {features.map((feature) => (
-                <li key={feature.title} className="flex items-start gap-3">
+                <li key={feature.key} className="flex items-start gap-3">
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
                     <feature.icon className="h-4 w-4" />
                   </div>
                   <div>
-                    <span className="font-medium text-foreground block">{feature.title}</span>
-                    <span className="text-sm text-muted-foreground">{feature.description}</span>
+                    <span className="font-medium text-foreground block">
+                      <T k={`QueueAssociations.features.${feature.key}.title`} />
+                    </span>
+                    <span className="text-sm text-muted-foreground">
+                      <T k={`QueueAssociations.features.${feature.key}.description`} />
+                    </span>
                   </div>
                 </li>
               ))}
@@ -62,14 +49,14 @@ export function QueueAssociations() {
                 href="/for-queue-orgs"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-3 font-medium text-accent-foreground transition-colors hover:bg-accent/90"
               >
-                Request a Demo
+                <T k="QueueAssociations.ctaDemo" />
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/for-associations"
                 className="inline-flex items-center justify-center gap-2 rounded-md border border-primary px-6 py-3 font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
               >
-                Partner as Association
+                <T k="QueueAssociations.ctaPartner" />
               </Link>
             </div>
           </div>

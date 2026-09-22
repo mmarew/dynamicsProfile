@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, MapPin, Shield } from "lucide-react"
+import { T } from "@/components/i18n/text"
 
 export function Hero() {
   return (
@@ -16,27 +17,29 @@ export function Hero() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary mb-6">
               <MapPin className="h-4 w-4" />
-              <span className="text-sm font-medium">Operating in Ethiopia & Djibouti</span>
+              <span className="text-sm font-medium"><T k="Hero.badge" /></span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
-              <span className="text-balance">Move goods across Ethiopia and Djibouti</span>
+              <T k="Hero.title" as="span" className="text-balance" />
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              Connect with verified truck drivers instantly. Post your shipment, receive competitive bids, and track your cargo in real-time.
-            </p>
+            <T
+              k="Hero.subtitle"
+              as="p"
+              className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed"
+            />
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground h-12 px-8">
                 <Link href="/for-shippers">
-                  Ship Your Cargo
+                  <T k="Hero.ctaPrimary" />
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="h-12 px-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                 <Link href="/for-drivers">
-                  Drive With Us
+                  <T k="Hero.ctaSecondary" />
                 </Link>
               </Button>
             </div>
@@ -44,16 +47,16 @@ export function Hero() {
             {/* Trust Indicators */}
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center sm:text-left">
-                <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-display)' }}>Verified</div>
-                <div className="text-sm text-muted-foreground">Drivers &amp; Vehicles</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-display)' }}><T k="Hero.trust.verified" /></div>
+                <div className="text-sm text-muted-foreground"><T k="Hero.trust.verifiedSub" /></div>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-display)' }}>GPS</div>
-                <div className="text-sm text-muted-foreground">Real-time Tracking</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-display)' }}><T k="Hero.trust.gps" /></div>
+                <div className="text-sm text-muted-foreground"><T k="Hero.trust.gpsSub" /></div>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-display)' }}>24/7</div>
-                <div className="text-sm text-muted-foreground">Support Available</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary" style={{ fontFamily: 'var(--font-display)' }}><T k="Hero.trust.support" /></div>
+                <div className="text-sm text-muted-foreground"><T k="Hero.trust.supportSub" /></div>
               </div>
             </div>
           </div>

@@ -1,19 +1,63 @@
 {
   "Hero": {
-    "title": "Move Your Cargo, Smart & Simple",
-    "subtitle": "Post a load free, compare verified truck bids, and track delivery — no commission during launch."
-  },
-  "StatsBar": {
-    "title": "Addis to Djibouti, on one trusted platform"
+    "badge": "Operating in Ethiopia & Djibouti",
+    "title": "Move goods across Ethiopia and Djibouti",
+    "subtitle": "Connect with verified truck drivers instantly. Post your shipment, receive competitive bids, and track your cargo in real-time.",
+    "ctaPrimary": "Ship Your Cargo",
+    "ctaSecondary": "Drive With Us",
+    "trust": {
+      "verified": "Verified",
+      "verifiedSub": "Drivers & Vehicles",
+      "gps": "GPS",
+      "gpsSub": "Real-time Tracking",
+      "support": "24/7",
+      "supportSub": "Support Available"
+    }
   },
   "QueueAssociations": {
-    "title": "Fair Queues, Digitized",
-    "description": "FIFO rotation, verified members, and transparent rates for queue organizations."
+    "badge": "For Queue Operators & Transport Associations",
+    "title": "For Queue Operators & Transport Associations",
+    "description": "Digitize your loading queue. Drivers check in via GPS. Automatic FIFO rotation. No more paper, no more arguments.",
+    "ctaDemo": "Request a Demo",
+    "ctaPartner": "Partner as Association",
+    "features": {
+      "geofencedCheckin": {
+        "title": "Geofenced driver check-in",
+        "description": "Drivers confirm arrival by GPS before joining the queue."
+      },
+      "fifoRotation": {
+        "title": "Automatic FIFO queue rotation",
+        "description": "First in, first out — enforced by the system, not by the gate."
+      },
+      "refusalHandling": {
+        "title": "Refusal and rotation handling",
+        "description": "Declines and timeouts rotate to the next driver automatically."
+      },
+      "performanceDashboard": {
+        "title": "Queue performance dashboard",
+        "description": "Turnaround times, wait times, and throughput at a glance."
+      },
+      "bulkOnboarding": {
+        "title": "Bulk driver onboarding for associations",
+        "description": "Register whole fleets at once with verified documents."
+      }
+    }
   },
   "CtaBanner": {
-    "description": "Free during launch — post, compare, and ship with zero commission."
+    "title": "Ready to Move Your Cargo?",
+    "description": "Join businesses and drivers using DTC to move goods across Ethiopia and Djibouti. Get started today.",
+    "ctaPrimary": "Ship Your Cargo",
+    "ctaSecondary": "Become a Driver",
+    "phoneNote": "Or call our support center for assisted booking"
   },
   "Footer": {
-    "tagline": "Ethiopia's trusted freight marketplace."
+    "tagline": "Dynamics Transport Commission connects shippers with verified truck drivers across Ethiopia and Djibouti. Move goods. Move fast. Move smart.",
+    "address": "Addis Ababa, Ethiopia | Djibouti City, Djibouti",
+    "callCenter": "| Call Center 24/7",
+    "columns": {
+      "platform": "Platform",
+      "company": "Company",
+      "resources": "Resources"
+    }
   }
 }

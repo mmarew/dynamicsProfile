@@ -4,7 +4,6 @@ import { Hero } from "@/components/home/hero"
 import { HowItWorks } from "@/components/home/how-it-works"
 import { VehicleFleet } from "@/components/home/vehicle-fleet"
 import { QueueAssociations } from "@/components/home/queue-associations"
-import { LanguageSample } from "@/components/home/language-sample"
 import { CoverageMap } from "@/components/home/coverage-map"
 import { Benefits } from "@/components/home/benefits"
 import { TrustSafety } from "@/components/home/trust-safety"
@@ -19,7 +18,6 @@ export default function HomePage() {
       <Navigation />
       <main className="flex-1">
         <Hero />
-        <LanguageSample />
         <HowItWorks />
         <VehicleFleet />
         <QueueAssociations />

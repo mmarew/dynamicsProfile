@@ -38,6 +38,7 @@ export function changeLanguage(lang: LangCode): void {
   } catch {
     /* private mode — ignore */
   }
+  document.documentElement.lang = lang === "am" ? "am" : "en"
   window.dispatchEvent(new Event(LANGUAGE_CHANGED_EVENT))
 }
 
