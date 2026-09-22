@@ -19,8 +19,18 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Menu } from "lucide-react";
+import { Languages, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+/* Only paths that have a physical /am/ twin page. Everything else falls back
+   to /am (Amharic home) — so the toggle never generates a 404 link. */
+const AM_TWINS = new Set(["/", "/contact"])
+const amHrefFor = (pathname: string) => {
+  if (!AM_TWINS.has(pathname)) return "/am"
+  return pathname === "/" ? "/am" : `/am${pathname}`
+}
+const enHrefFor = (pathname: string) =>
+  pathname.startsWith("/am") ? pathname.replace(/^\/am(\/|$)/, "/$1") || "/" : pathname
 
 const navigation = {
   main: [
@@ -171,6 +181,33 @@ export function Navigation() {
         </NavigationMenu>
 
         <div className="hidden lg:flex items-center gap-3">
+          {/* Language toggle — EN ↔ AM (i18n-aware hrefs) */}
+          <div className="inline-flex items-center rounded-full border border-border bg-card p-0.5">
+            {[
+              { code: "en", label: "EN", href: enHrefFor(pathname), hrefLang: "en" },
+              { code: "am", label: "አማ", href: amHrefFor(pathname), hrefLang: "am" },
+            ].map((lang) => {
+              const isCurrent =
+                lang.code === "am" ? pathname.startsWith("/am") : !pathname.startsWith("/am")
+              return (
+                <Link
+                  key={lang.code}
+                  href={lang.href}
+                  hrefLang={lang.hrefLang}
+                  aria-label={`Switch language to ${lang.code}`}
+                  className={cn(
+                    "rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
+                    isCurrent
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground",
+                  )}
+                >
+                  {lang.label}
+                </Link>
+              )
+            })}
+          </div>
+
           <Button variant="ghost" asChild>
             <Link href="/download">Download App</Link>
           </Button>
@@ -242,6 +279,47 @@ export function Navigation() {
                     Drive With Us
                   </Link>
                 </Button>
+                {/* Language toggle — mobile */}
+                <div className="mt-1 flex w-full items-center justify-between rounded-full border border-border bg-card p-1">
+                  {[
+                    {
+                      code: "en",
+                      label: "English (EN)",
+                      href: pathname.startsWith("/am")
+                        ? pathname.replace(/^\/am(\/|$)/, "/$1") || "/"
+                        : pathname,
+                    },
+                    {
+                      code: "am",
+                      label: "አማርኛ (አማ)",
+                      href: pathname.startsWith("/am")
+                        ? pathname
+                        : `/am${pathname === "/" ? "" : pathname}`,
+                    },
+                  ].map((lang) => {
+                    const isCurrent =
+                      lang.code === "am"
+                        ? pathname.startsWith("/am")
+                        : !pathname.startsWith("/am")
+                    return (
+                      <Link
+                        key={lang.code}
+                        href={lang.href}
+                        hrefLang={lang.code}
+                        onClick={() => setOpen(false)}
+                        aria-label={`Switch language to ${lang.code}`}
+                        className={cn(
+                          "flex-1 rounded-full px-3 py-1.5 text-xs font-semibold text-center transition-colors",
+                          isCurrent
+                            ? "bg-primary text-primary-foreground"
+                            : "text-muted-foreground hover:text-foreground",
+                        )}
+                      >
+                        {lang.label}
+                      </Link>
+                    )
+                  })}
+                </div>
               </div>
             </nav>
           </SheetContent>

@@ -129,7 +129,7 @@ export default function BlogPostPage() {
                 Step 2 — Choose Your Truck Type
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                The right vehicle keeps your per-quintal cost low)Skip and matches the cargo. Rates quoted per quintal (100 kg).
+                The right vehicle keeps your per-quintal cost low and matches the cargo. Rates quoted per quintal (100 kg).
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
