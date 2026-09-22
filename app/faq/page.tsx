@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { canonical } from "@/lib/seo"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -12,6 +13,7 @@ import {
 import { HelpCircle, Package, Truck, CreditCard, MapPin, Shield } from "lucide-react"
 
 export const metadata: Metadata = {
+  ...canonical('/faq'),
   title: "FAQ - DTC | Frequently Asked Questions",
   description: "Find answers to common questions about DTC: shipping, driver registration, pricing, tracking, payments, and more.",
 }

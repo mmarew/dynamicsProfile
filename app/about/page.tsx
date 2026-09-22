@@ -1,11 +1,13 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { canonical } from "@/lib/seo"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Target, Eye, Users, MapPin, Globe, TrendingUp } from "lucide-react"
 
 export const metadata: Metadata = {
+  ...canonical('/about'),
   title: "About Us - DTC | Dynamics Transport Commission",
   description: "Learn about DTC, Ethiopia and Djibouti's leading freight transportation marketplace. Our mission is to digitize and modernize cargo transportation in the Horn of Africa.",
 }

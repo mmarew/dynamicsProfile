@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { canonical } from "@/lib/seo";
 import {
   Package,
   Star,
@@ -12,6 +13,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
+  ...canonical('/download'),
   title:
     "Download DTC App - Freight Connector & Digital Transport Cargo App | Driver & Shipper Apps",
   description:

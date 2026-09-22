@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
+import { canonical } from "@/lib/seo"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -17,6 +18,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
+  ...canonical('/services'),
   title: "Services & Freight Vehicles - DTC | From Light Trucks to Container Rigs",
   description: "DTC freight vehicles by cargo type and capacity: light and medium open flatbed trucks for bulk cargo, heavy flatbeds for bulk or 20ft containers, and specialised low-bed rigs for 40ft containers. Ethiopia and Djibouti.",
 }

@@ -131,10 +131,10 @@ export default function ForAssociationsPage() {
                   <span className="text-sm font-medium">For Transport Associations &amp; Companies</span>
                 </span>
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
-                  One Portal for Your Whole Fleet
+                  Transport Association Partnership
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                  Bid on big loads as a company, assign your member drivers, and track every truck — all from one association portal.
+                  Onboard all your drivers at once. Manage fleet, dispatch, and compliance from one dashboard — bid on big loads as a company, assign member drivers, and track every truck.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground h-12 px-8">
@@ -436,6 +436,26 @@ export default function ForAssociationsPage() {
         </section>
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Transport Association Software Ethiopia",
+            serviceType: "Transport association fleet management",
+            description: "Bulk driver onboarding, association dashboard, batch bidding, fleet and member management, and compliance tracking for transport associations and companies in Ethiopia.",
+            url: "https://dynamicsroute.tech/for-associations",
+            provider: {
+              "@type": "Organization",
+              name: "DTC - Dynamics Route Tech",
+              telephone: "+251983222221",
+              url: "https://dynamicsroute.tech",
+            },
+            areaServed: { "@type": "Country", name: "Ethiopia" },
+          }),
+        }}
+      />
     </div>
   )
 }

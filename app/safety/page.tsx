@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { canonical } from "@/lib/seo"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -19,6 +20,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
+  ...canonical('/safety'),
   title: "Safety & Trust - DTC | Your Cargo, Fully Protected",
   description: "Learn about DTC's safety measures: driver verification, real-time GPS tracking, rating systems, and delinquency tracking. Your cargo is protected at every step.",
 }

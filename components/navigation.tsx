@@ -192,7 +192,7 @@ export function Navigation() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-            <nav className="flex flex-col gap-4 mt-8">
+            <nav className="flex flex-col gap-4 mt-8 pl-2.5">
               {navigation.main.map((item) => (
                 <Link
                   key={item.name}

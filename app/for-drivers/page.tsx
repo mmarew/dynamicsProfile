@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
+import { canonical } from "@/lib/seo"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -21,6 +22,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
+  ...canonical('/for-drivers'),
   title: "For Drivers - DTC | Grow Your Trucking Business",
   description: "Join DTC and get access to quality loads, fair pricing, and steady income. Register your vehicle, get verified, and start earning. Free trial for new drivers.",
 }

@@ -432,6 +432,58 @@ export default function ForQueueOrgsPage() {
         </section>
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["SoftwareApplication", "Product"],
+            name: "DTC Truck Queue Management System",
+            applicationCategory: "BusinessApplication",
+            applicationSubCategory: "Freight and loading queue management",
+            operatingSystem: "Web, Android, iOS",
+            description: "Digitize your loading queue with GPS driver check-in, automatic FIFO rotation, refusal handling, and a dispatcher dashboard for ports, customs yards, factories, cement plants, and depots.",
+            url: "https://dynamicsroute.tech/for-queue-orgs",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "ETB",
+              description: "Free 30-day pilot at your loading place",
+            },
+            provider: {
+              "@type": "Organization",
+              name: "DTC - Dynamics Route Tech",
+              telephone: "+251983222221",
+              url: "https://dynamicsroute.tech",
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Truck Queue Management System Ethiopia",
+            serviceType: "Loading queue digitization",
+            description: "Automatic FIFO loading queue with geofenced driver check-in for queue operators and transport associations in Ethiopia.",
+            url: "https://dynamicsroute.tech/for-queue-orgs",
+            provider: {
+              "@type": "Organization",
+              name: "DTC - Dynamics Route Tech",
+              url: "https://dynamicsroute.tech",
+            },
+            areaServed: { "@type": "Country", name: "Ethiopia" },
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "ETB",
+              description: "Free 30-day pilot",
+            },
+          }),
+        }}
+      />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
+import { canonical } from "@/lib/seo"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -24,6 +25,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
+  ...canonical('/how-it-works'),
   title: "How It Works - DTC | Individual, Company & Queue Freight Dispatch",
   description: "Learn how DTC moves cargo. Shipper posts a job. Loads up to 10 vehicles go to individual driver bidding; larger loads go to company bidding. Queue dispatch at loading places, plus street pickup and call center booking.",
   keywords: [

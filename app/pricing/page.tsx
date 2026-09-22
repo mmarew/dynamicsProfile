@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
+import { canonical } from "@/lib/seo"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -15,6 +16,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
+  ...canonical('/pricing'),
   title: "Pricing - DTC | Free During Launch & Transparent Pricing",
   description: "Understand DTC's pricing model. Free for drivers during launch, no hidden fees, competitive bidding for shippers, and optional driver subscription plans.",
 }
@@ -162,8 +164,34 @@ export default function PricingPage() {
                 Transparent Pricing
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                No hidden fees. Shippers pay drivers directly through competitive bidding. Drivers subscribe to access the platform.
+                Free during launch. No hidden fees. Shippers pay drivers directly and only when cargo is delivered.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Transparency Strip */}
+        <section className="py-12 bg-background">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-card border border-border rounded-2xl p-6">
+                <div className="text-sm font-semibold text-accent mb-2">During Launch</div>
+                <div className="text-foreground">
+                  <span className="font-bold">Free.</span> Drivers keep 100% of earnings. No commission, no hidden fees.
+                </div>
+              </div>
+              <div className="bg-card border border-border rounded-2xl p-6">
+                <div className="text-sm font-semibold text-accent mb-2">After Launch</div>
+                <div className="text-foreground">
+                  A transparent commission on completed loads — the exact rate will be announced and published here before any fee is introduced. No subscription fees for shippers. No listing fees.
+                </div>
+              </div>
+              <div className="bg-card border border-border rounded-2xl p-6">
+                <div className="text-sm font-semibold text-accent mb-2">For Shippers</div>
+                <div className="text-foreground">
+                  Post loads for free. Pay only when a load is matched and delivered. No platform commission on your side.
+                </div>
+              </div>
             </div>
           </div>
         </section>
