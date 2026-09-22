@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,17 +21,10 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Languages, Menu } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
+import { changeLanguage, getSavedLanguage, type LangCode } from "@/lib/i18n";
 
-/* Only paths that have a physical /am/ twin page. Everything else falls back
-   to /am (Amharic home) — so the toggle never generates a 404 link. */
-const AM_TWINS = new Set(["/", "/contact"])
-const amHrefFor = (pathname: string) => {
-  if (!AM_TWINS.has(pathname)) return "/am"
-  return pathname === "/" ? "/am" : `/am${pathname}`
-}
-const enHrefFor = (pathname: string) =>
-  pathname.startsWith("/am") ? pathname.replace(/^\/am(\/|$)/, "/$1") || "/" : pathname
+
 
 const navigation = {
   main: [
@@ -90,6 +84,12 @@ const mobileLinkClass = (active: boolean) =>
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
+  const [langState, setLangState] = useState<LangCode>(() => getSavedLanguage() ?? "en");
+  useEffect(() => {
+    const onLangChange = () => setLangState(getSavedLanguage() ?? "en");
+    window.addEventListener("dtc:lang-change", onLangChange);
+    return () => window.removeEventListener("dtc:lang-change", onLangChange);
+  }, []);
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
   const activePlatform = navigation.platform.some((item) => isActive(item.href));
@@ -181,19 +181,19 @@ export function Navigation() {
         </NavigationMenu>
 
         <div className="hidden lg:flex items-center gap-3">
-          {/* Language toggle — EN ↔ AM (i18n-aware hrefs) */}
+          {/* Language toggle — EN ↔ AM (in-place dictionary swap, persisted, no /am URL) */}
           <div className="inline-flex items-center rounded-full border border-border bg-card p-0.5">
             {[
-              { code: "en", label: "EN", href: enHrefFor(pathname), hrefLang: "en" },
-              { code: "am", label: "አማ", href: amHrefFor(pathname), hrefLang: "am" },
+              { code: "en", label: "EN" },
+              { code: "am", label: "አማ" },
             ].map((lang) => {
-              const isCurrent =
-                lang.code === "am" ? pathname.startsWith("/am") : !pathname.startsWith("/am")
+              const isCurrent = lang.code === "en" ? langState === "en" : langState === "am"
               return (
-                <Link
+                <button
                   key={lang.code}
-                  href={lang.href}
-                  hrefLang={lang.hrefLang}
+                  type="button"
+                  onClick={() => changeLanguage(lang.code)}
+                  aria-pressed={isCurrent}
                   aria-label={`Switch language to ${lang.code}`}
                   className={cn(
                     "rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
@@ -203,7 +203,7 @@ export function Navigation() {
                   )}
                 >
                   {lang.label}
-                </Link>
+                </button>
               )
             })}
           </div>
@@ -282,32 +282,20 @@ export function Navigation() {
                 {/* Language toggle — mobile */}
                 <div className="mt-1 flex w-full items-center justify-between rounded-full border border-border bg-card p-1">
                   {[
-                    {
-                      code: "en",
-                      label: "English (EN)",
-                      href: pathname.startsWith("/am")
-                        ? pathname.replace(/^\/am(\/|$)/, "/$1") || "/"
-                        : pathname,
-                    },
-                    {
-                      code: "am",
-                      label: "አማርኛ (አማ)",
-                      href: pathname.startsWith("/am")
-                        ? pathname
-                        : `/am${pathname === "/" ? "" : pathname}`,
-                    },
+                    { code: "en", label: "English (EN)" },
+                    { code: "am", label: "አማርኛ (አማ)" },
                   ].map((lang) => {
-                    const isCurrent =
-                      lang.code === "am"
-                        ? pathname.startsWith("/am")
-                        : !pathname.startsWith("/am")
+                    const isCurrent = langState === lang.code
                     return (
-                      <Link
+                      <button
                         key={lang.code}
-                        href={lang.href}
-                        hrefLang={lang.code}
-                        onClick={() => setOpen(false)}
-                        aria-label={`Switch language to ${lang.code}`}
+                        type="button"
+                        onClick={() => {
+                          changeLanguage(lang.code)
+                          setLangState(lang.code)
+                          setOpen(false)
+                        }}
+                        aria-pressed={isCurrent}
                         className={cn(
                           "flex-1 rounded-full px-3 py-1.5 text-xs font-semibold text-center transition-colors",
                           isCurrent
@@ -316,7 +304,7 @@ export function Navigation() {
                         )}
                       >
                         {lang.label}
-                      </Link>
+                      </button>
                     )
                   })}
                 </div>

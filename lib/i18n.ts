@@ -6,6 +6,7 @@
  */
 
 const LANGUAGE_KEY = "dtc:language"
+export const LANGUAGE_CHANGED_EVENT = "dtc:lang-change"
 export const DEFAULT_LOCALE = "en"
 
 export type LangCode = "en" | "am"
@@ -37,6 +38,7 @@ export function changeLanguage(lang: LangCode): void {
   } catch {
     /* private mode — ignore */
   }
+  window.dispatchEvent(new Event(LANGUAGE_CHANGED_EVENT))
 }
 
 /** i18n-aware href twin per RN hrefLang pattern (fallback to locale home, never 404) */
