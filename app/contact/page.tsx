@@ -5,6 +5,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { T } from "@/components/i18n/text"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -22,23 +23,23 @@ import {
 const contactInfo = [
   {
     icon: Mail,
-    title: "Email Support",
-    description: "Get help via email",
+    titleKey: "Contact.options.email.title",
+    descriptionKey: "Contact.options.email.description",
     contact: "support@dynamicstransport.com",
     href: "mailto:support@dynamicstransport.com",
   },
   {
     icon: Phone,
-    title: "Call Center",
-    description: "Phone-based assistance, 24/7",
+    titleKey: "Contact.options.call.title",
+    descriptionKey: "Contact.options.call.description",
     contact: "+251 983 222 221",
     href: "tel:+251983222221",
   },
   {
     icon: MessageSquare,
-    title: "In-App Support",
-    description: "Contact us through the app",
-    contact: "24/7 messaging support",
+    titleKey: "Contact.options.inApp.title",
+    descriptionKey: "Contact.options.inApp.description",
+    contactKey: "Contact.options.inApp.contact",
     href: null,
   },
 ]
@@ -46,12 +47,12 @@ const contactInfo = [
 const offices = [
   {
     city: "Addis Ababa, Ethiopia",
-    role: "Head Office",
+    roleKey: "Contact.offices.head",
     icon: Building,
   },
   {
     city: "Djibouti City, Djibouti",
-    role: "Regional Office",
+    roleKey: "Contact.offices.regional",
     icon: Building,
   },
 ]
@@ -94,10 +95,10 @@ export default function ContactPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-                Contact Us
+                <T k="Contact.hero.title" />
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Have questions or need assistance? Our team is here to help you with shipping, driver registration, or any platform inquiries.
+                <T k="Contact.hero.sub" />
               </p>
             </div>
           </div>
@@ -108,18 +109,18 @@ export default function ContactPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid md:grid-cols-3 gap-6 mb-16">
               {contactInfo.map((item) => (
-                <div key={item.title} className="bg-card border border-border rounded-xl p-6 text-center">
+                <div key={item.titleKey} className="bg-card border border-border rounded-xl p-6 text-center">
                   <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary mx-auto mb-4">
                     <item.icon className="h-7 w-7" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-2">{item.description}</p>
+                  <h3 className="font-semibold text-foreground mb-1"><T k={item.titleKey} /></h3>
+                  <p className="text-sm text-muted-foreground mb-2"><T k={item.descriptionKey} /></p>
                   {item.href ? (
                     <a href={item.href} className="text-primary hover:underline font-medium">
                       {item.contact}
                     </a>
                   ) : (
-                    <span className="text-foreground font-medium">{item.contact}</span>
+                    <span className="text-foreground font-medium"><T k={item.contactKey!} /></span>
                   )}
                 </div>
               ))}
@@ -129,7 +130,7 @@ export default function ContactPage() {
               {/* Contact Form */}
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-                  Send Us a Message
+                  <T k="Contact.form.title" />
                 </h2>
                 
                 {isSubmitted ? (
@@ -137,12 +138,12 @@ export default function ContactPage() {
                     <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/20 text-accent mx-auto mb-4">
                       <Send className="h-8 w-8" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">Message Sent!</h3>
+                    <h3 className="text-xl font-semibold text-foreground mb-2"><T k="Contact.form.success" /></h3>
                     <p className="text-muted-foreground mb-4">
-                      Thank you for reaching out. Our team will get back to you as soon as possible.
+                      <T k="Contact.form.successSub" />
                     </p>
                     <Button variant="outline" onClick={() => setIsSubmitted(false)}>
-                      Send Another Message
+                      <T k="Contact.form.sendAnother" />
                     </Button>
                   </div>
                 ) : (
@@ -150,7 +151,7 @@ export default function ContactPage() {
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
-                          Full Name *
+                          <T k="Contact.form.name" />
                         </label>
                         <Input
                           id="name"
@@ -163,7 +164,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
-                          Email Address *
+                          <T k="Contact.form.email" />
                         </label>
                         <Input
                           id="email"
@@ -179,7 +180,7 @@ export default function ContactPage() {
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1.5">
-                          Phone Number
+                          <T k="Contact.form.phone" />
                         </label>
                         <Input
                           id="phone"
@@ -191,7 +192,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-1.5">
-                          Subject *
+                          <T k="Contact.form.subject" />
                         </label>
                         <Input
                           id="subject"
@@ -206,7 +207,7 @@ export default function ContactPage() {
 
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">
-                        Message *
+                        <T k="Contact.form.message" />
                       </label>
                       <Textarea
                         id="message"
@@ -223,7 +224,7 @@ export default function ContactPage() {
                       className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? "Sending..." : "Send Message"}
+                      {isSubmitting ? <T k="Contact.form.sending" /> : <T k="Contact.form.submit" />}
                     </Button>
                   </form>
                 )}
@@ -232,7 +233,7 @@ export default function ContactPage() {
               {/* Office Locations & Info */}
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-                  Our Offices
+                  <T k="Contact.offices.title" />
                 </h2>
 
                 <div className="space-y-4 mb-8">
@@ -242,7 +243,7 @@ export default function ContactPage() {
                         <office.icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground">{office.role}</h3>
+                        <h3 className="font-semibold text-foreground"><T k={office.roleKey} /></h3>
                         <p className="text-muted-foreground flex items-center gap-1">
                           <MapPin className="h-4 w-4" />
                           {office.city}
@@ -255,14 +256,14 @@ export default function ContactPage() {
                 <div className="bg-primary text-primary-foreground rounded-2xl p-8">
                   <div className="flex items-center gap-3 mb-4">
                     <Headphones className="h-8 w-8 text-secondary" />
-                    <h3 className="text-xl font-semibold">Call Center Support</h3>
+                    <h3 className="text-xl font-semibold"><T k="Contact.offices.callCenter" /></h3>
                   </div>
                   <p className="text-primary-foreground/80 mb-4">
-                    Our call center operators are ready to assist you with booking shipments, answering questions, and resolving issues.
+                    <T k="Contact.offices.callCenterSub" />
                   </p>
                   <div className="flex items-center gap-2 text-secondary mb-4">
                     <Clock className="h-4 w-4" />
-                    <span className="text-sm">Available 24/7</span>
+                    <span className="text-sm"><T k="Contact.offices.available" /></span>
                   </div>
                   <a
                     href="tel:+251983222221"
@@ -272,14 +273,14 @@ export default function ContactPage() {
                     <span className="font-medium">+251 983 222 221</span>
                   </a>
                   <p className="text-sm text-primary-foreground/70">
-                    For urgent matters, call us directly or use in-app support or email.
+                    <T k="Contact.offices.urgent" />
                   </p>
                 </div>
 
                 <div className="mt-8 p-6 border border-border rounded-xl">
-                  <h3 className="font-semibold text-foreground mb-3">Business Inquiries</h3>
+                  <h3 className="font-semibold text-foreground mb-3"><T k="Contact.business.title" /></h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    For fleet partnerships, corporate accounts, and business collaborations:
+                    <T k="Contact.business.sub" />
                   </p>
                   <a href="mailto:business@dynamicstransport.com" className="text-primary hover:underline flex items-center gap-2">
                     <Mail className="h-4 w-4" />
@@ -295,17 +296,17 @@ export default function ContactPage() {
         <section className="py-16 lg:py-24 bg-muted/50">
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              Ready to Get Started?
+              <T k="Contact.cta.title" />
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Download the DTC app and start shipping or earning today.
+              <T k="Contact.cta.sub" />
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                <Link href="/download">Download App</Link>
+                <Link href="/download"><T k="Contact.cta.download" /></Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                <Link href="/faq">View FAQ</Link>
+                <Link href="/faq"><T k="Contact.cta.faq" /></Link>
               </Button>
             </div>
           </div>

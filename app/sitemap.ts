@@ -28,21 +28,13 @@ const routes = [
   "/directory-listings",
 ]
 
-const amRoutes = [
-  "/am",
-  "/am/for-shippers",
-  "/am/for-drivers",
-  "/am/for-queue-orgs",
-  "/am/addis-to-djibouti",
-]
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [...routes, ...amRoutes].map((route) => ({
+  return routes.map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
-    changeFrequency: route === "/" || route === "/am" ? "weekly" : "monthly",
+    changeFrequency: route === "/" ? "weekly" : "monthly",
     priority:
-      route === "/" || route === "/addis-to-djibouti" || route === "/am"
+      route === "/" || route === "/addis-to-djibouti"
         ? 1
         : route === "/download"
           ? 0.9

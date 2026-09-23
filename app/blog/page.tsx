@@ -5,17 +5,14 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { T } from "@/components/i18n/text"
 import { BookOpen, Clock, Tag } from "lucide-react"
 
 const posts = [
   {
     slug: "addis-to-djibouti-shipping-guide-2026",
-    title: "How to Ship Cargo from Addis Ababa to Djibouti (2026 Guide)",
-    excerpt:
-      "The complete 2026 guide to the Addis Ababa–Djibouti corridor, the route carrying ~95% of Ethiopia's trade. Documentation, truck types, transit times, and haulage costs.",
+    k: "post1",
     date: "2026-01-15",
-    category: "Route Guide",
-    readTime: "9 min read",
   },
 ]
 
@@ -51,13 +48,13 @@ export default function BlogPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="max-w-3xl">
               <span className="inline-flex items-center gap-2 text-xs text-muted-foreground mb-4">
-                <BookOpen className="h-4 w-4" /> Freight Guides &amp; Rates
+                <BookOpen className="h-4 w-4" /> <T k="Blog.badge" />
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-5" style={{ fontFamily: 'var(--font-display)' }}>
-                Freight &amp; Shipping Blog
+                <T k="Blog.title" />
               </h1>
               <p className="text-xl text-muted-foreground">
-                Practical route guides, cost breakdowns, and customs tips written for Ethiopian shippers and drivers.
+                <T k="Blog.sub" />
               </p>
             </div>
           </div>
@@ -70,18 +67,18 @@ export default function BlogPage() {
                 <Link href={`/blog/${post.slug}`} className="block pb-10">
                   <div className="flex items-center gap-3 text-sm text-muted-foreground mb-3">
                     <span className="inline-flex items-center gap-1.5">
-                      <Tag className="h-3.5 w-3.5" /> {post.category}
+                      <Tag className="h-3.5 w-3.5" /> <T k={`Blog.${post.k}.category`} />
                     </span>
                     <span className="inline-flex items-center gap-1.5">
-                      <Clock className="h-3.5 w-3.5" /> {post.readTime}
+                      <Clock className="h-3.5 w-3.5" /> <T k={`Blog.${post.k}.readTime`} />
                     </span>
                     <time dateTime={post.date}>{post.date}</time>
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3 group-hover:text-primary" style={{ fontFamily: 'var(--font-display)' }}>
-                    {post.title}
+                    <T k={`Blog.${post.k}.title`} />
                   </h2>
-                  <p className="text-muted-foreground leading-relaxed mb-4">{post.excerpt}</p>
-                  <span className="text-primary font-medium">Read the full guide →</span>
+                  <p className="text-muted-foreground leading-relaxed mb-4"><T k={`Blog.${post.k}.excerpt`} /></p>
+                  <span className="text-primary font-medium"><T k="Blog.read" /></span>
                 </Link>
               </article>
             ))}
@@ -89,11 +86,11 @@ export default function BlogPage() {
 
           <div className="container mx-auto px-4 lg:px-8 max-w-3xl mt-16">
             <div className="bg-card border border-border rounded-2xl p-8">
-              <h2 className="text-xl font-semibold mb-2">Route &amp; Rates Updates</h2>
-              <p className="text-sm text-muted-foreground mb-4">Get new route guides in your inbox weekly. Unsubscribe anytime.</p>
+              <h2 className="text-xl font-semibold mb-2"><T k="Blog.updates.title" /></h2>
+              <p className="text-sm text-muted-foreground mb-4"><T k="Blog.updates.sub" /></p>
               <form className="flex flex-col sm:flex-row gap-3">
                 <Input type="email" placeholder="you@example.com" className="flex-1" aria-label="Email" />
-                <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">Subscribe</Button>
+                <Button className="bg-accent hover:bg-accent/90 text-accent-foreground"><T k="Blog.updates.subscribe" /></Button>
               </form>
             </div>
           </div>

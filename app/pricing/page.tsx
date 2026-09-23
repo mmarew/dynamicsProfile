@@ -5,6 +5,7 @@ import { canonical } from "@/lib/seo"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { T } from "@/components/i18n/text"
 import { 
   Gavel, 
   Percent, 
@@ -22,133 +23,59 @@ export const metadata: Metadata = {
 }
 
 const forShippers = [
-  {
-    title: "No Platform Fees",
-    description: "Shippers do not pay any platform fees to use DTC",
-  },
-  {
-    title: "Competitive Bidding",
-    description: "Set your budget or let drivers compete for the best price",
-  },
-  {
-    title: "Pay the Driver Directly",
-    description: "Payment goes straight to the driver, with no platform commission during launch",
-  },
-  {
-    title: "Free to Post",
-    description: "Post unlimited shipment requests at no cost",
-  },
+  { k: "f1" },
+  { k: "f2" },
+  { k: "f3" },
+  { k: "f4" },
 ]
 
 const subscriptionPlans = [
   {
-    name: "Free Trial",
-    duration: "1 month",
+    k: "p1",
     price: "FREE",
     priceValue: 0,
-    savings: "700 ETB value",
-    features: [
-      "Full platform access",
-      "Receive shipment requests",
-      "Place bids on loads",
-      "GPS tracking enabled",
-      "24/7 support access",
-    ],
+    hasSavings: true,
+    featureKeys: ["1", "2", "3", "4", "5"],
     highlight: true,
-    note: "Available once per driver",
   },
   {
-    name: "Monthly",
-    duration: "30 days",
+    k: "p2",
     price: "700 ETB",
     priceValue: 700,
-    savings: null,
-    features: [
-      "Full platform access",
-      "Receive shipment requests",
-      "Place bids on loads",
-      "GPS tracking enabled",
-      "24/7 support access",
-    ],
+    hasSavings: false,
+    featureKeys: ["1", "2", "3", "4", "5"],
     highlight: false,
-    note: "Best for flexibility",
   },
   {
-    name: "Quarterly",
-    duration: "90 days",
+    k: "p3",
     price: "1,800 ETB",
     priceValue: 1800,
-    savings: "Save 300 ETB",
-    features: [
-      "Full platform access",
-      "Receive shipment requests",
-      "Place bids on loads",
-      "GPS tracking enabled",
-      "24/7 support access",
-      "Priority support",
-    ],
+    hasSavings: true,
+    featureKeys: ["1", "2", "3", "4", "5", "6"],
     highlight: false,
-    note: "Best for regular drivers",
   },
   {
-    name: "Annual",
-    duration: "365 days",
+    k: "p4",
     price: "6,000 ETB",
     priceValue: 6000,
-    savings: "Save 2,400 ETB",
-    features: [
-      "Full platform access",
-      "Receive shipment requests",
-      "Place bids on loads",
-      "GPS tracking enabled",
-      "24/7 support access",
-      "Priority support",
-      "Best value",
-    ],
+    hasSavings: true,
+    featureKeys: ["1", "2", "3", "4", "5", "6", "7"],
     highlight: false,
-    note: "Best for committed drivers",
   },
 ]
 
 const paymentMethods = [
-  {
-    name: "Cash on Delivery",
-    description: "Shipper pays driver directly upon delivery completion",
-    icon: CreditCard,
-  },
-  {
-    name: "Bank Transfer",
-    description: "CBE, Dashen, and other Ethiopian banks",
-    icon: CreditCard,
-  },
-  {
-    name: "Telebirr / Mobile Money",
-    description: "Quick digital payments via mobile",
-    icon: Smartphone,
-  },
+  { k: "m1", icon: CreditCard },
+  { k: "m2", icon: CreditCard },
+  { k: "m3", icon: Smartphone },
 ]
 
 const faqs = [
-  {
-    question: "How is the shipping price determined?",
-    answer: "Prices are determined through competitive bidding. When you post a shipment, drivers submit their proposed prices. You can set a budget or leave it open for drivers to bid freely. Choose the best offer based on price, ratings, and vehicle type.",
-  },
-  {
-    question: "What is the platform commission?",
-    answer: "DTC is currently free — no commission is charged. Drivers keep 100% of their earnings during the launch period. We will announce a transparent commission structure before introducing any fees.",
-  },
-  {
-    question: "Are there any hidden fees for shippers?",
-    answer: "No. Shippers do not pay any platform fees. You only pay the agreed shipping cost to the driver. Driver subscriptions are optional during launch.",
-  },
-  {
-    question: "Can I negotiate the price?",
-    answer: "The bidding system is your negotiation tool. You can review multiple bids and choose the one that fits your budget. If no bids meet your expectations, you can repost with a different budget.",
-  },
-  {
-    question: "What happens if I don't have a subscription?",
-    answer: "Drivers need an active subscription to receive shipment requests. When your subscription expires, your status changes to 'Inactive - No Subscription' and you won't receive new job notifications until you renew.",
-  },
+  { k: "q1" },
+  { k: "q2" },
+  { k: "q3" },
+  { k: "q4" },
+  { k: "q5" },
 ]
 
 export default function PricingPage() {
@@ -161,10 +88,10 @@ export default function PricingPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-                Transparent Pricing
+                <T k="Pricing.hero.title" />
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Free during launch. No hidden fees. Shippers pay drivers directly and only when cargo is delivered.
+                <T k="Pricing.hero.sub" />
               </p>
             </div>
           </div>
@@ -175,21 +102,21 @@ export default function PricingPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-card border border-border rounded-2xl p-6">
-                <div className="text-sm font-semibold text-accent mb-2">During Launch</div>
+                <div className="text-sm font-semibold text-accent mb-2"><T k="Pricing.strip.launchLabel" /></div>
                 <div className="text-foreground">
-                  <span className="font-bold">Free.</span> Drivers keep 100% of earnings. No commission, no hidden fees.
+                  <span className="font-bold"><T k="Pricing.strip.launchFree" /></span> <T k="Pricing.strip.launchText" />
                 </div>
               </div>
               <div className="bg-card border border-border rounded-2xl p-6">
-                <div className="text-sm font-semibold text-accent mb-2">After Launch</div>
+                <div className="text-sm font-semibold text-accent mb-2"><T k="Pricing.strip.afterLabel" /></div>
                 <div className="text-foreground">
-                  A transparent commission on completed loads — the exact rate will be announced and published here before any fee is introduced. No subscription fees for shippers. No listing fees.
+                  <T k="Pricing.strip.afterText" />
                 </div>
               </div>
               <div className="bg-card border border-border rounded-2xl p-6">
-                <div className="text-sm font-semibold text-accent mb-2">For Shippers</div>
+                <div className="text-sm font-semibold text-accent mb-2"><T k="Pricing.strip.shippersLabel" /></div>
                 <div className="text-foreground">
-                  Post loads for free. Pay only when a load is matched and delivered. No platform commission on your side.
+                  <T k="Pricing.strip.shippersText" />
                 </div>
               </div>
             </div>
@@ -207,27 +134,27 @@ export default function PricingPage() {
                     <Users className="h-6 w-6" />
                   </div>
                   <h2 className="text-2xl font-bold text-foreground" style={{ fontFamily: 'var(--font-display)' }}>
-                    For Shippers
+                    <T k="Pricing.shippers.title" />
                   </h2>
                 </div>
 
                 <div className="mb-6">
                   <div className="flex items-center gap-2 mb-2">
                     <Gavel className="h-5 w-5 text-secondary" />
-                    <h3 className="font-semibold text-foreground">Competitive Bidding</h3>
+                    <h3 className="font-semibold text-foreground"><T k="Pricing.shippers.bidTitle" /></h3>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">
-                    Post your shipment and receive multiple bids from verified drivers. There is no fixed price—you choose the best offer based on price, driver ratings, and vehicle type.
+                    <T k="Pricing.shippers.bidDesc" />
                   </p>
                 </div>
 
                 <ul className="space-y-3">
                   {forShippers.map((item) => (
-                    <li key={item.title} className="flex items-start gap-3">
+                    <li key={item.k} className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
                       <div>
-                        <span className="font-medium text-foreground">{item.title}</span>
-                        <p className="text-sm text-muted-foreground">{item.description}</p>
+                        <span className="font-medium text-foreground"><T k={`Pricing.shippers.${item.k}.title`} /></span>
+                        <p className="text-sm text-muted-foreground"><T k={`Pricing.shippers.${item.k}.desc`} /></p>
                       </div>
                     </li>
                   ))}
@@ -235,7 +162,7 @@ export default function PricingPage() {
 
                 <div className="mt-8">
                   <Button asChild className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                    <Link href="/for-shippers">Start Shipping</Link>
+                    <Link href="/for-shippers"><T k="Pricing.shippers.cta" /></Link>
                   </Button>
                 </div>
               </div>
@@ -253,45 +180,45 @@ export default function PricingPage() {
                     />
                   </div>
                   <h2 className="text-2xl font-bold text-foreground" style={{ fontFamily: 'var(--font-display)' }}>
-                    For Drivers
+                    <T k="Pricing.drivers.title" />
                   </h2>
                 </div>
 
                 <div className="mb-6">
                   <div className="flex items-center gap-2 mb-2">
                     <Percent className="h-5 w-5 text-primary" />
-                    <h3 className="font-semibold text-foreground">Free During Launch</h3>
+                    <h3 className="font-semibold text-foreground"><T k="Pricing.drivers.freeTitle" /></h3>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">
-                    DTC is currently free — no commission is deducted. Drivers keep 100% of their earnings while we launch. We will announce a transparent commission structure before any change.
+                    <T k="Pricing.drivers.freeDesc" />
                   </p>
                 </div>
 
                 <div className="bg-card rounded-xl p-4 mb-6">
-                  <h4 className="text-sm font-medium text-foreground mb-3">Example:</h4>
+                  <h4 className="text-sm font-medium text-foreground mb-3"><T k="Pricing.drivers.example" /></h4>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Shipping Cost</span>
+                      <span className="text-muted-foreground"><T k="Pricing.drivers.cost" /></span>
                       <span className="font-medium text-foreground">45,000 ETB</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Commission</span>
+                      <span className="text-muted-foreground"><T k="Pricing.drivers.commission" /></span>
                       <span className="font-bold text-accent">0 ETB (free now)</span>
                     </div>
                     <div className="border-t pt-2 flex justify-between">
-                      <span className="font-medium text-foreground">Driver Receives</span>
+                      <span className="font-medium text-foreground"><T k="Pricing.drivers.receives" /></span>
                       <span className="font-bold text-accent">45,000 ETB</span>
                     </div>
                   </div>
                 </div>
 
                 <p className="text-sm text-muted-foreground">
-                  New drivers get a free 1-month trial of the full platform. Subscription plans are optional during launch.
+                  <T k="Pricing.drivers.trial" />
                 </p>
 
                 <div className="mt-8">
                   <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                    <Link href="/for-drivers">Start Driving</Link>
+                    <Link href="/for-drivers"><T k="Pricing.drivers.cta" /></Link>
                   </Button>
                 </div>
               </div>
@@ -304,17 +231,17 @@ export default function PricingPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                Driver Subscription Plans
+                <T k="Pricing.plans.title" />
               </h2>
               <p className="text-lg text-muted-foreground">
-                Choose the plan that fits your driving schedule. All plans include full platform access.
+                <T k="Pricing.plans.sub" />
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {subscriptionPlans.map((plan) => (
                 <div
-                  key={plan.name}
+                  key={plan.k}
                   className={`rounded-2xl p-6 ${
                     plan.highlight
                       ? 'bg-primary text-primary-foreground ring-2 ring-primary ring-offset-2'
@@ -323,40 +250,40 @@ export default function PricingPage() {
                 >
                   {plan.highlight && (
                     <span className="inline-block px-2 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium mb-4">
-                      New Drivers
+                      <T k="Pricing.plans.newDrivers" />
                     </span>
                   )}
                   <h3 className={`text-xl font-semibold mb-1 ${plan.highlight ? '' : 'text-foreground'}`}>
-                    {plan.name}
+                    <T k={`Pricing.plans.${plan.k}.name`} />
                   </h3>
                   <p className={`text-sm mb-4 ${plan.highlight ? 'text-primary-foreground/70' : 'text-muted-foreground'}`}>
-                    {plan.duration}
+                    <T k={`Pricing.plans.${plan.k}.duration`} />
                   </p>
                   
                   <div className="mb-4">
                     <span className="text-3xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>
                       {plan.price}
                     </span>
-                    {plan.savings && (
+                    {plan.hasSavings && (
                       <p className={`text-sm mt-1 ${plan.highlight ? 'text-secondary' : 'text-accent'}`}>
-                        {plan.savings}
+                        <T k={`Pricing.plans.${plan.k}.savings`} />
                       </p>
                     )}
                   </div>
 
                   <ul className="space-y-2 mb-6">
-                    {plan.features.map((feature) => (
+                    {plan.featureKeys.map((feature) => (
                       <li key={feature} className="flex items-center gap-2 text-sm">
                         <CheckCircle className={`h-4 w-4 flex-shrink-0 ${plan.highlight ? 'text-secondary' : 'text-accent'}`} />
                         <span className={plan.highlight ? 'text-primary-foreground/90' : 'text-muted-foreground'}>
-                          {feature}
+                          <T k={`Pricing.plans.features.${feature}`} />
                         </span>
                       </li>
                     ))}
                   </ul>
 
                   <p className={`text-xs ${plan.highlight ? 'text-primary-foreground/60' : 'text-muted-foreground'}`}>
-                    {plan.note}
+                    <T k={`Pricing.plans.${plan.k}.note`} />
                   </p>
                 </div>
               ))}
@@ -370,19 +297,19 @@ export default function PricingPage() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                  Payment Methods
+                  <T k="Pricing.payment.title" />
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Multiple payment options for your convenience.
+                  <T k="Pricing.payment.sub" />
                 </p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
                 {paymentMethods.map((method) => (
-                  <div key={method.name} className="bg-card border border-border rounded-xl p-6 text-center">
+                  <div key={method.k} className="bg-card border border-border rounded-xl p-6 text-center">
                     <method.icon className="h-8 w-8 text-primary mx-auto mb-4" />
-                    <h3 className="font-semibold text-foreground mb-2">{method.name}</h3>
-                    <p className="text-sm text-muted-foreground">{method.description}</p>
+                    <h3 className="font-semibold text-foreground mb-2"><T k={`Pricing.payment.${method.k}.name`} /></h3>
+                    <p className="text-sm text-muted-foreground"><T k={`Pricing.payment.${method.k}.desc`} /></p>
                   </div>
                 ))}
               </div>
@@ -396,18 +323,18 @@ export default function PricingPage() {
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                  Pricing FAQ
+                  <T k="Pricing.faq.title" />
                 </h2>
               </div>
 
               <div className="space-y-4">
                 {faqs.map((faq) => (
-                  <div key={faq.question} className="bg-card border border-border rounded-xl p-6">
+                  <div key={faq.k} className="bg-card border border-border rounded-xl p-6">
                     <div className="flex items-start gap-3">
                       <HelpCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                       <div>
-                        <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
-                        <p className="text-muted-foreground text-sm">{faq.answer}</p>
+                        <h3 className="font-semibold text-foreground mb-2"><T k={`Pricing.faq.${faq.k}.q`} /></h3>
+                        <p className="text-muted-foreground text-sm"><T k={`Pricing.faq.${faq.k}.a`} /></p>
                       </div>
                     </div>
                   </div>
@@ -421,17 +348,17 @@ export default function PricingPage() {
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              Get Started Today
+              <T k="Pricing.cta.title" />
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-              Join shippers and drivers using DTC to move goods across Ethiopia and Djibouti.
+              <T k="Pricing.cta.sub" />
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                <Link href="/for-shippers">Ship Your Cargo</Link>
+                <Link href="/for-shippers"><T k="Pricing.cta.ship" /></Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <Link href="/for-drivers">Become a Driver</Link>
+                <Link href="/for-drivers"><T k="Pricing.cta.drive" /></Link>
               </Button>
             </div>
           </div>

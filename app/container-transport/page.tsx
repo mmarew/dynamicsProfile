@@ -4,6 +4,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { JsonLd } from "@/components/seo/json-ld"
 import { Button } from "@/components/ui/button"
+import { T } from "@/components/i18n/text"
 import { containerTransportData } from "@/lib/corridors"
 import { canonical, siteUrl } from "@/lib/seo"
 import { ArrowRight, CheckCircle, Truck, Package, MapPin } from "lucide-react"
@@ -23,27 +24,23 @@ export const metadata: Metadata = {
 
 const containerVehicles = [
   {
-    name: "20ft Container Truck",
+    k: "v1",
     capacity: "300 quintals",
-    bestFor: "One 20ft ISO container (cassoni)",
     icon: "20FT",
   },
   {
-    name: "2×20ft Container Truck",
+    k: "v2",
     capacity: "400 quintals",
-    bestFor: "Two 20ft ISO containers on one chassis",
     icon: "2×20",
   },
   {
-    name: "40ft Container Truck",
+    k: "v3",
     capacity: "400 quintals",
-    bestFor: "One 40ft ISO container",
     icon: "40FT",
   },
   {
-    name: "40ft Low-Bed Truck",
+    k: "v4",
     capacity: "350 quintals",
-    bestFor: "Over-dimensional and heavy container loads",
     icon: "LB",
   },
 ]
@@ -112,30 +109,30 @@ export default function ContainerTransportPage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground h-12 px-8">
                     <Link href="/for-shippers">
-                      Post a Container Load
+                      <T k="ContainerTransport.hero.cta" />
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                   <Button size="lg" variant="outline" asChild className="h-12 px-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                    <Link href="/download">Download Shipper App</Link>
+                    <Link href="/download"><T k="ContainerTransport.hero.download" /></Link>
                   </Button>
                 </div>
               </div>
 
               <div className="bg-card border border-border rounded-2xl p-8 shadow-xl">
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="font-semibold text-foreground">Container capacity by type</h2>
+                  <h2 className="font-semibold text-foreground"><T k="ContainerTransport.hero.capacityTitle" /></h2>
                   <Package className="h-5 w-5 text-accent" />
                 </div>
                 <div className="space-y-4">
                   {containerVehicles.map((v) => (
-                    <div key={v.name} className="flex items-start gap-3 bg-muted rounded-xl p-4">
+                    <div key={v.k} className="flex items-start gap-3 bg-muted rounded-xl p-4">
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/20 text-accent text-xs font-bold">
                         {v.icon}
                       </span>
                       <div>
-                        <div className="font-semibold text-foreground text-sm">{v.name}</div>
-                        <div className="text-xs text-muted-foreground">{v.bestFor}</div>
+                        <div className="font-semibold text-foreground text-sm"><T k={`ContainerTransport.vehicles.${v.k}.name`} /></div>
+                        <div className="text-xs text-muted-foreground"><T k={`ContainerTransport.vehicles.${v.k}.bestFor`} /></div>
                         <div className="text-xs text-accent font-medium mt-1">{v.capacity}</div>
                       </div>
                     </div>
@@ -151,10 +148,10 @@ export default function ContainerTransportPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                Container Routes We Cover
+                <T k="ContainerTransport.routes.title" />
               </h2>
               <p className="text-lg text-muted-foreground">
-                Move containers between Ethiopia's key dry ports, warehouses, and Djibouti Port.
+                <T k="ContainerTransport.routes.sub" />
               </p>
             </div>
 
@@ -173,7 +170,7 @@ export default function ContainerTransportPage() {
                   <MapPin className="h-5 w-5 text-accent mb-3" />
                   <div className="font-semibold text-foreground mb-2">{route.name}</div>
                   <span className="text-sm text-accent group-hover:underline inline-flex items-center gap-1">
-                    View route <ArrowRight className="h-3.5 w-3.5" />
+                    <T k="ContainerTransport.routes.view" /> <ArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </Link>
               ))}
@@ -186,22 +183,17 @@ export default function ContainerTransportPage() {
           <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                How It Works
+                <T k="ContainerTransport.how.title" />
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { title: "Post Load", desc: "Enter pickup, destination, container size, and weight." },
-                { title: "Match", desc: "Container drivers bid. Compare price, rating, and vehicle." },
-                { title: "Track", desc: "Follow your container on GPS from gate to delivery." },
-                { title: "Deliver & Pay", desc: "Confirm delivery, rate the driver, pay directly." },
-              ].map((step, i) => (
-                <div key={step.title} className="bg-card border border-border rounded-xl p-6">
+              {(["s1", "s2", "s3", "s4"] as const).map((key, i) => (
+                <div key={key} className="bg-card border border-border rounded-xl p-6">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/20 text-accent font-bold mb-4">
                     {i + 1}
                   </span>
-                  <div className="font-semibold text-foreground mb-1">{step.title}</div>
-                  <div className="text-sm text-muted-foreground">{step.desc}</div>
+                  <div className="font-semibold text-foreground mb-1"><T k={`ContainerTransport.how.${key}.title`} /></div>
+                  <div className="text-sm text-muted-foreground"><T k={`ContainerTransport.how.${key}.desc`} /></div>
                 </div>
               ))}
             </div>
@@ -213,17 +205,17 @@ export default function ContainerTransportPage() {
           <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                Container Transport FAQ
+                <T k="ContainerTransport.faq.title" />
               </h2>
             </div>
             <div className="space-y-4">
-              {containerFaqs.map((faq) => (
-                <div key={faq.question} className="bg-card border border-border rounded-xl p-6">
+              {(["f1", "f2", "f3"] as const).map((key) => (
+                <div key={key} className="bg-card border border-border rounded-xl p-6">
                   <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-accent" />
-                    {faq.question}
+                    <T k={`ContainerTransport.faq.${key}.q`} />
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed"><T k={`ContainerTransport.faq.${key}.a`} /></p>
                 </div>
               ))}
             </div>
@@ -234,17 +226,17 @@ export default function ContainerTransportPage() {
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              Book a Container Truck Now
+              <T k="ContainerTransport.cta.title" />
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-              Post your container load and receive bids from verified drivers — free during launch, no commission.
+              <T k="ContainerTransport.cta.sub" />
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link href="/for-shippers">Post a Load</Link>
+                <Link href="/for-shippers"><T k="ContainerTransport.cta.post" /></Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <Link href="/for-drivers">Drive for DTC</Link>
+                <Link href="/for-drivers"><T k="ContainerTransport.cta.drive" /></Link>
               </Button>
             </div>
           </div>

@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { T } from "@/components/i18n/text"
 import {
   Building2,
   Gavel,
@@ -23,69 +24,19 @@ import {
 } from "lucide-react"
 
 const features = [
-  {
-    icon: Gavel,
-    title: "Batch Bidding",
-    description:
-      "When a shipper posts a load of more than 10 vehicles, your association places ONE bid for the entire batch — no member fighting over pieces.",
-  },
-  {
-    icon: Users,
-    title: "Member & Fleet Management",
-    description:
-      "Register your member drivers and their vehicles. Approve, verify documents, and keep one clean record for the whole association.",
-  },
-  {
-    icon: Shield,
-    title: "Driver Assignment",
-    description:
-      "Win a batch? Assign your drivers to vehicle slots automatically or manually from the portal. Each driver confirms the assignment.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Fair Load Distribution",
-    description:
-      "Rotate loads among members so everyone earns consistently. No favorites, no one-person-takes-all.",
-  },
-  {
-    icon: MapPin,
-    title: "Per-Slot GPS Tracking",
-    description:
-      "Track every assigned truck from loading to delivery. Know where each vehicle is at all times.",
-  },
-  {
-    icon: FileText,
-    title: "Batch & Payment Records",
-    description:
-      "Complete payment and delivery history per member. Clean books for the association, transparent earnings for drivers.",
-  },
+  { icon: Gavel, key: "f1" },
+  { icon: Users, key: "f2" },
+  { icon: Shield, key: "f3" },
+  { icon: TrendingUp, key: "f4" },
+  { icon: MapPin, key: "f5" },
+  { icon: FileText, key: "f6" },
 ]
 
 const howItWorks = [
-  {
-    step: 1,
-    title: "Association Joins",
-    description:
-      "Your association registers and adds your certified drivers and vehicles member by member.",
-  },
-  {
-    step: 2,
-    title: "Large Loads Come to You",
-    description:
-      "Shipper batches over 10 vehicles are shown to verified companies like yours. You bid once per batch.",
-  },
-  {
-    step: 3,
-    title: "Won Bid → Assign the Fleet",
-    description:
-      "When accepted, you assign your drivers to the vehicle slots. They confirm and head to the loading place.",
-  },
-  {
-    step: 4,
-    title: "Track & Settle",
-    description:
-      "Follow the whole convoy live, complete each slot, and keep clean records per member.",
-  },
+  { step: 1, key: "h1" },
+  { step: 2, key: "h2" },
+  { step: 3, key: "h3" },
+  { step: 4, key: "h4" },
 ]
 
 export default function ForAssociationsPage() {
@@ -128,24 +79,24 @@ export default function ForAssociationsPage() {
               <div>
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-secondary mb-6">
                   <Building2 className="h-4 w-4" />
-                  <span className="text-sm font-medium">For Transport Associations &amp; Companies</span>
+                  <span className="text-sm font-medium"><T k="ForAssociations.hero.badge" /></span>
                 </span>
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
-                  Transport Association Partnership
+                  <T k="ForAssociations.hero.title" />
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                  Onboard all your drivers at once. Manage fleet, dispatch, and compliance from one dashboard — bid on big loads as a company, assign member drivers, and track every truck.
+                  <T k="ForAssociations.hero.sub" />
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground h-12 px-8">
                     <Link href="#partnership">
-                      Partner With Us
+                      <T k="ForAssociations.hero.partner" />
                       <Send className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                   <Button size="lg" variant="outline" asChild className="h-12 px-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                     <a href="https://association.dynamicsroute.tech/" target="_blank" rel="noopener noreferrer">
-                      Open Company Portal
+                      <T k="ForAssociations.hero.portal" />
                       <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
@@ -156,8 +107,8 @@ export default function ForAssociationsPage() {
               <div className="hidden lg:block">
                 <div className="bg-card border border-border rounded-2xl p-8 shadow-xl">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="font-semibold text-foreground">Won Batch</h3>
-                    <span className="text-xs px-2 py-1 rounded-full bg-secondary/20 text-secondary">15 vehicles</span>
+                    <h3 className="font-semibold text-foreground"><T k="ForAssociations.hero.misc.wonBatch" /></h3>
+                    <span className="text-xs px-2 py-1 rounded-full bg-secondary/20 text-secondary"><T k="ForAssociations.hero.misc.vehicles" /></span>
                   </div>
 
                   <div className="space-y-3 mb-6">
@@ -191,7 +142,7 @@ export default function ForAssociationsPage() {
                   <div className="border-t pt-4">
                     <div className="text-sm text-muted-foreground flex items-center gap-2">
                       <MapPin className="h-4 w-4 text-secondary" />
-                      Addis Ababa → Djibouti Port · 15 vehicle slots
+                      <T k="ForAssociations.hero.misc.routeBar" />
                     </div>
                   </div>
                 </div>
@@ -205,24 +156,24 @@ export default function ForAssociationsPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                Why Associations Choose DTC
+                <T k="ForAssociations.features.title" />
               </h2>
               <p className="text-lg text-muted-foreground">
-                Big loads, clean records, and a fair share for every member.
+                <T k="ForAssociations.features.sub" />
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {features.map((feature) => (
                 <div
-                  key={feature.title}
+                  key={feature.key}
                   className="bg-card border border-border rounded-xl p-6 hover:border-secondary/30 transition-colors"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-secondary/10 text-secondary mb-4">
                     <feature.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  <h3 className="font-semibold text-foreground mb-2"><T k={`ForAssociations.features.${feature.key}.title`} /></h3>
+                  <p className="text-sm text-muted-foreground"><T k={`ForAssociations.features.${feature.key}.desc`} /></p>
                 </div>
               ))}
             </div>
@@ -234,10 +185,10 @@ export default function ForAssociationsPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                From Bid to Delivery
+                <T k="ForAssociations.how.title" />
               </h2>
               <p className="text-lg text-muted-foreground">
-                The full association workflow — win, assign, track, settle.
+                <T k="ForAssociations.how.sub" />
               </p>
             </div>
 
@@ -250,17 +201,17 @@ export default function ForAssociationsPage() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/10 text-secondary mb-4">
                     <Building2 className="h-5 w-5" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <h3 className="font-semibold text-foreground mb-2"><T k={`ForAssociations.how.${item.key}.title`} /></h3>
+                  <p className="text-sm text-muted-foreground"><T k={`ForAssociations.how.${item.key}.desc`} /></p>
                 </div>
               ))}
             </div>
 
             <div className="mt-10 rounded-2xl bg-secondary/10 p-6 flex flex-col sm:flex-row items-center gap-4 justify-between">
-              <p className="text-foreground font-medium">See your fleet dashboard, bids, and batches right now.</p>
+              <p className="text-foreground font-medium"><T k="ForAssociations.how.banner" /></p>
               <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground shrink-0">
                 <a href="https://association.dynamicsroute.tech/" target="_blank" rel="noopener noreferrer">
-                  Open Company Portal
+                  <T k="ForAssociations.how.portal" />
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -274,28 +225,23 @@ export default function ForAssociationsPage() {
             <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                  Partner With Us
+                  <T k="ForAssociations.partner.title" />
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
-                  We onboard associations and transport companies onto the portal so their members can start bidding on batches. Free during our launch period.
+                  <T k="ForAssociations.partner.sub" />
                 </p>
                 <ul className="space-y-3">
-                  {[
-                    "Register your members and vehicles as a fleet",
-                    "Bid on large shipper batches (10+ vehicles)",
-                    "Assign drivers and track every slot live",
-                    "Clean earnings and payment records per member",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-foreground">
+                  {(["point1", "point2", "point3", "point4"] as const).map((key) => (
+                    <li key={key} className="flex items-center gap-2 text-foreground">
                       <CheckCircle className="h-5 w-5 text-secondary" />
-                      {item}
+                      <T k={`ForAssociations.partner.${key}`} />
                     </li>
                   ))}
                 </ul>
                 <div className="mt-8 rounded-xl border border-border p-6">
                   <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <Phone className="h-5 w-5 text-secondary" />
-                    Or call us directly
+                    <T k="ForAssociations.partner.call" />
                   </h3>
                   <a href="tel:+251983222221" className="text-secondary hover:underline font-medium">
                     +251 983 222 221
@@ -309,19 +255,19 @@ export default function ForAssociationsPage() {
                     <div className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/20 text-secondary mx-auto mb-4">
                       <Send className="h-8 w-8" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">Inquiry Received!</h3>
+                    <h3 className="text-xl font-semibold text-foreground mb-2"><T k="ForAssociations.partner.successTitle" /></h3>
                     <p className="text-muted-foreground mb-4">
-                      Thank you for reaching out. Our team will contact you about onboarding your association.
+                      <T k="ForAssociations.partner.successText" />
                     </p>
                     <Button variant="outline" onClick={() => setIsSubmitted(false)}>
-                      Submit Another Inquiry
+                      <T k="ForAssociations.partner.again" />
                     </Button>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label htmlFor="associationName" className="block text-sm font-medium text-foreground mb-1.5">
-                        Association / Company Name *
+                        <T k="ForAssociations.partner.assocName" />
                       </label>
                       <Input
                         id="associationName"
@@ -335,7 +281,7 @@ export default function ForAssociationsPage() {
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
-                          Your Name *
+                          <T k="ForAssociations.partner.yourName" />
                         </label>
                         <Input
                           id="name"
@@ -348,7 +294,7 @@ export default function ForAssociationsPage() {
                       </div>
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1.5">
-                          Phone *
+                          <T k="ForAssociations.partner.phone" />
                         </label>
                         <Input
                           id="phone"
@@ -363,7 +309,7 @@ export default function ForAssociationsPage() {
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
-                          Email
+                          <T k="ForAssociations.partner.email" />
                         </label>
                         <Input
                           id="email"
@@ -375,7 +321,7 @@ export default function ForAssociationsPage() {
                       </div>
                       <div>
                         <label htmlFor="memberCount" className="block text-sm font-medium text-foreground mb-1.5">
-                          Approx. member count
+                          <T k="ForAssociations.partner.memberCount" />
                         </label>
                         <Input
                           id="memberCount"
@@ -388,7 +334,7 @@ export default function ForAssociationsPage() {
                     </div>
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">
-                        Anything else?
+                        <T k="ForAssociations.partner.message" />
                       </label>
                       <Textarea
                         id="message"
@@ -403,10 +349,10 @@ export default function ForAssociationsPage() {
                       className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? "Sending..." : "Send Partnership Inquiry"}
+                      {isSubmitting ? <T k="ForAssociations.partner.sending" /> : <T k="ForAssociations.partner.submit" />}
                     </Button>
                     <p className="text-xs text-muted-foreground text-center">
-                      No subscription required during launch. We onboard you free.
+                      <T k="ForAssociations.partner.note" />
                     </p>
                   </form>
                 )}
@@ -419,17 +365,17 @@ export default function ForAssociationsPage() {
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              Bring Your Fleet to the Platform
+              <T k="ForAssociations.cta.title" />
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-              Turn your member fleet into a competitive force on big loads — and keep every driver in the loop.
+              <T k="ForAssociations.cta.sub" />
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                <Link href="#partnership">Partner With Us</Link>
+                <Link href="#partnership"><T k="ForAssociations.cta.partner" /></Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <Link href="/for-queue-orgs">Queue Operators</Link>
+                <Link href="/for-queue-orgs"><T k="ForAssociations.cta.queueOps" /></Link>
               </Button>
             </div>
           </div>

@@ -5,6 +5,7 @@ import { canonical } from "@/lib/seo"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { T } from "@/components/i18n/text"
 import { 
   Package, 
   TrendingUp, 
@@ -27,90 +28,27 @@ export const metadata: Metadata = {
 }
 
 const benefits = [
-  {
-    icon: Package,
-    title: "Easy Booking",
-    description: "Post shipments in minutes through our app or call center. Enter cargo details, pickup, destination, and get matched instantly.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Competitive Pricing",
-    description: "Receive multiple bids from drivers and choose the best offer. No fixed prices—you decide what works for your budget.",
-  },
-  {
-    icon: Shield,
-    title: "Verified Drivers",
-    description: "Every driver is verified with government-issued licenses, vehicle registration, and photo ID before they can accept jobs.",
-  },
-  {
-    icon: MapPin,
-    title: "Real-time Tracking",
-    description: "Follow your cargo from pickup to delivery with continuous GPS tracking. Know exactly where your shipment is at all times.",
-  },
-  {
-    icon: CreditCard,
-    title: "Flexible Payments",
-    description: "Pay via cash on delivery, bank transfer (CBE, Dashen), or Telebirr mobile money. Choose what works for you.",
-  },
-  {
-    icon: Clock,
-    title: "Fast Matching",
-    description: "Get matched with nearby drivers within seconds. Our system finds verified drivers within 1km radius of your pickup location.",
-  },
+  { icon: Package, key: "b1" },
+  { icon: TrendingUp, key: "b2" },
+  { icon: Shield, key: "b3" },
+  { icon: MapPin, key: "b4" },
+  { icon: CreditCard, key: "b5" },
+  { icon: Clock, key: "b6" },
 ]
 
 const steps = [
-  {
-    step: 1,
-    icon: Smartphone,
-    title: "Download the App",
-    description: "Get the DTC app from Google Play or App Store. Register with your phone number and verify via OTP.",
-  },
-  {
-    step: 2,
-    icon: FileText,
-    title: "Post Your Shipment",
-    description: "Enter pickup location, destination, cargo details, vehicle type, and preferred dates. Set a budget or let drivers bid.",
-  },
-  {
-    step: 3,
-    icon: Users,
-    title: "Receive Bids",
-    description: "Nearby verified drivers will bid on your shipment. Compare prices, ratings, and vehicle details.",
-  },
-  {
-    step: 4,
-    icon: CheckCircle,
-    title: "Select Driver",
-    description: "Choose the best offer and confirm. The driver will pick up your cargo at the scheduled time.",
-  },
-  {
-    step: 5,
-    icon: MapPin,
-    title: "Track in Real-time",
-    description: "Follow your cargo on the live map as it moves from pickup to destination.",
-  },
-  {
-    step: 6,
-    icon: Star,
-    title: "Confirm & Rate",
-    description: "Confirm delivery, make payment, and rate your driver to help other shippers.",
-  },
+  { step: 1, icon: Smartphone, key: "s1" },
+  { step: 2, icon: FileText, key: "s2" },
+  { step: 3, icon: Users, key: "s3" },
+  { step: 4, icon: CheckCircle, key: "s4" },
+  { step: 5, icon: MapPin, key: "s5" },
+  { step: 6, icon: Star, key: "s6" },
 ]
 
 const paymentMethods = [
-  {
-    name: "Cash on Delivery",
-    description: "Pay the driver directly when your cargo arrives",
-  },
-  {
-    name: "Bank Transfer",
-    description: "CBE, Dashen, and other Ethiopian banks",
-  },
-  {
-    name: "Telebirr",
-    description: "Mobile money for quick digital payments",
-  },
+  { key: "m1" },
+  { key: "m2" },
+  { key: "m3" },
 ]
 
 export default function ForShippersPage() {
@@ -125,20 +63,20 @@ export default function ForShippersPage() {
               <div>
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-secondary mb-6">
                   <Package className="h-4 w-4" />
-                  <span className="text-sm font-medium">For Shippers</span>
+                  <span className="text-sm font-medium"><T k="ForShippers.hero.badge" /></span>
                 </span>
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
-                  Ship Your Cargo with Confidence
+                  <T k="ForShippers.hero.title" />
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                  Post your shipment, receive competitive bids from verified drivers, and track your cargo in real-time. Move goods across Ethiopia and Djibouti the smart way.
+                  <T k="ForShippers.hero.sub" />
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground h-12 px-8">
-                    <Link href="/download">Download App</Link>
+                    <Link href="/download"><T k="ForShippers.hero.download" /></Link>
                   </Button>
                   <Button size="lg" variant="outline" asChild className="h-12 px-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                    <Link href="/how-it-works">How It Works</Link>
+                    <Link href="/how-it-works"><T k="ForShippers.hero.how" /></Link>
                   </Button>
                 </div>
               </div>
@@ -147,8 +85,8 @@ export default function ForShippersPage() {
               <div className="hidden lg:block">
                 <div className="bg-card border border-border rounded-2xl p-8 shadow-xl">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="font-semibold text-foreground">New Shipment</h3>
-                    <span className="text-xs px-2 py-1 rounded-full bg-accent/20 text-accent">3 bids received</span>
+                    <h3 className="font-semibold text-foreground"><T k="ForShippers.hero.misc.newShipment" /></h3>
+                    <span className="text-xs px-2 py-1 rounded-full bg-accent/20 text-accent"><T k="ForShippers.hero.misc.bidsReceived" /></span>
                   </div>
                   
                   <div className="space-y-4 mb-6">
@@ -165,17 +103,17 @@ export default function ForShippersPage() {
 
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="bg-muted rounded-lg p-3">
-                      <div className="text-xs text-muted-foreground">Cargo</div>
-                      <div className="font-medium text-sm">Construction Materials</div>
+                      <div className="text-xs text-muted-foreground"><T k="ForShippers.hero.misc.cargo" /></div>
+                      <div className="font-medium text-sm"><T k="ForShippers.hero.misc.constructionMaterials" /></div>
                     </div>
                     <div className="bg-muted rounded-lg p-3">
-                      <div className="text-xs text-muted-foreground">Weight</div>
+                      <div className="text-xs text-muted-foreground"><T k="ForShippers.hero.misc.weight" /></div>
                       <div className="font-medium text-sm">150 quintals</div>
                     </div>
                   </div>
 
                   <div className="border-t pt-4">
-                    <div className="text-xs text-muted-foreground mb-2">Best Bid</div>
+                    <div className="text-xs text-muted-foreground mb-2"><T k="ForShippers.hero.misc.bestBid" /></div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center">
@@ -188,16 +126,16 @@ export default function ForShippersPage() {
                           />
                         </div>
                         <div>
-                          <div className="font-medium text-sm">Heavy Truck</div>
+                          <div className="font-medium text-sm"><T k="ForShippers.hero.misc.heavyTruck" /></div>
                           <div className="flex items-center gap-1">
                             <Star className="h-3 w-3 text-secondary fill-secondary" />
-                            <span className="text-xs text-muted-foreground">4.8 rating</span>
+                            <span className="text-xs text-muted-foreground"><T k="ForShippers.hero.misc.rating" /></span>
                           </div>
                         </div>
                       </div>
                       <div className="text-right">
                         <div className="font-bold text-foreground">45,000 ETB</div>
-                        <div className="text-xs text-accent">Lowest bid</div>
+                        <div className="text-xs text-accent"><T k="ForShippers.hero.misc.lowestBid" /></div>
                       </div>
                     </div>
                   </div>
@@ -212,24 +150,24 @@ export default function ForShippersPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                Why Shippers Choose DTC
+                <T k="ForShippers.benefits.title" />
               </h2>
               <p className="text-lg text-muted-foreground">
-                Everything you need to move your cargo safely, affordably, and on time.
+                <T k="ForShippers.benefits.sub" />
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {benefits.map((benefit) => (
                 <div
-                  key={benefit.title}
+                  key={benefit.key}
                   className="bg-card border border-border rounded-xl p-6 hover:border-secondary/30 transition-colors"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-secondary/10 text-secondary mb-4">
                     <benefit.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                  <h3 className="font-semibold text-foreground mb-2"><T k={`ForShippers.benefits.${benefit.key}.title`} /></h3>
+                  <p className="text-sm text-muted-foreground"><T k={`ForShippers.benefits.${benefit.key}.desc`} /></p>
                 </div>
               ))}
             </div>
@@ -241,10 +179,10 @@ export default function ForShippersPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                How to Ship Your Cargo
+                <T k="ForShippers.steps.title" />
               </h2>
               <p className="text-lg text-muted-foreground">
-                Get started in minutes with our simple 6-step process.
+                <T k="ForShippers.steps.sub" />
               </p>
             </div>
 
@@ -257,8 +195,8 @@ export default function ForShippersPage() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary mb-4">
                     <item.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <h3 className="font-semibold text-foreground mb-2"><T k={`ForShippers.steps.${item.key}.title`} /></h3>
+                  <p className="text-sm text-muted-foreground"><T k={`ForShippers.steps.${item.key}.desc`} /></p>
                 </div>
               ))}
             </div>
@@ -271,19 +209,19 @@ export default function ForShippersPage() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                  Payment Options
+                  <T k="ForShippers.payments.title" />
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Choose the payment method that works best for you.
+                  <T k="ForShippers.payments.sub" />
                 </p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
                 {paymentMethods.map((method) => (
-                  <div key={method.name} className="bg-card border border-border rounded-xl p-6 text-center">
+                  <div key={method.key} className="bg-card border border-border rounded-xl p-6 text-center">
                     <CreditCard className="h-8 w-8 text-primary mx-auto mb-4" />
-                    <h3 className="font-semibold text-foreground mb-2">{method.name}</h3>
-                    <p className="text-sm text-muted-foreground">{method.description}</p>
+                    <h3 className="font-semibold text-foreground mb-2"><T k={`ForShippers.payments.${method.key}.title`} /></h3>
+                    <p className="text-sm text-muted-foreground"><T k={`ForShippers.payments.${method.key}.desc`} /></p>
                   </div>
                 ))}
               </div>
@@ -296,13 +234,13 @@ export default function ForShippersPage() {
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <Phone className="h-16 w-16 mx-auto mb-6 text-secondary" />
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              Prefer Phone Booking?
+              <T k="ForShippers.call.title" />
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-              Do not have the app? No problem. Call our support center and our operators will create your shipment request for you. Available during business hours.
+              <T k="ForShippers.call.sub" />
             </p>
             <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground h-12 px-8">
-              <Link href="/contact">Contact Support</Link>
+              <Link href="/contact"><T k="ForShippers.call.support" /></Link>
             </Button>
           </div>
         </section>
@@ -311,17 +249,17 @@ export default function ForShippersPage() {
         <section className="py-16 lg:py-24 bg-background">
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              Ready to Ship Your Cargo?
+              <T k="ForShippers.cta.title" />
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Download the app, post your first shipment, and get competitive bids from verified drivers within minutes.
+              <T k="ForShippers.cta.sub" />
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                <Link href="/download">Download App</Link>
+                <Link href="/download"><T k="ForShippers.cta.download" /></Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                <Link href="/pricing">View Pricing</Link>
+                <Link href="/pricing"><T k="ForShippers.cta.pricing" /></Link>
               </Button>
             </div>
           </div>

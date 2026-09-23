@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { cn } from "@/lib/utils"
+import { T } from "@/components/i18n/text"
 import {
   MapPin,
   Clock,
@@ -25,69 +26,19 @@ import {
 } from "lucide-react"
 
 const features = [
-  {
-    icon: Users,
-    title: "Automatic FIFO Rotation",
-    description:
-      "Every driver that checks in joins a fair first-in-first-out line for their vehicle type. The front waiting driver gets the next order — no favoritism, no arguments.",
-  },
-  {
-    icon: Clock,
-    title: "3-Minute Offer Window",
-    description:
-      "An order is offered to the front driver with a short accept window. A decline or timeout moves the order to the next driver in line, keeping turnaround fast.",
-  },
-  {
-    icon: Gavel,
-    title: "Open for Bidding",
-    description:
-      "Need a competitive price instead of a queue? Open any order for bidding — up to 5 drivers bid per vehicle slot and you pick the winner.",
-  },
-  {
-    icon: MapPin,
-    title: "Geofenced Check-In",
-    description:
-      "Drivers confirm they are physically at your loading place with GPS. Virtual queues stay honest, and loading staff stay in control.",
-  },
-  {
-    icon: FileText,
-    title: "Create Orders for Shippers",
-    description:
-      "Walk-in shippers without the app? Queue staff create the order on their behalf in seconds and it enters your dispatch line immediately.",
-  },
-  {
-    icon: Shield,
-    title: "Refusal & Conduct Rules",
-    description:
-      "Too many refusals sends a driver to the back of the line. Ratings and conduct history keep every driver accountable.",
-  },
+  { icon: Users, key: "f1" },
+  { icon: Clock, key: "f2" },
+  { icon: Gavel, key: "f3" },
+  { icon: MapPin, key: "f4" },
+  { icon: FileText, key: "f5" },
+  { icon: Shield, key: "f6" },
 ]
 
 const steps = [
-  {
-    icon: FileText,
-    title: "Order Enters the Queue",
-    description:
-      "A job linked to your loading place (port, customs, factory, cement plant, depot) enters your dispatch queue. Staff can create it for walk-in shippers.",
-  },
-  {
-    icon: MapPin,
-    title: "Drivers Check In by GPS",
-    description:
-      "Drivers check in at the site and join the FIFO line for their vehicle type, verified by geofence.",
-  },
-  {
-    icon: Clock,
-    title: "Front Driver Gets the Order",
-    description:
-      "The order is offered to the front waiting driver. Decline or timeout → next in line. Open for bidding if you prefer.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Load, Track, Complete",
-    description:
-      "The driver loads, runs the journey with live GPS, and the order closes. Your queue stats update automatically.",
-  },
+  { icon: FileText, key: "h1" },
+  { icon: MapPin, key: "h2" },
+  { icon: Clock, key: "h3" },
+  { icon: TrendingUp, key: "h4" },
 ]
 
 export default function ForQueueOrgsPage() {
@@ -130,24 +81,24 @@ export default function ForQueueOrgsPage() {
               <div>
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 text-accent mb-6">
                   <Clock className="h-4 w-4" />
-                  <span className="text-sm font-medium">For Queue Operators &amp; Loading Places</span>
+                  <span className="text-sm font-medium"><T k="ForQueueOrgs.hero.badge" /></span>
                 </span>
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
-                  Digitize Your Loading Queue
+                  <T k="ForQueueOrgs.hero.title" />
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                  Automatic FIFO rotation, geofenced driver check-in, and fair dispatch — no more paper lists, no more arguments at the gate.
+                  <T k="ForQueueOrgs.hero.sub" />
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground h-12 px-8">
                     <Link href="#request-demo">
-                      Request a Demo
+                      <T k="ForQueueOrgs.hero.demo" />
                       <Send className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                   <Button size="lg" variant="outline" asChild className="h-12 px-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                     <a href="https://queue.dynamicsroute.tech/" target="_blank" rel="noopener noreferrer">
-                      Open Queue Console
+                      <T k="ForQueueOrgs.hero.console" />
                       <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
@@ -158,8 +109,8 @@ export default function ForQueueOrgsPage() {
               <div className="hidden lg:block">
                 <div className="bg-card border border-border rounded-2xl p-8 shadow-xl">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="font-semibold text-foreground">Live Dispatch Board</h3>
-                    <span className="text-xs px-2 py-1 rounded-full bg-accent/20 text-accent">Queue running</span>
+                    <h3 className="font-semibold text-foreground"><T k="ForQueueOrgs.hero.misc.liveBoard" /></h3>
+                    <span className="text-xs px-2 py-1 rounded-full bg-accent/20 text-accent"><T k="ForQueueOrgs.hero.misc.queueRunning" /></span>
                   </div>
 
                   <div className="space-y-3 mb-6">
@@ -187,7 +138,7 @@ export default function ForQueueOrgsPage() {
                   <div className="border-t pt-4">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Eye className="h-4 w-4 text-accent" />
-                      Next order → offered to driver #1
+                      <T k="ForQueueOrgs.hero.misc.nextOrder" />
                     </div>
                   </div>
                 </div>
@@ -201,24 +152,24 @@ export default function ForQueueOrgsPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                What the Queue Console Does
+                <T k="ForQueueOrgs.features.title" />
               </h2>
               <p className="text-lg text-muted-foreground">
-                Purpose-built for ports, customs yards, factories, cement plants, and depots that fight driver chaos every day.
+                <T k="ForQueueOrgs.features.sub" />
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {features.map((feature) => (
                 <div
-                  key={feature.title}
+                  key={feature.key}
                   className="bg-card border border-border rounded-xl p-6 hover:border-accent/30 transition-colors"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent mb-4">
                     <feature.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  <h3 className="font-semibold text-foreground mb-2"><T k={`ForQueueOrgs.features.${feature.key}.title`} /></h3>
+                  <p className="text-sm text-muted-foreground"><T k={`ForQueueOrgs.features.${feature.key}.desc`} /></p>
                 </div>
               ))}
             </div>
@@ -230,33 +181,33 @@ export default function ForQueueOrgsPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                A Fair Line, Every Time
+                <T k="ForQueueOrgs.how.title" />
               </h2>
               <p className="text-lg text-muted-foreground">
-                From check-in to completion, the system removes the disputes that cost loading places hours every day.
+                <T k="ForQueueOrgs.how.sub" />
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {steps.map((item) => (
-                <div key={item.title} className="bg-card border border-border rounded-xl p-6 relative">
+              {steps.map((item, index) => (
+                <div key={item.key} className="bg-card border border-border rounded-xl p-6 relative">
                   <span className="absolute top-4 right-4 text-4xl font-bold text-border" style={{ fontFamily: 'var(--font-display)' }}>
-                    {String(steps.indexOf(item) + 1).padStart(2, '0')}
+                    {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent mb-4">
                     <item.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <h3 className="font-semibold text-foreground mb-2"><T k={`ForQueueOrgs.how.${item.key}.title`} /></h3>
+                  <p className="text-sm text-muted-foreground"><T k={`ForQueueOrgs.how.${item.key}.desc`} /></p>
                 </div>
               ))}
             </div>
 
             <div className="mt-8 rounded-2xl bg-accent/10 p-6 flex flex-col sm:flex-row items-center gap-4 justify-between">
-              <p className="text-foreground font-medium">Queue staff run the live dispatch board online, from any device.</p>
+              <p className="text-foreground font-medium"><T k="ForQueueOrgs.how.banner" /></p>
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shrink-0">
                 <a href="https://queue.dynamicsroute.tech/" target="_blank" rel="noopener noreferrer">
-                  Open Queue Console
+                  <T k="ForQueueOrgs.how.console" />
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -270,28 +221,23 @@ export default function ForQueueOrgsPage() {
             <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                  Try It at Your Loading Place
+                  <T k="ForQueueOrgs.demo.title" />
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
-                  We can run a free pilot at your site. Your drivers check in on the app, your staff dispatches from the console, and you see the difference within days — not months.
+                  <T k="ForQueueOrgs.demo.sub" />
                 </p>
                 <ul className="space-y-3">
-                  {[
-                    "Free 30-day pilot at your loading place",
-                    "Onboarding for your queue staff",
-                    "Driver check-in via GPS",
-                    "No paper lists, no gate arguments",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-foreground">
+                  {(["point1", "point2", "point3", "point4"] as const).map((key) => (
+                    <li key={key} className="flex items-center gap-2 text-foreground">
                       <CheckCircle className="h-5 w-5 text-accent" />
-                      {item}
+                      <T k={`ForQueueOrgs.demo.${key}`} />
                     </li>
                   ))}
                 </ul>
                 <div className="mt-8 rounded-xl border border-border p-6">
                   <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <Phone className="h-5 w-5 text-accent" />
-                    Or call us directly
+                    <T k="ForQueueOrgs.demo.call" />
                   </h3>
                   <a href="tel:+251983222221" className="text-accent hover:underline font-medium">
                     +251 983 222 221
@@ -305,19 +251,19 @@ export default function ForQueueOrgsPage() {
                     <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/20 text-accent mx-auto mb-4">
                       <Send className="h-8 w-8" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">Request Received!</h3>
+                    <h3 className="text-xl font-semibold text-foreground mb-2"><T k="ForQueueOrgs.demo.successTitle" /></h3>
                     <p className="text-muted-foreground mb-4">
-                      Thank you for your interest. Our team will contact you to schedule your queue demo.
+                      <T k="ForQueueOrgs.demo.successText" />
                     </p>
                     <Button variant="outline" onClick={() => setIsSubmitted(false)}>
-                      Submit Another Request
+                      <T k="ForQueueOrgs.demo.again" />
                     </Button>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label htmlFor="orgName" className="block text-sm font-medium text-foreground mb-1.5">
-                        Loading Place / Organization Name *
+                        <T k="ForQueueOrgs.demo.orgName" />
                       </label>
                       <Input
                         id="orgName"
@@ -331,7 +277,7 @@ export default function ForQueueOrgsPage() {
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
-                          Your Name *
+                          <T k="ForQueueOrgs.demo.yourName" />
                         </label>
                         <Input
                           id="name"
@@ -344,7 +290,7 @@ export default function ForQueueOrgsPage() {
                       </div>
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1.5">
-                          Phone *
+                          <T k="ForQueueOrgs.demo.phone" />
                         </label>
                         <Input
                           id="phone"
@@ -359,7 +305,7 @@ export default function ForQueueOrgsPage() {
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
-                          Email
+                          <T k="ForQueueOrgs.demo.email" />
                         </label>
                         <Input
                           id="email"
@@ -371,7 +317,7 @@ export default function ForQueueOrgsPage() {
                       </div>
                       <div>
                         <label htmlFor="vehicles" className="block text-sm font-medium text-foreground mb-1.5">
-                          Trucks per day (approx.)
+                          <T k="ForQueueOrgs.demo.vehicles" />
                         </label>
                         <Input
                           id="vehicles"
@@ -384,7 +330,7 @@ export default function ForQueueOrgsPage() {
                     </div>
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">
-                        Anything else?
+                        <T k="ForQueueOrgs.demo.message" />
                       </label>
                       <Textarea
                         id="message"
@@ -399,10 +345,10 @@ export default function ForQueueOrgsPage() {
                       className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? "Sending..." : "Request Demo"}
+                      {isSubmitting ? <T k="ForQueueOrgs.demo.sending" /> : <T k="ForQueueOrgs.demo.submit" />}
                     </Button>
                     <p className={cn("text-xs text-muted-foreground text-center")}>
-                      No commitment. We simply run a free pilot and show you the numbers.
+                      <T k="ForQueueOrgs.demo.finePrint" />
                     </p>
                   </form>
                 )}
@@ -415,17 +361,17 @@ export default function ForQueueOrgsPage() {
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              Ready to End the Chaos at Your Gate?
+              <T k="ForQueueOrgs.cta.title" />
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-              Digitize your queue, keep your drivers fair, and cut wasted time for everyone. Start with a free pilot.
+              <T k="ForQueueOrgs.cta.sub" />
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link href="#request-demo">Request a Demo</Link>
+                <Link href="#request-demo"><T k="ForQueueOrgs.cta.demo" /></Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <Link href="/how-it-works">See How It Works</Link>
+                <Link href="/how-it-works"><T k="ForQueueOrgs.cta.how" /></Link>
               </Button>
             </div>
           </div>

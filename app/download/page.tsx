@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { T } from "@/components/i18n/text";
 import { canonical } from "@/lib/seo";
 import {
   Package,
@@ -73,6 +74,7 @@ export const metadata: Metadata = {
 
 const apps = [
   {
+    block: "driver",
     title: "Dynamics Driver",
     subtitle: "For truck drivers",
     description:
@@ -80,12 +82,13 @@ const apps = [
     link: "https://play.google.com/store/apps/details?id=com.driverloadnow",
     icon: "/app-icon-driver.png",
     features: [
-      { icon: MapPin, text: "Find loads near your location" },
-      { icon: Bell, text: "Instant load notifications" },
-      { icon: Wallet, text: "Fair pay for every trip" },
+      { icon: MapPin, key: "f1", text: "Find loads near your location" },
+      { icon: Bell, key: "f2", text: "Instant load notifications" },
+      { icon: Wallet, key: "f3", text: "Fair pay for every trip" },
     ],
   },
   {
+    block: "shipper",
     title: "Dynamics Shipper",
     subtitle: "For shippers & businesses",
     description:
@@ -93,9 +96,9 @@ const apps = [
     link: "https://play.google.com/store/apps/details?id=com.shipperloadnow",
     icon: "/app-icon-shipper.png",
     features: [
-      { icon: Package, text: "Post shipments in minutes" },
-      { icon: Star, text: "Compare bids from drivers" },
-      { icon: MapPin, text: "Live GPS cargo tracking" },
+      { icon: Package, key: "f1", text: "Post shipments in minutes" },
+      { icon: Star, key: "f2", text: "Compare bids from drivers" },
+      { icon: MapPin, key: "f3", text: "Live GPS cargo tracking" },
     ],
   },
 ];
@@ -112,8 +115,8 @@ function GooglePlayBadge({ href }: { href: string }) {
         <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z" />
       </svg>
       <div className="text-left">
-        <div className="text-xs opacity-70">Get it on</div>
-        <div className="text-sm font-semibold">Google Play</div>
+        <div className="text-xs opacity-70"><T k="Download.play.top" /></div>
+        <div className="text-sm font-semibold"><T k="Download.play.bottom" /></div>
       </div>
     </a>
   );
@@ -174,18 +177,17 @@ export default function DownloadPage() {
                 className="text-3xl md:text-4xl font-bold mb-4 text-foreground"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Get the DTC Mobile Apps
+                <T k="Download.hero.title" />
               </h1>
               <p className="text-muted-foreground text-lg">
-                Choose the app that fits your role. Drivers find loads; shippers
-                move cargo. Both are available now on Google Play.
+                <T k="Download.hero.sub" />
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {apps.map((app) => (
                 <div
-                  key={app.title}
+                  key={app.block}
                   className="flex flex-col bg-card border border-border/60 rounded-3xl p-8 shadow-sm"
                 >
                   <div className="flex items-center gap-4 mb-6">
@@ -200,29 +202,29 @@ export default function DownloadPage() {
                     </div>
                     <div>
                       <h2 className="text-xl font-bold text-foreground">
-                        {app.title}
+                        <T k={`Download.apps.${app.block}.title`} />
                       </h2>
                       <p className="text-sm text-muted-foreground">
-                        {app.subtitle}
+                        <T k={`Download.apps.${app.block}.subtitle`} />
                       </p>
                     </div>
                   </div>
 
                   <p className="text-muted-foreground mb-6">
-                    {app.description}
+                    <T k={`Download.apps.${app.block}.desc`} />
                   </p>
 
                   <ul className="space-y-3 mb-8 flex-1">
                     {app.features.map((feature) => (
                       <li
-                        key={feature.text}
+                        key={feature.key}
                         className="flex items-center gap-3"
                       >
                         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0">
                           <feature.icon className="h-4 w-4" />
                         </div>
                         <span className="text-sm text-foreground">
-                          {feature.text}
+                          <T k={`Download.apps.${app.block}.${feature.key}`} />
                         </span>
                       </li>
                     ))}
@@ -238,11 +240,10 @@ export default function DownloadPage() {
                 <CheckCircle className="h-8 w-8 text-secondary shrink-0" />
                 <div className="text-center sm:text-left">
                   <p className="font-semibold text-lg mb-1">
-                    Have both roles? Install both apps
+                    <T k="Download.both.title" />
                   </p>
                   <p className="text-primary-foreground/80">
-                    Manage your fleet and your shipments from one place. Free to
-                    download — create your account in under a minute.
+                    <T k="Download.both.sub" />
                   </p>
                 </div>
               </div>

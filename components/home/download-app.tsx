@@ -1,9 +1,10 @@
 import { Smartphone, MapPin, Bell, Wallet } from "lucide-react"
+import { T } from "@/components/i18n/text"
 
 const features = [
-  { icon: MapPin, text: "Live GPS tracking" },
-  { icon: Bell, text: "Instant notifications" },
-  { icon: Wallet, text: "Easy payments" },
+  { icon: MapPin, key: "f1", text: "Live GPS tracking" },
+  { icon: Bell, key: "f2", text: "Instant notifications" },
+  { icon: Wallet, key: "f3", text: "Easy payments" },
 ]
 
 export function DownloadApp() {
@@ -15,17 +16,17 @@ export function DownloadApp() {
             {/* Content */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                Get the DTC Mobile App
+                <T k="DownloadApp.title" />
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8">
-                Download our app to ship cargo, track deliveries, and manage your transportation needs on the go. Available for both shippers and drivers.
+                <T k="DownloadApp.sub" />
               </p>
 
               <div className="flex flex-wrap gap-4 mb-8">
                 {features.map((feature) => (
-                  <div key={feature.text} className="flex items-center gap-2 text-primary-foreground/90">
+                  <div key={feature.key} className="flex items-center gap-2 text-primary-foreground/90">
                     <feature.icon className="h-4 w-4 text-secondary" />
-                    <span className="text-sm">{feature.text}</span>
+                    <span className="text-sm"><T k={`DownloadApp.${feature.key}`} /></span>
                   </div>
                 ))}
               </div>
@@ -40,8 +41,8 @@ export function DownloadApp() {
                     <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
                   </svg>
                   <div className="text-left">
-                    <div className="text-xs opacity-70">Download on the</div>
-                    <div className="text-sm font-semibold">App Store</div>
+                    <div className="text-xs opacity-70"><T k="DownloadApp.ios.top" /></div>
+                    <div className="text-sm font-semibold"><T k="DownloadApp.ios.bottom" /></div>
                   </div>
                 </a>
                 <a
@@ -52,8 +53,8 @@ export function DownloadApp() {
                     <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/>
                   </svg>
                   <div className="text-left">
-                    <div className="text-xs opacity-70">Get it on</div>
-                    <div className="text-sm font-semibold">Google Play</div>
+                    <div className="text-xs opacity-70"><T k="DownloadApp.android.top" /></div>
+                    <div className="text-sm font-semibold"><T k="DownloadApp.android.bottom" /></div>
                   </div>
                 </a>
               </div>
@@ -73,7 +74,7 @@ export function DownloadApp() {
                     
                     {/* App Content */}
                     <div className="flex-1 bg-background p-4 flex flex-col">
-                      <div className="text-sm font-semibold text-foreground mb-4">Active Shipment</div>
+                      <div className="text-sm font-semibold text-foreground mb-4"><T k="DownloadApp.mock.activeShipment" /></div>
                       
                       {/* Route Card */}
                       <div className="bg-muted rounded-xl p-3 mb-4">
@@ -97,9 +98,9 @@ export function DownloadApp() {
                       <div className="mt-4 flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                          <span className="text-xs text-muted-foreground">In Transit</span>
+                          <span className="text-xs text-muted-foreground"><T k="DownloadApp.mock.inTransit" /></span>
                         </div>
-                        <span className="text-xs font-medium text-foreground">ETA: 8 hours</span>
+                        <span className="text-xs font-medium text-foreground"><T k="DownloadApp.mock.eta" /></span>
                       </div>
                     </div>
                   </div>

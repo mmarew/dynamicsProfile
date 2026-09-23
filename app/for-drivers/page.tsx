@@ -5,6 +5,7 @@ import { canonical } from "@/lib/seo"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { T } from "@/components/i18n/text"
 import { 
   Users, 
   Wallet, 
@@ -17,7 +18,6 @@ import {
   Bell,
   CreditCard,
   
-  
   Truck
 } from "lucide-react"
 
@@ -28,119 +28,44 @@ export const metadata: Metadata = {
 }
 
 const benefits = [
-  {
-    icon: Truck,
-    title: "Steady Income",
-    description: "Access to a constant stream of transportation jobs from businesses and individuals across Ethiopia and Djibouti.",
-  },
-  {
-    icon: Users,
-    title: "Direct Connections",
-    description: "Connect directly with shippers without middlemen. Build relationships and earn repeat business.",
-  },
-  {
-    icon: Wallet,
-    title: "No Fees During Launch",
-    description: "Free to use right now — no commission, no hidden fees. Keep 100% of what you earn while the platform is free.",
-  },
-  {
-    icon: Calendar,
-    title: "Flexible Schedule",
-    description: "Work on your own time. Choose the loads that fit your schedule and preferred routes.",
-  },
-  {
-    icon: Star,
-    title: "Build Reputation",
-    description: "Earn ratings from shippers and grow your customer base. Good ratings mean more business.",
-  },
-  {
-    icon: Headphones,
-    title: "24/7 Support",
-    description: "Get help anytime through our call center. We are here to support your success.",
-  },
+  { icon: Truck, key: "b1" },
+  { icon: Users, key: "b2" },
+  { icon: Wallet, key: "b3" },
+  { icon: Calendar, key: "b4" },
+  { icon: Star, key: "b5" },
+  { icon: Headphones, key: "b6" },
 ]
 
 const registrationSteps = [
-  {
-    step: 1,
-    icon: Smartphone,
-    title: "Download & Register",
-    description: "Get the DTC app and register with your phone number, full name, and email. Verify via OTP.",
-  },
-  {
-    step: 2,
-    icon: FileCheck,
-    title: "Upload Documents",
-    description: "Upload your Driver's License, Vehicle Registration (Librea), and Profile Photo. Optional: Insurance, Tax ID, National ID.",
-  },
-  {
-    step: 3,
-    icon: Truck,
-    title: "Register Vehicle",
-    description: "Add your vehicle details: license plate, color, and vehicle type — from light trucks (up to 35 quintals) to multi-container rigs (up to 400 quintals).",
-  },
-  {
-    step: 4,
-    icon: CheckCircle,
-    title: "Get Verified",
-    description: "Wait for admin to review and approve your documents. This usually takes 24-48 hours.",
-  },
-  {
-    step: 5,
-    icon: CreditCard,
-    title: "Subscribe",
-    description: "Choose a subscription plan to start receiving jobs. New drivers get a free 1-month trial.",
-  },
-  {
-    step: 6,
-    icon: Bell,
-    title: "Start Earning",
-    description: "Receive shipment requests, place your bids, and start earning when shippers select you.",
-  },
+  { step: 1, icon: Smartphone, key: "s1" },
+  { step: 2, icon: FileCheck, key: "s2" },
+  { step: 3, icon: Truck, key: "s3" },
+  { step: 4, icon: CheckCircle, key: "s4" },
+  { step: 5, icon: CreditCard, key: "s5" },
+  { step: 6, icon: Bell, key: "s6" },
 ]
 
 const requiredDocs = [
-  { name: "Driver's License", required: true, description: "Valid license with expiration date and file number" },
-  { name: "Vehicle Registration (Librea)", required: true, description: "Proof of legal vehicle ownership or delegation" },
-  { name: "Profile Photo", required: true, description: "Clear photo for identity confirmation" },
-  { name: "Insurance Document", required: false, description: "Vehicle insurance (recommended)" },
-  { name: "Tax Identification Number", required: false, description: "For tax compliance" },
-  { name: "National ID", required: false, description: "Government-issued identification" },
+  { key: "d1", required: true },
+  { key: "d2", required: true },
+  { key: "d3", required: true },
+  { key: "d4", required: false },
+  { key: "d5", required: false },
+  { key: "d6", required: false },
 ]
 
 const subscriptionPlans = [
-  {
-    name: "Free Trial",
-    duration: "1 month",
-    price: "FREE",
-    priceNote: "(700 ETB value)",
-    description: "Available once per driver. Experience the platform at no cost.",
-    highlight: true,
-  },
-  {
-    name: "Monthly",
-    duration: "30 days",
-    price: "700 ETB",
-    priceNote: "",
-    description: "Standard monthly subscription. Best for flexibility.",
-    highlight: false,
-  },
-  {
-    name: "Quarterly",
-    duration: "90 days",
-    price: "1,800 ETB",
-    priceNote: "(save 300 ETB)",
-    description: "3-month plan at a discounted rate.",
-    highlight: false,
-  },
-  {
-    name: "Annual",
-    duration: "365 days",
-    price: "6,000 ETB",
-    priceNote: "(save 2,400 ETB)",
-    description: "Best value for committed drivers. Save the most.",
-    highlight: false,
-  },
+  { key: "p1", highlight: true, price: "FREE", priceNote: "(700 ETB value)" },
+  { key: "p2", highlight: false, price: "700 ETB", priceNote: "" },
+  { key: "p3", highlight: false, price: "1,800 ETB", priceNote: "(save 300 ETB)" },
+  { key: "p4", highlight: false, price: "6,000 ETB", priceNote: "(save 2,400 ETB)" },
+]
+
+const driverStats = [
+  { key: "st1" },
+  { key: "st2" },
+  { key: "st3" },
+  { key: "st4" },
 ]
 
 export default function ForDriversPage() {
@@ -161,53 +86,43 @@ export default function ForDriversPage() {
                   height={16}
                   className="h-4 w-4 rounded"
                 />
-                <span className="text-sm font-medium">For Drivers</span>
+                <span className="text-sm font-medium"><T k="ForDrivers.hero.badge" /></span>
                 </span>
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
-                  Grow Your Trucking Business with DTC
+                  <T k="ForDrivers.hero.title" />
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                  Join the DTC driver network and get access to quality loads, fair pricing, and a platform built to support your success.
+                  <T k="ForDrivers.hero.sub" />
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 px-8">
-                    <Link href="/download">Start Driving</Link>
+                    <Link href="/download"><T k="ForDrivers.hero.start" /></Link>
                   </Button>
                   <Button size="lg" variant="outline" asChild className="h-12 px-8 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground">
-                    <Link href="/how-it-works">How It Works</Link>
+                    <Link href="/how-it-works"><T k="ForDrivers.hero.how" /></Link>
                   </Button>
                 </div>
 
                 <div className="mt-8 flex items-center gap-6 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-accent" />
-                    <span>Free 1-month trial</span>
+                    <span><T k="ForDrivers.hero.trial" /></span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-accent" />
-                    <span>No hidden fees</span>
+                    <span><T k="ForDrivers.hero.noFees" /></span>
                   </div>
                 </div>
               </div>
               
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-card border border-border rounded-2xl p-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2" style={{ fontFamily: 'var(--font-display)' }}>Verified</div>
-                  <div className="text-muted-foreground">Drivers &amp; Vehicles</div>
-                </div>
-                <div className="bg-card border border-border rounded-2xl p-6 text-center">
-                  <div className="text-4xl font-bold text-secondary mb-2" style={{ fontFamily: 'var(--font-display)' }}>GPS</div>
-                  <div className="text-muted-foreground">Live Load Tracking</div>
-                </div>
-                <div className="bg-card border border-border rounded-2xl p-6 text-center">
-                  <div className="text-4xl font-bold text-accent mb-2" style={{ fontFamily: 'var(--font-display)' }}>Rated</div>
-                  <div className="text-muted-foreground">Build Your Reputation</div>
-                </div>
-                <div className="bg-card border border-border rounded-2xl p-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2" style={{ fontFamily: 'var(--font-display)' }}>24/7</div>
-                  <div className="text-muted-foreground">Support Available</div>
-                </div>
+                {driverStats.map((stat) => (
+                  <div key={stat.key} className="bg-card border border-border rounded-2xl p-6 text-center">
+                    <div className="text-4xl font-bold text-primary mb-2" style={{ fontFamily: 'var(--font-display)' }}><T k={`ForDrivers.hero.stats.${stat.key}.head`} /></div>
+                    <div className="text-muted-foreground"><T k={`ForDrivers.hero.stats.${stat.key}.label`} /></div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -218,24 +133,24 @@ export default function ForDriversPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                Why Drivers Choose DTC
+                <T k="ForDrivers.benefits.title" />
               </h2>
               <p className="text-lg text-muted-foreground">
-                Join a platform built by truckers, for truckers. We understand what you need to succeed.
+                <T k="ForDrivers.benefits.sub" />
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {benefits.map((benefit) => (
                 <div
-                  key={benefit.title}
+                  key={benefit.key}
                   className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary mb-4">
                     <benefit.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                  <h3 className="font-semibold text-foreground mb-2"><T k={`ForDrivers.benefits.${benefit.key}.title`} /></h3>
+                  <p className="text-sm text-muted-foreground"><T k={`ForDrivers.benefits.${benefit.key}.desc`} /></p>
                 </div>
               ))}
             </div>
@@ -247,10 +162,10 @@ export default function ForDriversPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                How to Register
+                <T k="ForDrivers.register.title" />
               </h2>
               <p className="text-lg text-muted-foreground">
-                Get started in 6 simple steps. New drivers get a free 1-month trial.
+                <T k="ForDrivers.register.sub" />
               </p>
             </div>
 
@@ -263,8 +178,8 @@ export default function ForDriversPage() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary mb-4">
                     <item.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <h3 className="font-semibold text-foreground mb-2"><T k={`ForDrivers.register.${item.key}.title`} /></h3>
+                  <p className="text-sm text-muted-foreground"><T k={`ForDrivers.register.${item.key}.desc`} /></p>
                 </div>
               ))}
             </div>
@@ -277,17 +192,17 @@ export default function ForDriversPage() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                  Required Documents
+                  <T k="ForDrivers.docs.title" />
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Prepare these documents before registration to speed up the verification process.
+                  <T k="ForDrivers.docs.sub" />
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">
                 {requiredDocs.map((doc) => (
                   <div
-                    key={doc.name}
+                    key={doc.key}
                     className={`flex items-start gap-4 p-4 rounded-xl border ${
                       doc.required ? 'bg-card border-border' : 'bg-muted/50 border-transparent'
                     }`}
@@ -299,14 +214,14 @@ export default function ForDriversPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-medium text-foreground">{doc.name}</h3>
+                        <h3 className="font-medium text-foreground"><T k={`ForDrivers.docs.${doc.key}.name`} /></h3>
                         {doc.required ? (
-                          <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">Required</span>
+                          <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary"><T k="ForDrivers.docs.required" /></span>
                         ) : (
-                          <span className="text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground">Optional</span>
+                          <span className="text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground"><T k="ForDrivers.docs.optional" /></span>
                         )}
                       </div>
-                      <p className="text-sm text-muted-foreground">{doc.description}</p>
+                      <p className="text-sm text-muted-foreground"><T k={`ForDrivers.docs.${doc.key}.desc`} /></p>
                     </div>
                   </div>
                 ))}
@@ -320,17 +235,17 @@ export default function ForDriversPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                Subscription Plans
+                <T k="ForDrivers.plans.title" />
               </h2>
               <p className="text-primary-foreground/80 text-lg">
-                Choose the plan that works best for you. New drivers get a free trial.
+                <T k="ForDrivers.plans.sub" />
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {subscriptionPlans.map((plan) => (
                 <div
-                  key={plan.name}
+                  key={plan.key}
                   className={`rounded-2xl p-6 ${
                     plan.highlight
                       ? 'bg-secondary text-secondary-foreground'
@@ -339,10 +254,10 @@ export default function ForDriversPage() {
                 >
                   {plan.highlight && (
                     <span className="inline-block px-2 py-1 rounded-full bg-secondary-foreground/20 text-xs font-medium mb-4">
-                      New Drivers
+                      <T k="ForDrivers.plans.newDrivers" />
                     </span>
                   )}
-                  <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
+                  <h3 className="text-xl font-semibold mb-2"><T k={`ForDrivers.plans.${plan.key}.name`} /></h3>
                   <div className="mb-4">
                     <span className="text-3xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>{plan.price}</span>
                     {plan.priceNote && (
@@ -351,9 +266,9 @@ export default function ForDriversPage() {
                       </span>
                     )}
                   </div>
-                  <p className="text-sm mb-2">{plan.duration}</p>
+                  <p className="text-sm mb-2"><T k={`ForDrivers.plans.${plan.key}.duration`} /></p>
                   <p className={`text-sm ${plan.highlight ? 'text-secondary-foreground/80' : 'text-primary-foreground/80'}`}>
-                    {plan.description}
+                    <T k={`ForDrivers.plans.${plan.key}.desc`} />
                   </p>
                 </div>
               ))}
@@ -365,17 +280,17 @@ export default function ForDriversPage() {
         <section className="py-16 lg:py-24 bg-background">
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              Ready to Start Earning?
+              <T k="ForDrivers.cta.title" />
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join DTC today and get your free 1-month trial. Start receiving loads and grow your trucking business.
+              <T k="ForDrivers.cta.sub" />
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                <Link href="/download">Download App</Link>
+                <Link href="/download"><T k="ForDrivers.cta.download" /></Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground">
-                <Link href="/contact">Contact Support</Link>
+                <Link href="/contact"><T k="ForDrivers.cta.support" /></Link>
               </Button>
             </div>
           </div>

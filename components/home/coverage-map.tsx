@@ -1,4 +1,5 @@
 import { MapPin } from "lucide-react"
+import { T } from "@/components/i18n/text"
 
 const locations = {
   ethiopia: [
@@ -18,10 +19,10 @@ const locations = {
 }
 
 const corridors = [
-  "Addis Ababa to Djibouti Port (Primary Trade Route)",
-  "All major Ethiopian industrial zones",
-  "Cross-border Ethiopia-Djibouti freight",
-  "Urban last-mile delivery within Addis Ababa",
+  "c1",
+  "c2",
+  "c3",
+  "c4",
 ]
 
 export function CoverageMap() {
@@ -66,17 +67,17 @@ export function CoverageMap() {
           {/* Content */}
           <div className="order-1 lg:order-2">
             <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-              Service Coverage
+              <T k="CoverageMap.title" />
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8">
-              We cover the busiest trade corridors in the Horn of Africa, connecting Ethiopian industrial centers with Djibouti Port.
+              <T k="CoverageMap.sub" />
             </p>
 
             <div className="grid sm:grid-cols-2 gap-8 mb-8">
               <div>
                 <h3 className="font-semibold text-secondary mb-4 flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
-                  Ethiopia
+                  <T k="CoverageMap.ethiopia" />
                 </h3>
                 <ul className="space-y-2">
                   {locations.ethiopia.map((city) => (
@@ -90,7 +91,7 @@ export function CoverageMap() {
               <div>
                 <h3 className="font-semibold text-secondary mb-4 flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
-                  Djibouti
+                  <T k="CoverageMap.djibouti" />
                 </h3>
                 <ul className="space-y-2">
                   {locations.djibouti.map((city) => (
@@ -104,12 +105,12 @@ export function CoverageMap() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-secondary mb-4">Key Corridors</h3>
+              <h3 className="font-semibold text-secondary mb-4"><T k="CoverageMap.keyCorridors" /></h3>
               <ul className="space-y-2">
                 {corridors.map((corridor) => (
                   <li key={corridor} className="text-primary-foreground/70 text-sm flex items-start gap-2">
                     <span className="w-1.5 h-1.5 bg-accent rounded-full mt-1.5 flex-shrink-0" />
-                    {corridor}
+                    <T k={`CoverageMap.corridors.${corridor}`} />
                   </li>
                 ))}
               </ul>

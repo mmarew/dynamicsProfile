@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { T } from "@/components/i18n/text"
 import { Button } from "@/components/ui/button"
 import { 
   Package, 
@@ -18,31 +19,37 @@ import {
 const shipperBenefits = [
   {
     icon: Package,
+    key: "s1",
     title: "Easy Booking",
     description: "Post shipments in minutes through our app or call center",
   },
   {
     icon: TrendingUp,
+    key: "s2",
     title: "Competitive Pricing",
     description: "Get multiple bids from drivers and choose the best offer",
   },
   {
     icon: Shield,
+    key: "s3",
     title: "Verified Drivers",
     description: "All drivers are verified with proper documentation",
   },
   {
     icon: MapPin,
+    key: "s4",
     title: "Real-time Tracking",
     description: "Follow your cargo with live GPS tracking",
   },
   {
     icon: CreditCard,
+    key: "s5",
     title: "Flexible Payments",
     description: "Pay via cash, bank transfer, or Telebirr",
   },
   {
     icon: Clock,
+    key: "s6",
     title: "Fast Matching",
     description: "Get matched with nearby drivers instantly",
   },
@@ -51,31 +58,37 @@ const shipperBenefits = [
 const driverBenefits = [
   {
     icon: Truck,
+    key: "i1",
     title: "Steady Income",
     description: "Access to a constant stream of transportation jobs",
   },
   {
     icon: Users,
+    key: "i2",
     title: "Direct Connections",
     description: "Connect directly with shippers without middlemen",
   },
   {
     icon: Wallet,
+    key: "i3",
     title: "Free During Launch",
     description: "No commission, no hidden fees — keep 100% of your earnings",
   },
   {
     icon: Calendar,
+    key: "i4",
     title: "Flexible Schedule",
     description: "Work on your own time and choose your loads",
   },
   {
     icon: Star,
+    key: "i5",
     title: "Build Reputation",
     description: "Earn ratings and grow your customer base",
   },
   {
     icon: Headphones,
+    key: "i6",
     title: "24/7 Support",
     description: "Get help anytime through our call center",
   },
@@ -89,13 +102,13 @@ export function Benefits() {
         <div className="mb-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-4">
-              For Shippers
+              <T k="ShipperBenefits.badge" />
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              Ship Your Cargo with Confidence
+              <T k="ShipperBenefits.title" />
             </h2>
             <p className="text-lg text-muted-foreground">
-              Whether you are a business moving freight or an individual with goods to transport, DTC makes shipping simple and transparent.
+              <T k="ShipperBenefits.sub" />
             </p>
           </div>
 
@@ -109,8 +122,8 @@ export function Benefits() {
                   <benefit.icon className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                  <h3 className="font-semibold text-foreground mb-1"><T k={`ShipperBenefits.${benefit.key}.title`} /></h3>
+                  <p className="text-sm text-muted-foreground"><T k={`ShipperBenefits.${benefit.key}.desc`} /></p>
                 </div>
               </div>
             ))}
@@ -118,7 +131,7 @@ export function Benefits() {
 
           <div className="text-center mt-8">
             <Button asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-              <Link href="/for-shippers">Learn More for Shippers</Link>
+              <Link href="/for-shippers"><T k="ShipperBenefits.cta" /></Link>
             </Button>
           </div>
         </div>
@@ -127,13 +140,13 @@ export function Benefits() {
         <div>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              For Drivers
+              <T k="DriverBenefits.badge" />
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              Grow Your Trucking Business
+              <T k="DriverBenefits.title" />
             </h2>
             <p className="text-lg text-muted-foreground">
-              Join the DTC driver network and get access to quality loads, fair pricing, and a platform that supports your success.
+              <T k="DriverBenefits.sub" />
             </p>
           </div>
 
@@ -147,8 +160,8 @@ export function Benefits() {
                   <benefit.icon className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                  <h3 className="font-semibold text-foreground mb-1"><T k={`DriverBenefits.${benefit.key}.title`} /></h3>
+                  <p className="text-sm text-muted-foreground"><T k={`DriverBenefits.${benefit.key}.desc`} /></p>
                 </div>
               </div>
             ))}
@@ -156,7 +169,7 @@ export function Benefits() {
 
           <div className="text-center mt-8">
             <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-              <Link href="/for-drivers">Learn More for Drivers</Link>
+              <Link href="/for-drivers"><T k="DriverBenefits.cta" /></Link>
             </Button>
           </div>
         </div>

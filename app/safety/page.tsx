@@ -4,6 +4,7 @@ import { canonical } from "@/lib/seo"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { T } from "@/components/i18n/text"
 import { 
   Shield, 
   FileCheck, 
@@ -26,78 +27,36 @@ export const metadata: Metadata = {
 }
 
 const verificationSteps = [
-  {
-    icon: FileCheck,
-    title: "Document Verification",
-    description: "Every driver must submit a valid Driver's License with expiration tracking and Vehicle Registration (Librea) proving legal ownership or delegation.",
-  },
-  {
-    icon: UserCheck,
-    title: "Profile Photo",
-    description: "Drivers provide a clear profile photo for identity confirmation. This helps shippers recognize their assigned driver.",
-  },
-  {
-    icon: Truck,
-    title: "Vehicle Registration",
-    description: "Each vehicle is verified with license plate, type, and carrying capacity. Active/inactive status is managed by admin.",
-  },
-  {
-    icon: CheckCircle,
-    title: "Admin Approval",
-    description: "All documents are reviewed and approved or rejected by DTC admin staff before a driver can go active on the platform.",
-  },
+  { icon: FileCheck, key: "s1" },
+  { icon: UserCheck, key: "s2" },
+  { icon: Truck, key: "s3" },
+  { icon: CheckCircle, key: "s4" },
 ]
 
 const trackingFeatures = [
-  {
-    icon: Radar,
-    title: "Real-time GPS Tracking",
-    description: "Continuous GPS monitoring from journey start to completion. Shippers can see driver location on a live map at all times.",
-  },
-  {
-    icon: Eye,
-    title: "Route Recording",
-    description: "Route points are recorded continuously during every journey, creating a complete audit trail of the cargo's path.",
-  },
-  {
-    icon: Lock,
-    title: "Secure Data",
-    description: "All tracking data is secured and only shared with relevant parties during active journeys. Privacy is protected.",
-  },
+  { icon: Radar, key: "f1" },
+  { icon: Eye, key: "f2" },
+  { icon: Lock, key: "f3" },
 ]
 
 const accountabilityFeatures = [
-  {
-    icon: Star,
-    title: "Rating System",
-    description: "After every journey, both shipper and driver rate each other (1-5 stars) with optional comments. Ratings build trust and help others make informed decisions.",
-  },
-  {
-    icon: AlertTriangle,
-    title: "Delinquency Tracking",
-    description: "The platform tracks violations (late arrival, rude behavior, cancellations) with severity levels (Low, Medium, High, Critical) and point-based scoring.",
-  },
-  {
-    icon: Ban,
-    title: "Automatic Banning",
-    description: "Users who accumulate too many delinquency points are automatically banned for a configurable duration (7, 30, 90+ days).",
-  },
-  {
-    icon: HeadphonesIcon,
-    title: "Admin Oversight",
-    description: "DTC admins can manually ban or unban users, resolve disputes, and intervene when necessary to maintain platform safety.",
-  },
+  { icon: Star, key: "a1" },
+  { icon: AlertTriangle, key: "a2" },
+  { icon: Ban, key: "a3" },
+  { icon: HeadphonesIcon, key: "a4" },
 ]
 
 const driverStatuses = [
-  { status: "Active", meaning: "All documents approved, vehicle registered, subscription active. Can receive requests.", type: "success" },
-  { status: "Inactive - Documents Pending", meaning: "Documents uploaded but awaiting admin review.", type: "warning" },
-  { status: "Inactive - Documents Rejected", meaning: "One or more documents were rejected. Must re-upload.", type: "error" },
-  { status: "Inactive - Documents Missing", meaning: "Must upload all required documents.", type: "warning" },
-  { status: "Inactive - Vehicle Not Registered", meaning: "Must register a vehicle first.", type: "warning" },
-  { status: "Inactive - No Subscription", meaning: "Must purchase or renew a subscription plan.", type: "warning" },
-  { status: "Inactive - Banned", meaning: "Account suspended due to policy violation.", type: "error" },
+  { key: "st1", type: "success" },
+  { key: "st2", type: "warning" },
+  { key: "st3", type: "error" },
+  { key: "st4", type: "warning" },
+  { key: "st5", type: "warning" },
+  { key: "st6", type: "warning" },
+  { key: "st7", type: "error" },
 ]
+
+const cancellationRules = ["c1", "c2", "c3", "c4"]
 
 export default function SafetyPage() {
   return (
@@ -110,13 +69,13 @@ export default function SafetyPage() {
             <div className="max-w-3xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 text-accent mb-6">
                 <Shield className="h-4 w-4" />
-                <span className="text-sm font-medium">Trust & Safety</span>
+                <span className="text-sm font-medium"><T k="Safety.hero.badge" /></span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-                Your Cargo, Fully Protected
+                <T k="Safety.hero.title" />
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                We have built multiple layers of verification, tracking, and accountability to ensure every shipment is secure and every transaction is trustworthy.
+                <T k="Safety.hero.sub" />
               </p>
             </div>
           </div>
@@ -127,22 +86,22 @@ export default function SafetyPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                Driver Verification
+                <T k="Safety.verification.title" />
               </h2>
               <p className="text-lg text-muted-foreground">
-                Every driver on DTC goes through a rigorous verification process before they can accept jobs.
+                <T k="Safety.verification.sub" />
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {verificationSteps.map((step) => (
-                <div key={step.title} className="flex items-start gap-4 p-6 bg-card border border-border rounded-xl">
+                <div key={step.key} className="flex items-start gap-4 p-6 bg-card border border-border rounded-xl">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent flex-shrink-0">
                     <step.icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-2">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground">{step.description}</p>
+                    <h3 className="font-semibold text-foreground mb-2"><T k={`Safety.verification.${step.key}.title`} /></h3>
+                    <p className="text-sm text-muted-foreground"><T k={`Safety.verification.${step.key}.desc`} /></p>
                   </div>
                 </div>
               ))}
@@ -156,21 +115,21 @@ export default function SafetyPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-                  Real-time Cargo Tracking
+                  <T k="Safety.tracking.title" />
                 </h2>
                 <p className="text-primary-foreground/80 text-lg mb-8">
-                  Know exactly where your cargo is at all times. Our GPS tracking system provides continuous updates from pickup to delivery.
+                  <T k="Safety.tracking.sub" />
                 </p>
                 
                 <div className="space-y-6">
                   {trackingFeatures.map((feature) => (
-                    <div key={feature.title} className="flex items-start gap-4">
+                    <div key={feature.key} className="flex items-start gap-4">
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-secondary-foreground flex-shrink-0">
                         <feature.icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-1">{feature.title}</h3>
-                        <p className="text-primary-foreground/70 text-sm">{feature.description}</p>
+                        <h3 className="font-semibold mb-1"><T k={`Safety.tracking.${feature.key}.title`} /></h3>
+                        <p className="text-primary-foreground/70 text-sm"><T k={`Safety.tracking.${feature.key}.desc`} /></p>
                       </div>
                     </div>
                   ))}
@@ -201,8 +160,8 @@ export default function SafetyPage() {
                     </svg>
                   </div>
                   <div className="mt-4 flex items-center justify-between text-sm">
-                    <span className="text-primary-foreground/70">Live tracking active</span>
-                    <span className="text-secondary">Updated 5s ago</span>
+                    <span className="text-primary-foreground/70"><T k="Safety.tracking.liveActive" /></span>
+                    <span className="text-secondary"><T k="Safety.tracking.updatedAgo" /></span>
                   </div>
                 </div>
               </div>
@@ -215,21 +174,21 @@ export default function SafetyPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                Accountability System
+                <T k="Safety.accountability.title" />
               </h2>
               <p className="text-lg text-muted-foreground">
-                Our rating and delinquency tracking systems ensure high standards and protect all users.
+                <T k="Safety.accountability.sub" />
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {accountabilityFeatures.map((feature) => (
-                <div key={feature.title} className="bg-card border border-border rounded-xl p-6">
+                <div key={feature.key} className="bg-card border border-border rounded-xl p-6">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary mb-4">
                     <feature.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  <h3 className="font-semibold text-foreground mb-2"><T k={`Safety.accountability.${feature.key}.title`} /></h3>
+                  <p className="text-sm text-muted-foreground"><T k={`Safety.accountability.${feature.key}.desc`} /></p>
                 </div>
               ))}
             </div>
@@ -242,17 +201,17 @@ export default function SafetyPage() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                  Driver Account Statuses
+                  <T k="Safety.statuses.title" />
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Understanding driver statuses helps shippers know who they are working with.
+                  <T k="Safety.statuses.sub" />
                 </p>
               </div>
 
               <div className="space-y-3">
                 {driverStatuses.map((item) => (
                   <div
-                    key={item.status}
+                    key={item.key}
                     className={`flex items-start gap-4 p-4 rounded-xl border ${
                       item.type === 'success' ? 'bg-accent/5 border-accent/20' :
                       item.type === 'warning' ? 'bg-secondary/5 border-secondary/20' :
@@ -273,8 +232,8 @@ export default function SafetyPage() {
                       )}
                     </div>
                     <div>
-                      <h3 className="font-medium text-foreground">{item.status}</h3>
-                      <p className="text-sm text-muted-foreground">{item.meaning}</p>
+                      <h3 className="font-medium text-foreground"><T k={`Safety.statuses.${item.key}.status`} /></h3>
+                      <p className="text-sm text-muted-foreground"><T k={`Safety.statuses.${item.key}.meaning`} /></p>
                     </div>
                   </div>
                 ))}
@@ -289,49 +248,30 @@ export default function SafetyPage() {
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-                  Cancellation Policy
+                  <T k="Safety.cancellation.title" />
                 </h2>
               </div>
 
               <div className="bg-card border border-border rounded-2xl p-8">
                 <p className="text-muted-foreground mb-6">
-                  Either party can cancel a request, but cancellations are tracked and may result in penalties:
+                  <T k="Safety.cancellation.intro" />
                 </p>
                 
                 <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2" />
-                    <div>
-                      <span className="font-medium text-foreground">Shipper Cancels:</span>
-                      <span className="text-muted-foreground"> All matched drivers are notified; the request is removed.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2" />
-                    <div>
-                      <span className="font-medium text-foreground">Driver Cancels:</span>
-                      <span className="text-muted-foreground"> Only that driver's participation is withdrawn; the shipper can select another driver.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2" />
-                    <div>
-                      <span className="font-medium text-foreground">Admin Cancels:</span>
-                      <span className="text-muted-foreground"> Administrative intervention (e.g., fraud, safety concern).</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2" />
-                    <div>
-                      <span className="font-medium text-foreground">System Cancels:</span>
-                      <span className="text-muted-foreground"> Automatic cancellation due to timeout or rule violation.</span>
-                    </div>
-                  </li>
+                  {cancellationRules.map((key) => (
+                    <li key={key} className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2" />
+                      <div>
+                        <span className="font-medium text-foreground"><T k={`Safety.cancellation.${key}.label`} /></span>
+                        <span className="text-muted-foreground"> <T k={`Safety.cancellation.${key}.desc`} /></span>
+                      </div>
+                    </li>
+                  ))}
                 </ul>
 
                 <div className="mt-6 p-4 bg-muted rounded-lg">
                   <p className="text-sm text-muted-foreground">
-                    <strong>Note:</strong> Every cancellation requires selecting a reason from a predefined list, and all cancellations are logged for audit. Excessive cancellations may result in temporary or permanent account suspension.
+                    <strong><T k="Safety.cancellation.noteLabel" /></strong> <T k="Safety.cancellation.noteText" />
                   </p>
                 </div>
               </div>
@@ -343,17 +283,17 @@ export default function SafetyPage() {
         <section className="py-16 lg:py-24 bg-accent/10">
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              Ship with Confidence
+              <T k="Safety.cta.title" />
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Our safety measures ensure your cargo is protected at every step. Join shippers and drivers who trust DTC.
+              <T k="Safety.cta.sub" />
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                <Link href="/for-shippers">Start Shipping</Link>
+                <Link href="/for-shippers"><T k="Safety.cta.start" /></Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                <Link href="/for-drivers">Become a Driver</Link>
+                <Link href="/for-drivers"><T k="Safety.cta.driver" /></Link>
               </Button>
             </div>
           </div>

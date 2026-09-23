@@ -24,46 +24,52 @@ import {
 Menu } from "lucide-react";
 import { cn } from "@/lib/utils"
 import { changeLanguage, getSavedLanguage, type LangCode } from "@/lib/i18n";
+import { T } from "@/components/i18n/text";
 
 
 
 const navigation = {
   main: [
-    { name: "About", href: "/about" },
-    { name: "How It Works", href: "/how-it-works" },
-    { name: "Services", href: "/services" },
+    { key: "about", href: "/about" },
+    { key: "howItWorks", href: "/how-it-works" },
+    { key: "services", href: "/services" },
   ],
   platform: [
     {
-      name: "For Shippers",
+      key: "shippers",
       href: "/for-shippers",
+      name: "For Shippers",
       description: "Post shipments and get competitive bids",
     },
     {
-      name: "For Drivers",
+      key: "drivers",
       href: "/for-drivers",
+      name: "For Drivers",
       description: "Find loads and grow your business",
     },
     {
-      name: "For Queue Orgs",
+      key: "queueOrgs",
       href: "/for-queue-orgs",
+      name: "For Queue Orgs",
       description: "Digitize your loading queue with FIFO dispatch",
     },
     {
-      name: "For Associations",
+      key: "associations",
       href: "/for-associations",
+      name: "For Associations",
       description: "Fleet bidding and driver assignment portal",
     },
     {
-      name: "Pricing",
+      key: "pricing",
       href: "/pricing",
+      name: "Pricing",
       description: "Transparent pricing and subscription plans",
     },
   ],
   resources: [
-    { name: "Safety", href: "/safety" },
-    { name: "FAQ", href: "/faq" },
-    { name: "Contact", href: "/contact" },
+    { key: "safety", href: "/safety" },
+    { key: "faq", href: "/faq" },
+    { key: "contact", href: "/contact" },
   ],
 };
 
@@ -120,13 +126,13 @@ export function Navigation() {
         <NavigationMenu viewport={false} className="hidden lg:flex">
           <NavigationMenuList>
             {navigation.main.map((item) => (
-              <NavigationMenuItem key={item.name}>
+              <NavigationMenuItem key={item.key}>
                 <NavigationMenuLink asChild active={isActive(item.href)}>
                   <Link
                     href={item.href}
                     className={desktopLinkClass(isActive(item.href))}
                   >
-                    {item.name}
+                    <T k={`Nav.main.${item.key}`} />
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -140,12 +146,12 @@ export function Navigation() {
                     "after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:rounded-full after:bg-primary",
                 )}
               >
-                Platform
+                <T k="Nav.platform" />
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
                   {navigation.platform.map((item) => (
-                    <li key={item.name}>
+                    <li key={item.key}>
                       <NavigationMenuLink asChild active={isActive(item.href)}>
                         <Link
                           href={item.href}
@@ -154,10 +160,10 @@ export function Navigation() {
                           )}
                         >
                           <div className="text-sm font-medium leading-none">
-                            {item.name}
+                            <T k={`Nav.links.${item.key}.name`} />
                           </div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            {item.description}
+                            <T k={`Nav.links.${item.key}.desc`} />
                           </p>
                         </Link>
                       </NavigationMenuLink>
@@ -167,13 +173,13 @@ export function Navigation() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             {navigation.resources.map((item) => (
-              <NavigationMenuItem key={item.name}>
+              <NavigationMenuItem key={item.key}>
                 <NavigationMenuLink asChild active={isActive(item.href)}>
                   <Link
                     href={item.href}
                     className={desktopLinkClass(isActive(item.href))}
                   >
-                    {item.name}
+                    <T k={`Nav.resources.${item.key}`} />
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -185,8 +191,8 @@ export function Navigation() {
           {/* Language toggle — EN ↔ AM (in-place dictionary swap, persisted, no /am URL) */}
           <div className="inline-flex items-center rounded-full border border-border bg-card p-0.5">
             {[
-              { code: "en", label: "EN" },
-              { code: "am", label: "አማ" },
+              { code: "en" as LangCode, label: "EN" },
+              { code: "am" as LangCode, label: "አማ" },
             ].map((lang) => {
               const isCurrent = lang.code === "en" ? langState === "en" : langState === "am"
               return (
@@ -210,13 +216,13 @@ export function Navigation() {
           </div>
 
           <Button variant="ghost" asChild>
-            <Link href="/download">Download App</Link>
+            <Link href="/download"><T k="Nav.cta.download" /></Link>
           </Button>
           <Button
             asChild
             className="bg-secondary hover:bg-secondary/90 text-secondary-foreground"
           >
-            <Link href="/for-shippers">Ship Your Cargo</Link>
+            <Link href="/for-shippers"><T k="Nav.cta.ship" /></Link>
           </Button>
         </div>
 
@@ -225,44 +231,44 @@ export function Navigation() {
           <SheetTrigger asChild className="lg:hidden">
             <Button variant="ghost" size="icon">
               <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle menu</span>
+              <span className="sr-only"><T k="Nav.mobile.toggleMenu" /></span>
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            <SheetTitle className="sr-only"><T k="Nav.mobile.navMenu" /></SheetTitle>
             <nav className="flex flex-col gap-4 mt-8 pl-2.5">
               {navigation.main.map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.key}
                   href={item.href}
                   onClick={() => setOpen(false)}
                   className={mobileLinkClass(isActive(item.href))}
                 >
-                  {item.name}
+                  <T k={`Nav.main.${item.key}`} />
                 </Link>
               ))}
               <div className="border-t pt-4">
-                <p className="text-sm text-muted-foreground mb-2">Platform</p>
+                <p className="text-sm text-muted-foreground mb-2"><T k="Nav.platform" /></p>
                 {navigation.platform.map((item) => (
                   <Link
-                    key={item.name}
+                    key={item.key}
                     href={item.href}
                     onClick={() => setOpen(false)}
                     className={cn("block py-2 text-lg font-medium transition-colors hover:text-primary", isActive(item.href) ? "text-primary underline decoration-primary decoration-2 underline-offset-8" : "text-foreground")}
                   >
-                    {item.name}
+                    <T k={`Nav.links.${item.key}.name`} />
                   </Link>
                 ))}
               </div>
               <div className="border-t pt-4">
                 {navigation.resources.map((item) => (
                   <Link
-                    key={item.name}
+                    key={item.key}
                     href={item.href}
                     onClick={() => setOpen(false)}
                     className={cn("block py-2 text-lg font-medium transition-colors hover:text-primary", isActive(item.href) ? "text-primary underline decoration-primary decoration-2 underline-offset-8" : "text-foreground")}
                   >
-                    {item.name}
+                    <T k={`Nav.resources.${item.key}`} />
                   </Link>
                 ))}
               </div>
@@ -272,19 +278,19 @@ export function Navigation() {
                   className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground"
                 >
                   <Link href="/for-shippers" onClick={() => setOpen(false)}>
-                    Ship Your Cargo
+                    <T k="Nav.cta.ship" />
                   </Link>
                 </Button>
                 <Button variant="outline" asChild className="w-full">
                   <Link href="/for-drivers" onClick={() => setOpen(false)}>
-                    Drive With Us
+                    <T k="Nav.cta.drive" />
                   </Link>
                 </Button>
                 {/* Language toggle — mobile */}
                 <div className="mt-1 flex w-full items-center justify-between rounded-full border border-border bg-card p-1">
                   {[
-                    { code: "en", label: "English (EN)" },
-                    { code: "am", label: "አማርኛ (አማ)" },
+                    { code: "en" as LangCode, label: "English (EN)" },
+                    { code: "am" as LangCode, label: "አማርኛ (አማ)" },
                   ].map((lang) => {
                     const isCurrent = langState === lang.code
                     return (

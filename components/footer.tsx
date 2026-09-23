@@ -5,24 +5,24 @@ import { T } from "@/components/i18n/text"
 
 const footerNavigation = {
   platform: [
-    { name: "For Shippers", href: "/for-shippers" },
-    { name: "For Drivers", href: "/for-drivers" },
-    { name: "For Queue Orgs", href: "/for-queue-orgs" },
-    { name: "For Associations", href: "/for-associations" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "Download App", href: "/download" },
+    { key: "shippers", href: "/for-shippers" },
+    { key: "drivers", href: "/for-drivers" },
+    { key: "queueOrgs", href: "/for-queue-orgs" },
+    { key: "associations", href: "/for-associations" },
+    { key: "pricing", href: "/pricing" },
+    { key: "download", href: "/download" },
   ],
   company: [
-    { name: "About Us", href: "/about" },
-    { name: "How It Works", href: "/how-it-works" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
+    { key: "about", href: "/about" },
+    { key: "howItWorks", href: "/how-it-works" },
+    { key: "services", href: "/services" },
+    { key: "contact", href: "/contact" },
   ],
   resources: [
-    { name: "Safety", href: "/safety" },
-    { name: "FAQ", href: "/faq" },
-    { name: "Terms of Service", href: "/terms" },
-    { name: "Privacy Policy", href: "/privacy" },
+    { key: "safety", href: "/safety" },
+    { key: "faq", href: "/faq" },
+    { key: "terms", href: "/terms" },
+    { key: "privacy", href: "/privacy" },
   ],
 }
 
@@ -78,12 +78,12 @@ export function Footer() {
             <T k="Footer.columns.platform" as="h3" className="font-semibold mb-4" />
             <ul className="space-y-3">
               {footerNavigation.platform.map((item) => (
-                <li key={item.name}>
+                <li key={item.key}>
                   <Link
                     href={item.href}
                     className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
                   >
-                    {item.name}
+                    <T k={`Footer.nav.platform.${item.key}`} />
                   </Link>
                 </li>
               ))}
@@ -95,12 +95,12 @@ export function Footer() {
             <T k="Footer.columns.company" as="h3" className="font-semibold mb-4" />
             <ul className="space-y-3">
               {footerNavigation.company.map((item) => (
-                <li key={item.name}>
+                <li key={item.key}>
                   <Link
                     href={item.href}
                     className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
                   >
-                    {item.name}
+                    <T k={`Footer.nav.company.${item.key}`} />
                   </Link>
                 </li>
               ))}
@@ -112,12 +112,12 @@ export function Footer() {
             <T k="Footer.columns.resources" as="h3" className="font-semibold mb-4" />
             <ul className="space-y-3">
               {footerNavigation.resources.map((item) => (
-                <li key={item.name}>
+                <li key={item.key}>
                   <Link
                     href={item.href}
                     className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
                   >
-                    {item.name}
+                    <T k={`Footer.nav.resources.${item.key}`} />
                   </Link>
                 </li>
               ))}
@@ -127,14 +127,14 @@ export function Footer() {
 
         <div className="border-t border-primary-foreground/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-primary-foreground/60">
-            &copy; {new Date().getFullYear()} Dynamics Transport Commission. All rights reserved.
+            &copy; {new Date().getFullYear()}{" "}<T k="Footer.bottom.rights" />
           </p>
           <div className="flex items-center gap-6">
             <Link href="/terms" className="text-sm text-primary-foreground/60 hover:text-secondary transition-colors">
-              Terms
+              <T k="Footer.bottom.terms" />
             </Link>
             <Link href="/privacy" className="text-sm text-primary-foreground/60 hover:text-secondary transition-colors">
-              Privacy
+              <T k="Footer.bottom.privacy" />
             </Link>
           </div>
         </div>

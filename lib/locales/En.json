@@ -58,6 +58,33 @@
       "platform": "Platform",
       "company": "Company",
       "resources": "Resources"
+    },
+    "nav": {
+      "platform": {
+        "shippers": "For Shippers",
+        "drivers": "For Drivers",
+        "queueOrgs": "For Queue Orgs",
+        "associations": "For Associations",
+        "pricing": "Pricing",
+        "download": "Download App"
+      },
+      "company": {
+        "about": "About Us",
+        "howItWorks": "How It Works",
+        "services": "Services",
+        "contact": "Contact"
+      },
+      "resources": {
+        "safety": "Safety",
+        "faq": "FAQ",
+        "terms": "Terms of Service",
+        "privacy": "Privacy Policy"
+      }
+    },
+    "bottom": {
+      "rights": "Dynamics Transport Commission. All rights reserved.",
+      "terms": "Terms",
+      "privacy": "Privacy"
     }
   },
   "HowItWorks": {
@@ -131,6 +158,1321 @@
       "queue": "Queue",
       "street": "Street",
       "call": "Call"
+    },
+    "tabs": {
+      "ind": {
+        "title": "Individual Driver Bidding",
+        "sub": "For jobs of 10 or fewer vehicles. Up to 5 drivers bid per slot; you pick the winner."
+      },
+      "comp": {
+        "title": "Company Batch Bidding",
+        "sub": "For jobs of more than 10 vehicles. Companies bid on the batch; you accept one and they assign the fleet."
+      },
+      "queue": {
+        "title": "Queue Dispatch at Loading Places",
+        "sub": "Ports, customs, factories, and depots run a fair FIFO line — or open orders for bidding."
+      },
+      "street": {
+        "title": "Take From Street",
+        "sub": "For drivers who find a shipper on the road without the app. Perfect for street-side pickups and walk-in customers."
+      },
+      "call": {
+        "title": "Call Center Booking",
+        "sub": "For shippers who prefer phone-based booking or do not have the app. Our operators handle everything."
+      }
+    },
+    "indSteps": {
+      "1": { "title": "Drivers Are Matched", "desc": "Individual drivers near your pickup point are invited to your job — up to 5 verified drivers are invited per vehicle slot. Drivers at the loading-place queue get priority.", "status": "Requested" },
+      "2": { "title": "Drivers Submit Bids", "desc": "Each driver reviews your load and submits their best price for the slot. You see every bid, driver rating, and vehicle detail in real time.", "status": "Bids Received" },
+      "3": { "title": "You Select the Driver", "desc": "Compare prices and ratings and pick the best driver for each vehicle slot. Selected drivers confirm and prepare for pickup.", "status": "Selected" },
+      "4": { "title": "Track & Deliver", "desc": "The driver loads and starts the journey — you follow live GPS until delivery. Pay and rate at the end.", "status": "Journey Completed" }
+    },
+    "compSteps": {
+      "1": { "title": "Companies See the Batch", "desc": "Transport companies with large fleets see your full batch — the total number of vehicles needed, route, cargo, and timeline. They place one bid for the entire batch.", "status": "Batch Posted" },
+      "2": { "title": "Companies Bid", "desc": "Multiple verified companies compete with a price per vehicle. You compare bids and company ratings side by side.", "status": "Bids Received" },
+      "3": { "title": "You Accept a Company Bid", "desc": "Choose the company that best fits your budget and needs. Once accepted, the job is locked to them.", "status": "Accepted" },
+      "4": { "title": "Company Assigns Drivers", "desc": "The company assigns its drivers and vehicles to every slot — automatically or manually through their portal. Each assigned driver confirms the assignment.", "status": "Drivers Assigned" },
+      "5": { "title": "Track Every Slot", "desc": "Follow each assigned truck with live GPS from loading to delivery. Payment and rating happen per delivered slot.", "status": "Journey Completed" }
+    },
+    "queueSteps": {
+      "1": { "title": "Order Enters the Queue", "desc": "A job linked to a loading place (port, customs, factory, cement plant, depot) enters that site's dispatch queue. Queue staff can create it on your behalf.", "status": "Queue Order" },
+      "2": { "title": "Drivers Check In (FIFO)", "desc": "Drivers check in at the loading place and join a first-in-first-out line for their vehicle type. The front waiting driver is offered the order.", "status": "FIFO Line" },
+      "3": { "title": "Offer, Accept or Timeout", "desc": "The driver has a short window to accept. If they decline or time out, the order moves to the next driver in line. Too many refusals sends a driver to the back.", "status": "3-Min Window" },
+      "4": { "title": "Open for Bidding", "desc": "Queue staff can open an order for bidding instead of FIFO — up to 5 drivers bid per vehicle slot. You or the queue staff pick the winning bid.", "status": "≤ 5 Bids / Slot" },
+      "5": { "title": "Load, Track & Complete", "desc": "The winning driver loads, heads to your destination, and you track the full journey to completion.", "status": "Journey Completed" }
+    },
+    "streetSteps": {
+      "1": { "title": "Driver Meets Shipper", "desc": "Driver finds a shipper at a loading zone, marketplace, or on the road who needs transport but does not have the app." },
+      "2": { "title": "Quick Registration", "desc": "Driver opens the app and enters the shipper's phone number, cargo details, and pickup/destination locations." },
+      "3": { "title": "Instant SMS Confirmation", "desc": "The system creates accounts for both parties. The shipper receives SMS with driver details, vehicle info, and a tracking link." },
+      "4": { "title": "Journey Begins", "desc": "The journey starts immediately with GPS tracking active. No bidding phase required." }
+    },
+    "callSteps": {
+      "1": { "title": "Call DTC Hotline", "desc": "Shipper calls the DTC call center hotline for phone-based booking assistance." },
+      "2": { "title": "Operator Collects Details", "desc": "An operator collects all shipment information: origin, destination, item description, quantity, and vehicle type preference." },
+      "3": { "title": "Request Created", "desc": "The operator creates the request in the system on behalf of the shipper. The request enters the normal bid-matching flow." },
+      "4": { "title": "SMS Updates", "desc": "The shipper receives SMS updates on driver assignment, bid acceptance, and journey progress." }
+    },
+    "portal": {
+      "comp": "Manage bids, fleet, and assignments from the Company Portal.",
+      "compBtn": "Open Company Portal",
+      "queue": "Loading-place staff run the live queue and dispatch board online.",
+      "queueBtn": "Open Queue Console"
+    },
+    "streetUse": {
+      "title": "Use Cases:",
+      "1": "Street-side freight pickups",
+      "2": "Market-to-warehouse transport",
+      "3": "Walk-in customers at loading docks"
+    },
+    "callHelp": {
+      "title": "Need Assistance?",
+      "sub": "Our call center is available during business hours to help you book your shipment.",
+      "cta": "Contact us today"
+    },
+    "journey": {
+      "title": "The Journey, Whatever the Path",
+      "sub": "Every job — individual, company, or queue — finishes the same way.",
+      "stepWord": "Step",
+      "steps": {
+        "1": { "label": "Go to loading place" },
+        "2": { "label": "Load the cargo" },
+        "3": { "label": "Live GPS tracking" },
+        "4": { "label": "Deliver on time" },
+        "5": { "label": "Payment & rating" }
+      }
+    },
+    "payment": {
+      "title": "Payment Options",
+      "cod": { "title": "Cash on Delivery", "desc": "Pay the driver directly upon delivery" },
+      "bank": { "title": "Bank Transfer", "desc": "CBE, Dashen, and other banks" },
+      "telebirr": { "title": "Telebirr", "desc": "Mobile money payments" }
+    },
+    "cta": {
+      "title": "Ready to Ship?",
+      "sub": "Download the app and post your first cargo today. Companies and loading places can open their consoles right away.",
+      "download": "Download App",
+      "post": "Post a Shipment"
+    }
+  },
+  "VehicleFleet": {
+    "title": "Our Vehicle Fleet",
+    "sub": "Match your cargo with the right vehicle. From small urban deliveries to heavy cross-border freight, we have the capacity you need.",
+    "cap": "Capacity",
+    "best": "Best for",
+    "rows": {
+      "lt": {
+        "name": "Light Truck (up to 35 q)",
+        "capacity": "35 quintals",
+        "bestFor": "Bulk cargo, small & light loads",
+        "icon": "LT"
+      },
+      "mt50": {
+        "name": "Medium Truck (up to 50 q)",
+        "capacity": "50 quintals",
+        "bestFor": "Bulk cargo, regional transport",
+        "icon": "MT"
+      },
+      "mt100": {
+        "name": "Medium Truck (up to 100 q)",
+        "capacity": "100 quintals",
+        "bestFor": "Bulk cargo, warehouse transfers",
+        "icon": "MT"
+      },
+      "ht": {
+        "name": "Heavy Truck (125–175 q)",
+        "capacity": "175 quintals",
+        "bestFor": "Bulk cargo or 20ft container",
+        "icon": "HT"
+      },
+      "eht": {
+        "name": "Extra Heavy Truck (176–250 q)",
+        "capacity": "250 quintals",
+        "bestFor": "Bulk cargo or ISO containers",
+        "icon": "EHT"
+      },
+      "f20": {
+        "name": "20ft Container Truck (251–300 q)",
+        "capacity": "300 quintals",
+        "bestFor": "Bulk or 20ft container (cassoni)",
+        "icon": "20FT"
+      },
+      "lb": {
+        "name": "2×20ft / 40ft Low-Bed (301–350 q)",
+        "capacity": "350 quintals",
+        "bestFor": "2×20ft or 1×40ft ISO containers",
+        "icon": "LB"
+      },
+      "c400": {
+        "name": "2×20ft / 40ft Container (351–400 q)",
+        "capacity": "400 quintals",
+        "bestFor": "2×20ft or 1×40ft ISO containers",
+        "icon": "40FT"
+      }
+    },
+    "verified": "All vehicles on our platform are verified with valid registration, insurance status, and ownership records."
+  },
+  "Contact": {
+    "hero": {
+      "title": "Contact Us",
+      "sub": "Have questions or need assistance? Our team is here to help you with shipping, driver registration, or any platform inquiries."
+    },
+    "options": {
+      "email": {
+        "title": "Email Support",
+        "description": "Get help via email"
+      },
+      "call": {
+        "title": "Call Center",
+        "description": "Phone-based assistance, 24/7"
+      },
+      "inApp": {
+        "title": "In-App Support",
+        "description": "Contact us through the app",
+        "contact": "24/7 messaging support"
+      }
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "name": "Full Name *",
+      "namePlaceholder": "Your name",
+      "email": "Email Address *",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+251 9XX XXX XXXX",
+      "subject": "Subject *",
+      "subjectPlaceholder": "How can we help?",
+      "message": "Message *",
+      "messagePlaceholder": "Tell us more about your inquiry...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message Sent!",
+      "successSub": "Thank you for reaching out. Our team will get back to you as soon as possible.",
+      "sendAnother": "Send Another Message"
+    },
+    "offices": {
+      "title": "Our Offices",
+      "head": "Head Office",
+      "regional": "Regional Office",
+      "callCenter": "Call Center Support",
+      "callCenterSub": "Our call center operators are ready to assist you with booking shipments, answering questions, and resolving issues.",
+      "available": "Available 24/7",
+      "urgent": "For urgent matters, call us directly or use in-app support or email."
+    },
+    "business": {
+      "title": "Business Inquiries",
+      "sub": "For fleet partnerships, corporate accounts, and business collaborations:"
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "sub": "Download the DTC app and start shipping or earning today.",
+      "download": "Download App",
+      "faq": "View FAQ"
+    }
+  },
+  "HomeHowItWorks": {
+    "title": "How It Works",
+    "sub": "Ship your cargo in three simple steps. Our platform makes freight transportation transparent, efficient, and secure.",
+    "s1": {
+      "title": "Post Your Shipment",
+      "desc": "Enter pickup location, destination, cargo details, and preferred vehicle type. Set your budget or let drivers bid."
+    },
+    "s2": {
+      "title": "Compare & Select",
+      "desc": "Receive competitive bids from verified drivers nearby. Compare ratings, prices, and vehicle details to choose the best offer."
+    },
+    "s3": {
+      "title": "Track & Deliver",
+      "desc": "Follow your cargo in real-time with GPS tracking. Get notified when your shipment arrives safely at its destination."
+    }
+  },
+  "DriverBenefits": {
+    "badge": "For Drivers",
+    "title": "Grow Your Trucking Business",
+    "sub": "Join the DTC driver network and get access to quality loads, fair pricing, and a platform that supports your success.",
+    "i1": { "title": "Steady Income", "desc": "Access to a constant stream of transportation jobs" },
+    "i2": { "title": "Direct Connections", "desc": "Connect directly with shippers without middlemen" },
+    "i3": { "title": "Free During Launch", "desc": "No commission, no hidden fees — keep 100% of your earnings" },
+    "i4": { "title": "Flexible Schedule", "desc": "Work on your own time and choose your loads" },
+    "i5": { "title": "Build Reputation", "desc": "Earn ratings and grow your customer base" },
+    "i6": { "title": "24/7 Support", "desc": "Get help anytime through our call center" },
+    "cta": "Learn More for Drivers"
+  },
+  "TrustSafety": {
+    "badge": "Trust & Safety",
+    "title": "Your Cargo, Fully Protected",
+    "sub": "We have built multiple layers of verification, tracking, and accountability to ensure every shipment is secure.",
+    "i1": { "title": "Document Verification", "desc": "Every driver is verified through government-issued licenses, vehicle registration, and photo ID" },
+    "i2": { "title": "Real-time GPS Tracking", "desc": "Track your cargo location from pickup to delivery with continuous GPS monitoring" },
+    "i3": { "title": "Rating System", "desc": "Both shippers and drivers rate each transaction, building accountability and trust" },
+    "i4": { "title": "Delinquency Tracking", "desc": "Violations are tracked and users with poor conduct are automatically restricted" },
+    "i5": { "title": "Admin Oversight", "desc": "Our team monitors platform activity and can intervene to resolve disputes" },
+    "i6": { "title": "24/7 Support", "desc": "Call center available around the clock for booking assistance and issue resolution" }
+  },
+  "DownloadApp": {
+    "badge": "Mobile App",
+    "title": "Get the DTC Mobile App",
+    "sub": "Download our app to ship cargo, track deliveries, and manage your transportation needs on the go. Available for both shippers and drivers.",
+    "f1": "Live GPS tracking",
+    "f2": "Instant notifications",
+    "f3": "Easy payments",
+    "ios": { "top": "Download on the", "bottom": "App Store" },
+    "android": { "top": "Get it on", "bottom": "Google Play" },
+    "mock": {
+      "activeShipment": "Active Shipment",
+      "inTransit": "In Transit",
+      "eta": "ETA: 8 hours"
+    }
+  },
+  "Nav": {
+    "main": {
+      "about": "About",
+      "howItWorks": "How It Works",
+      "services": "Services"
+    },
+    "platform": "Platform",
+    "links": {
+      "shippers": {
+        "name": "For Shippers",
+        "desc": "Post shipments and get competitive bids"
+      },
+      "drivers": {
+        "name": "For Drivers",
+        "desc": "Find loads and grow your business"
+      },
+      "queueOrgs": {
+        "name": "For Queue Orgs",
+        "desc": "Digitize your loading queue with FIFO dispatch"
+      },
+      "associations": {
+        "name": "For Associations",
+        "desc": "Fleet bidding and driver assignment portal"
+      },
+      "pricing": {
+        "name": "Pricing",
+        "desc": "Transparent pricing and subscription plans"
+      }
+    },
+    "resources": {
+      "safety": "Safety",
+      "faq": "FAQ",
+      "contact": "Contact"
+    },
+    "cta": {
+      "download": "Download App",
+      "ship": "Ship Your Cargo",
+      "drive": "Drive With Us"
+    },
+    "mobile": {
+      "platform": "Platform",
+      "toggleMenu": "Toggle menu",
+      "navMenu": "Navigation Menu"
+    }
+  },
+  "ShipperBenefits": {
+    "badge": "For Shippers",
+    "title": "Ship Your Cargo with Confidence",
+    "sub": "Whether you are a business moving freight or an individual with goods to transport, DTC makes shipping simple and transparent.",
+    "s1": {
+      "title": "Easy Booking",
+      "desc": "Post shipments in minutes through our app or call center"
+    },
+    "s2": {
+      "title": "Competitive Pricing",
+      "desc": "Get multiple bids from drivers and choose the best offer"
+    },
+    "s3": {
+      "title": "Verified Drivers",
+      "desc": "All drivers are verified with proper documentation"
+    },
+    "s4": {
+      "title": "Real-time Tracking",
+      "desc": "Follow your cargo with live GPS tracking"
+    },
+    "s5": {
+      "title": "Flexible Payments",
+      "desc": "Pay via cash, bank transfer, or Telebirr"
+    },
+    "s6": {
+      "title": "Fast Matching",
+      "desc": "Get matched with nearby drivers instantly"
+    },
+    "cta": "Learn More for Shippers"
+  },
+  "CoverageMap": {
+    "title": "Service Coverage",
+    "sub": "We cover the busiest trade corridors in the Horn of Africa, connecting Ethiopian industrial centers with Djibouti Port.",
+    "ethiopia": "Ethiopia",
+    "djibouti": "Djibouti",
+    "keyCorridors": "Key Corridors",
+    "corridors": {
+      "c1": "Addis Ababa to Djibouti Port (Primary Trade Route)",
+      "c2": "All major Ethiopian industrial zones",
+      "c3": "Cross-border Ethiopia-Djibouti freight",
+      "c4": "Urban last-mile delivery within Addis Ababa"
+    }
+  },
+  "About": {
+    "hero": {
+      "title": "About Dynamics Transport Commission",
+      "sub": "We are building the future of freight transportation in the Horn of Africa. Our platform connects shippers with verified drivers through transparent, competitive bidding."
+    },
+    "story": {
+      "badge": "Our Story",
+      "title": "What We Are",
+      "p1": "Dynamics Transport Commission (DTC) is a technology-driven freight and cargo logistics platform operating across Ethiopia and Djibouti. We connect shippers—businesses and individuals who need to move goods—with verified truck drivers and fleet owners through a transparent, competitive bidding system.",
+      "p2": "Think of us as Uber for freight, combining Convoy-style load matching with comprehensive fleet management. Our platform handles everything from request creation to delivery completion.",
+      "tagline": "\u201cMove goods. Move fast. Move smart.\u201d"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "desc": "To digitize and modernize cargo transportation in the Horn of Africa, making it safer, more affordable, and more transparent for every participant in the supply chain."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "desc": "To become the leading logistics technology platform across East Africa, enabling any shipper to move any load to any destination with full visibility, fair pricing, and guaranteed security."
+    },
+    "coverage": {
+      "title": "Where We Operate",
+      "sub": "Our network spans the most critical trade corridors in the Horn of Africa.",
+      "ethiopia": {
+        "heading": "Ethiopia",
+        "i1": "Addis Ababa (Capital Hub)",
+        "i2": "Dire Dawa",
+        "i3": "Mekelle, Hawassa, Bahir Dar",
+        "i4": "Adama, Jimma",
+        "i5": "All inter-city freight routes"
+      },
+      "djibouti": {
+        "heading": "Djibouti",
+        "i1": "Djibouti City",
+        "i2": "Ali Sabieh",
+        "i3": "Djibouti-Ethiopia Trade Corridor",
+        "i4": "Djibouti Port Access"
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "sub": "The principles that guide everything we do at DTC.",
+      "v1": {
+        "title": "Community First",
+        "desc": "We build technology that empowers both shippers and drivers, creating value for the entire logistics ecosystem."
+      },
+      "v2": {
+        "title": "Regional Impact",
+        "desc": "We are committed to transforming logistics across the Horn of Africa, starting with Ethiopia and Djibouti."
+      },
+      "v3": {
+        "title": "Innovation",
+        "desc": "We continuously improve our platform with real-time tracking, competitive bidding, and seamless payments."
+      }
+    },
+    "cta": {
+      "title": "Join the DTC Network",
+      "sub": "Whether you need to ship cargo or you are a driver looking for loads, we are here to help you succeed.",
+      "start": "Start Shipping",
+      "driver": "Become a Driver"
+    }
+  },
+  "Download": {
+    "hero": {
+      "title": "Get the DTC Mobile Apps",
+      "sub": "Choose the app that fits your role. Drivers find loads; shippers move cargo. Both are available now on Google Play."
+    },
+    "apps": {
+      "driver": {
+        "title": "Dynamics Driver",
+        "subtitle": "For truck drivers",
+        "desc": "Find loads near you, receive instant notifications, submit competitive bids, and grow your trucking business from anywhere in Ethiopia and Djibouti.",
+        "f1": "Find loads near your location",
+        "f2": "Instant load notifications",
+        "f3": "Fair pay for every trip"
+      },
+      "shipper": {
+        "title": "Dynamics Shipper",
+        "subtitle": "For shippers & businesses",
+        "desc": "Post shipments, receive competitive bids from verified drivers, track your cargo in real-time, and manage all your transportation needs on the go.",
+        "f1": "Post shipments in minutes",
+        "f2": "Compare bids from drivers",
+        "f3": "Live GPS cargo tracking"
+      }
+    },
+    "play": {
+      "top": "Get it on",
+      "bottom": "Google Play"
+    },
+    "both": {
+      "title": "Have both roles? Install both apps",
+      "sub": "Manage your fleet and your shipments from one place. Free to download — create your account in under a minute."
+    }
+  },
+  "Faq": {
+    "hero": {
+      "badge": "Help Center",
+      "title": "Frequently Asked Questions",
+      "sub": "Find answers to common questions about shipping, driver registration, pricing, tracking, and more."
+    },
+    "categories": {
+      "shipping": {
+        "title": "Shipping",
+        "q1": {
+          "q": "How do I post a shipment request?",
+          "a": "Download the DTC app, register with your phone number, and verify via OTP. Then tap 'Post Shipment' and enter your pickup location, destination, cargo details (item name, quantity in quintals), vehicle type needed, and preferred dates. You can set a budget or let drivers bid freely."
+        },
+        "q2": {
+          "q": "How long does it take to get matched with a driver?",
+          "a": "Our system automatically finds verified drivers within approximately 1 km of your pickup location. Drivers are notified instantly and can place bids within minutes. Most shippers receive their first bid within 5-10 minutes."
+        },
+        "q3": {
+          "q": "Can I request multiple vehicles at once?",
+          "a": "Yes! You can create a batch request for multiple vehicles in one submission. This is useful for large shipments that need more than one truck."
+        },
+        "q4": {
+          "q": "What if no drivers bid on my shipment?",
+          "a": "If no drivers bid within a reasonable time, try adjusting your budget, expanding the vehicle type options, or reposting at a different time. You can also call our support center for assistance."
+        },
+        "q5": {
+          "q": "Can I cancel my shipment request?",
+          "a": "Yes, you can cancel before the journey starts. All matched drivers will be notified. However, cancellations are tracked and excessive cancellations may affect your account standing."
+        }
+      },
+      "drivers": {
+        "title": "Driver Registration",
+        "q1": {
+          "q": "What documents do I need to register as a driver?",
+          "a": "Required documents: Driver's License (with expiration date and file number), Vehicle Registration/Librea (with file number), and Profile Photo. Optional but recommended: Insurance Document, Tax Identification Number, National ID, and Delegation of Vehicle Use."
+        },
+        "q2": {
+          "q": "How long does the verification process take?",
+          "a": "Typically 24-48 hours after you submit all required documents. Our admin team reviews each submission carefully. You'll be notified when your account is approved."
+        },
+        "q3": {
+          "q": "What vehicle types are supported?",
+          "a": "We support eight vehicle classes, from Light Trucks (up to 35 quintals) and Medium Trucks (up to 50 or 100 quintals) to Heavy Trucks (125–175 quintals), Extra Heavy Trucks (176–250 quintals), and multi-container rigs for 40ft ISO containers (up to 400 quintals). Each vehicle must be registered with its license plate, color, and type."
+        },
+        "q4": {
+          "q": "Do I need to own the vehicle?",
+          "a": "You can drive a vehicle you own or one that's been delegated to you. If it's not your vehicle, you'll need a Delegation of Vehicle Use document from the owner."
+        },
+        "q5": {
+          "q": "What happens if my documents expire?",
+          "a": "The platform tracks document expiration dates. You'll receive alerts before expiration. If a document expires, your status will change to inactive until you upload the renewed document."
+        }
+      },
+      "pricing": {
+        "title": "Pricing & Payments",
+        "q1": {
+          "q": "How is the shipping price determined?",
+          "a": "Prices are determined through competitive bidding. When you post a shipment, drivers submit their proposed prices. You can set a budget or leave it open. Choose the best offer based on price, driver ratings, and vehicle type."
+        },
+        "q2": {
+          "q": "Are there any fees for shippers?",
+          "a": "No, shippers do not pay any platform fees. You only pay the agreed shipping cost directly to the driver. Driver fees are being launched at zero — the platform is free during the launch period."
+        },
+        "q3": {
+          "q": "What is the driver commission?",
+          "a": "DTC is currently free — no commission is charged yet. We are launching with a free period and will introduce a transparent commission structure in the future. Any changes will be announced clearly."
+        },
+        "q4": {
+          "q": "What payment methods are accepted?",
+          "a": "We accept Cash on Delivery, Bank Transfer (CBE, Dashen, and others), and Telebirr/Mobile Money. Choose the method that works best for you."
+        },
+        "q5": {
+          "q": "What are the driver subscription plans?",
+          "a": "Free Trial (1 month, for new drivers), Monthly (700 ETB), Quarterly (1,800 ETB, save 300 ETB), and Annual (6,000 ETB, save 2,400 ETB). Drivers need an active subscription to receive shipment requests."
+        }
+      },
+      "tracking": {
+        "title": "Tracking & Delivery",
+        "q1": {
+          "q": "How do I track my shipment?",
+          "a": "Once the driver starts the journey, you'll see a live map in the app showing the truck's real-time location. GPS tracking is continuous from pickup to delivery."
+        },
+        "q2": {
+          "q": "What happens when my cargo arrives?",
+          "a": "The driver taps 'Complete Journey' when they arrive at the destination. You'll receive a notification to confirm delivery. After confirmation, you can rate the driver and make payment."
+        },
+        "q3": {
+          "q": "What if there's a problem during delivery?",
+          "a": "Contact our 24/7 support center immediately. You can report issues through the app or by calling. Our admin team can intervene, cancel journeys, or help resolve disputes."
+        },
+        "q4": {
+          "q": "Can I communicate with the driver?",
+          "a": "Yes, once a driver is assigned to your shipment, you can see their contact information in the app and coordinate directly for pickup details."
+        }
+      },
+      "safety": {
+        "title": "Safety & Support",
+        "q1": {
+          "q": "How are drivers verified?",
+          "a": "Every driver must submit a valid Driver's License, Vehicle Registration (Librea), and Profile Photo. Documents are reviewed by our admin team. Drivers must also maintain an active subscription and good standing."
+        },
+        "q2": {
+          "q": "What is the rating system?",
+          "a": "After every journey, both shipper and driver rate each other (1-5 stars) with optional comments. Ratings help build trust and help others make informed decisions."
+        },
+        "q3": {
+          "q": "What happens if a driver has bad ratings?",
+          "a": "Drivers with consistently poor ratings or violations (late arrival, rude behavior, cancellations) accumulate delinquency points. Too many points result in automatic temporary or permanent bans."
+        },
+        "q4": {
+          "q": "Is my personal data secure?",
+          "a": "Yes. All passwords and OTPs are hashed using industry-standard encryption. API communication is secured via token-based authentication (JWT). We only share your information with matched drivers during active journeys."
+        },
+        "q5": {
+          "q": "How do I contact support?",
+          "a": "Contact us through the app's in-app support feature, call our hotline (available during business hours), or email support@dynamicstransport.com. Our team is here to help."
+        }
+      }
+    },
+    "cta": {
+      "title": "Still Have Questions?",
+      "sub": "Our support team is here to help. Contact us and we will get back to you as soon as possible.",
+      "contact": "Contact Support",
+      "download": "Download App"
+    }
+  },
+  "Safety": {
+    "hero": {
+      "badge": "Trust & Safety",
+      "title": "Your Cargo, Fully Protected",
+      "sub": "We have built multiple layers of verification, tracking, and accountability to ensure every shipment is secure and every transaction is trustworthy."
+    },
+    "verification": {
+      "title": "Driver Verification",
+      "sub": "Every driver on DTC goes through a rigorous verification process before they can accept jobs.",
+      "s1": {
+        "title": "Document Verification",
+        "desc": "Every driver must submit a valid Driver's License with expiration tracking and Vehicle Registration (Librea) proving legal ownership or delegation."
+      },
+      "s2": {
+        "title": "Profile Photo",
+        "desc": "Drivers provide a clear profile photo for identity confirmation. This helps shippers recognize their assigned driver."
+      },
+      "s3": {
+        "title": "Vehicle Registration",
+        "desc": "Each vehicle is verified with license plate, type, and carrying capacity. Active/inactive status is managed by admin."
+      },
+      "s4": {
+        "title": "Admin Approval",
+        "desc": "All documents are reviewed and approved or rejected by DTC admin staff before a driver can go active on the platform."
+      }
+    },
+    "tracking": {
+      "title": "Real-time Cargo Tracking",
+      "sub": "Know exactly where your cargo is at all times. Our GPS tracking system provides continuous updates from pickup to delivery.",
+      "f1": {
+        "title": "Real-time GPS Tracking",
+        "desc": "Continuous GPS monitoring from journey start to completion. Shippers can see driver location on a live map at all times."
+      },
+      "f2": {
+        "title": "Route Recording",
+        "desc": "Route points are recorded continuously during every journey, creating a complete audit trail of the cargo's path."
+      },
+      "f3": {
+        "title": "Secure Data",
+        "desc": "All tracking data is secured and only shared with relevant parties during active journeys. Privacy is protected."
+      },
+      "liveActive": "Live tracking active",
+      "updatedAgo": "Updated 5s ago"
+    },
+    "accountability": {
+      "title": "Accountability System",
+      "sub": "Our rating and delinquency tracking systems ensure high standards and protect all users.",
+      "a1": {
+        "title": "Rating System",
+        "desc": "After every journey, both shipper and driver rate each other (1-5 stars) with optional comments. Ratings build trust and help others make informed decisions."
+      },
+      "a2": {
+        "title": "Delinquency Tracking",
+        "desc": "The platform tracks violations (late arrival, rude behavior, cancellations) with severity levels (Low, Medium, High, Critical) and point-based scoring."
+      },
+      "a3": {
+        "title": "Automatic Banning",
+        "desc": "Users who accumulate too many delinquency points are automatically banned for a configurable duration (7, 30, 90+ days)."
+      },
+      "a4": {
+        "title": "Admin Oversight",
+        "desc": "DTC admins can manually ban or unban users, resolve disputes, and intervene when necessary to maintain platform safety."
+      }
+    },
+    "statuses": {
+      "title": "Driver Account Statuses",
+      "sub": "Understanding driver statuses helps shippers know who they are working with.",
+      "st1": { "status": "Active", "meaning": "All documents approved, vehicle registered, subscription active. Can receive requests." },
+      "st2": { "status": "Inactive - Documents Pending", "meaning": "Documents uploaded but awaiting admin review." },
+      "st3": { "status": "Inactive - Documents Rejected", "meaning": "One or more documents were rejected. Must re-upload." },
+      "st4": { "status": "Inactive - Documents Missing", "meaning": "Must upload all required documents." },
+      "st5": { "status": "Inactive - Vehicle Not Registered", "meaning": "Must register a vehicle first." },
+      "st6": { "status": "Inactive - No Subscription", "meaning": "Must purchase or renew a subscription plan." },
+      "st7": { "status": "Inactive - Banned", "meaning": "Account suspended due to policy violation." }
+    },
+    "cancellation": {
+      "title": "Cancellation Policy",
+      "intro": "Either party can cancel a request, but cancellations are tracked and may result in penalties:",
+      "c1": { "label": "Shipper Cancels:", "desc": "All matched drivers are notified; the request is removed." },
+      "c2": { "label": "Driver Cancels:", "desc": "Only that driver's participation is withdrawn; the shipper can select another driver." },
+      "c3": { "label": "Admin Cancels:", "desc": "Administrative intervention (e.g., fraud, safety concern)." },
+      "c4": { "label": "System Cancels:", "desc": "Automatic cancellation due to timeout or rule violation." },
+      "noteLabel": "Note:",
+      "noteText": "Every cancellation requires selecting a reason from a predefined list, and all cancellations are logged for audit. Excessive cancellations may result in temporary or permanent account suspension."
+    },
+    "cta": {
+      "title": "Ship with Confidence",
+      "sub": "Our safety measures ensure your cargo is protected at every step. Join shippers and drivers who trust DTC.",
+      "start": "Start Shipping",
+      "driver": "Become a Driver"
+    }
+  },
+  "Services": {
+    "hero": {
+      "title": "Our Services",
+      "sub": "From small urban deliveries to heavy cross-border freight, we have the vehicles and verified drivers to move your cargo safely."
+    },
+    "fleet": {
+      "title": "Vehicle Fleet",
+      "sub": "Match your cargo with the right vehicle — from light bulk trucks to multi-container rigs. All vehicles are verified with valid registration and ownership records.",
+      "capacity": "Capacity",
+      "weight": "Weight",
+      "noteLabel": "Note:",
+      "note": "1 quintal = 100 kg. All vehicles include verified driver, registration, and insurance status tracking."
+    },
+    "cargoTypes": {
+      "bulk_only": "Bulk Cargo Only",
+      "both": "Bulk + Container",
+      "container_only": "Containers Only"
+    },
+    "vehicles": {
+      "v1": {
+        "name": "Light Truck (up to 35 Quintal)",
+        "desc": "Small/light freight truck for bulk cargo up to 35 quintal. Cannot carry ISO containers."
+      },
+      "v2": {
+        "name": "Medium Truck (up to 50 Quintal)",
+        "desc": "Medium freight truck for bulk cargo up to 50 quintal. Cannot carry ISO containers."
+      },
+      "v3": {
+        "name": "Medium Truck (up to 100 Quintal)",
+        "desc": "Medium freight truck for bulk cargo up to 100 quintal. Cannot carry ISO containers."
+      },
+      "v4": {
+        "name": "Heavy Truck (125–175 Quintal)",
+        "desc": "Heavy truck for loads 125–175 quintal. Accepts bulk cargo or a single 20ft ISO container."
+      },
+      "v5": {
+        "name": "Extra Heavy Truck (176–250 Quintal)",
+        "desc": "Extra-heavy truck for loads 176–250 quintal. Accepts bulk cargo or ISO containers."
+      },
+      "v6": {
+        "name": "20ft Container Truck (251–300 Quintal)",
+        "desc": "Container truck with 20ft cassoni fitting for loads 251–300 quintal. Accepts bulk cargo or a 20ft ISO container."
+      },
+      "v7": {
+        "name": "2×20ft or 40ft Low-Bed Truck (301–350 Quintal)",
+        "desc": "Specialised low-bed container rig for 301–350 quintal. Carries either 2 × 20ft or 1 × 40ft ISO containers."
+      },
+      "v8": {
+        "name": "2×20ft or 40ft Container Truck (351–400 Quintal)",
+        "desc": "Specialised multi-container truck for 351–400 quintal. Carries either 2 × 20ft or 1 × 40ft ISO containers."
+      }
+    },
+    "types": {
+      "title": "Types of Services",
+      "sub": "Whatever you need to move, we have a solution for you.",
+      "s1": {
+        "title": "Urban Delivery",
+        "desc": "Last-mile delivery within Addis Ababa and other major cities. Perfect for businesses needing quick local transport."
+      },
+      "s2": {
+        "title": "Warehouse Transfers",
+        "desc": "Move goods between warehouses, distribution centers, and retail locations efficiently."
+      },
+      "s3": {
+        "title": "Industrial Freight",
+        "desc": "Transport construction materials, machinery, and industrial goods across Ethiopian industrial zones."
+      },
+      "s4": {
+        "title": "Cross-Border Logistics",
+        "desc": "Move cargo between Ethiopia and Djibouti, including access to Djibouti Port for import/export."
+      },
+      "s5": {
+        "title": "Market Transport",
+        "desc": "Connect agricultural producers and markets with reliable freight for perishable and bulk goods."
+      },
+      "s6": {
+        "title": "General Cargo",
+        "desc": "Flexible transportation for any cargo type, with verified drivers and real-time tracking."
+      }
+    },
+    "features": {
+      "title": "Why Choose DTC",
+      "f1": { "title": "Verified Drivers", "desc": "All drivers verified with licenses and documents" },
+      "f2": { "title": "Real-time Tracking", "desc": "GPS tracking from pickup to delivery" },
+      "f3": { "title": "Fast Matching", "desc": "Get matched with nearby drivers instantly" },
+      "f4": { "title": "Any Cargo Size", "desc": "From small packages to 43-ton loads" }
+    },
+    "cta": {
+      "title": "Ready to Ship?",
+      "sub": "Post your shipment and receive competitive bids from verified drivers within minutes.",
+      "start": "Start Shipping",
+      "how": "Learn How It Works"
+    }
+  },
+  "ForDrivers": {
+    "hero": {
+      "badge": "For Drivers",
+      "title": "Grow Your Trucking Business with DTC",
+      "sub": "Join the DTC driver network and get access to quality loads, fair pricing, and a platform built to support your success.",
+      "start": "Start Driving",
+      "how": "How It Works",
+      "trial": "Free 1-month trial",
+      "noFees": "No hidden fees",
+      "stats": {
+        "st1": { "head": "Verified", "label": "Drivers & Vehicles" },
+        "st2": { "head": "GPS", "label": "Live Load Tracking" },
+        "st3": { "head": "Rated", "label": "Build Your Reputation" },
+        "st4": { "head": "24/7", "label": "Support Available" }
+      }
+    },
+    "benefits": {
+      "title": "Why Drivers Choose DTC",
+      "sub": "Join a platform built by truckers, for truckers. We understand what you need to succeed.",
+      "b1": {
+        "title": "Steady Income",
+        "desc": "Access to a constant stream of transportation jobs from businesses and individuals across Ethiopia and Djibouti."
+      },
+      "b2": {
+        "title": "Direct Connections",
+        "desc": "Connect directly with shippers without middlemen. Build relationships and earn repeat business."
+      },
+      "b3": {
+        "title": "No Fees During Launch",
+        "desc": "Free to use right now — no commission, no hidden fees. Keep 100% of what you earn while the platform is free."
+      },
+      "b4": {
+        "title": "Flexible Schedule",
+        "desc": "Work on your own time. Choose the loads that fit your schedule and preferred routes."
+      },
+      "b5": {
+        "title": "Build Reputation",
+        "desc": "Earn ratings from shippers and grow your customer base. Good ratings mean more business."
+      },
+      "b6": {
+        "title": "24/7 Support",
+        "desc": "Get help anytime through our call center. We are here to support your success."
+      }
+    },
+    "register": {
+      "title": "How to Register",
+      "sub": "Get started in 6 simple steps. New drivers get a free 1-month trial.",
+      "s1": {
+        "title": "Download & Register",
+        "desc": "Get the DTC app and register with your phone number, full name, and email. Verify via OTP."
+      },
+      "s2": {
+        "title": "Upload Documents",
+        "desc": "Upload your Driver's License, Vehicle Registration (Librea), and Profile Photo. Optional: Insurance, Tax ID, National ID."
+      },
+      "s3": {
+        "title": "Register Vehicle",
+        "desc": "Add your vehicle details: license plate, color, and vehicle type — from light trucks (up to 35 quintals) to multi-container rigs (up to 400 quintals)."
+      },
+      "s4": {
+        "title": "Get Verified",
+        "desc": "Wait for admin to review and approve your documents. This usually takes 24-48 hours."
+      },
+      "s5": {
+        "title": "Subscribe",
+        "desc": "Choose a subscription plan to start receiving jobs. New drivers get a free 1-month trial."
+      },
+      "s6": {
+        "title": "Start Earning",
+        "desc": "Receive shipment requests, place your bids, and start earning when shippers select you."
+      }
+    },
+    "docs": {
+      "title": "Required Documents",
+      "sub": "Prepare these documents before registration to speed up the verification process.",
+      "required": "Required",
+      "optional": "Optional",
+      "d1": { "name": "Driver's License", "desc": "Valid license with expiration date and file number" },
+      "d2": { "name": "Vehicle Registration (Librea)", "desc": "Proof of legal vehicle ownership or delegation" },
+      "d3": { "name": "Profile Photo", "desc": "Clear photo for identity confirmation" },
+      "d4": { "name": "Insurance Document", "desc": "Vehicle insurance (recommended)" },
+      "d5": { "name": "Tax Identification Number", "desc": "For tax compliance" },
+      "d6": { "name": "National ID", "desc": "Government-issued identification" }
+    },
+    "plans": {
+      "title": "Subscription Plans",
+      "sub": "Choose the plan that works best for you. New drivers get a free trial.",
+      "newDrivers": "New Drivers",
+      "p1": { "name": "Free Trial", "duration": "1 month", "desc": "Available once per driver. Experience the platform at no cost." },
+      "p2": { "name": "Monthly", "duration": "30 days", "desc": "Standard monthly subscription. Best for flexibility." },
+      "p3": { "name": "Quarterly", "duration": "90 days", "desc": "3-month plan at a discounted rate." },
+      "p4": { "name": "Annual", "duration": "365 days", "desc": "Best value for committed drivers. Save the most." }
+    },
+    "cta": {
+      "title": "Ready to Start Earning?",
+      "sub": "Join DTC today and get your free 1-month trial. Start receiving loads and grow your trucking business.",
+      "download": "Download App",
+      "support": "Contact Support"
+    }
+  },
+  "ForShippers": {
+    "hero": {
+      "badge": "For Shippers",
+      "title": "Ship Your Cargo with Confidence",
+      "sub": "Post your shipment, receive competitive bids from verified drivers, and track your cargo in real-time. Move goods across Ethiopia and Djibouti the smart way.",
+      "download": "Download App",
+      "how": "How It Works",
+      "misc": {
+        "newShipment": "New Shipment",
+        "bidsReceived": "3 bids received",
+        "cargo": "Cargo",
+        "weight": "Weight",
+        "constructionMaterials": "Construction Materials",
+        "bestBid": "Best Bid",
+        "heavyTruck": "Heavy Truck",
+        "rating": "4.8 rating",
+        "lowestBid": "Lowest bid"
+      }
+    },
+    "benefits": {
+      "title": "Why Shippers Choose DTC",
+      "sub": "Everything you need to move your cargo safely, affordably, and on time.",
+      "b1": {
+        "title": "Easy Booking",
+        "desc": "Post shipments in minutes through our app or call center. Enter cargo details, pickup, destination, and get matched instantly."
+      },
+      "b2": {
+        "title": "Competitive Pricing",
+        "desc": "Receive multiple bids from drivers and choose the best offer. No fixed prices—you decide what works for your budget."
+      },
+      "b3": {
+        "title": "Verified Drivers",
+        "desc": "Every driver is verified with government-issued licenses, vehicle registration, and photo ID before they can accept jobs."
+      },
+      "b4": {
+        "title": "Real-time Tracking",
+        "desc": "Follow your cargo from pickup to delivery with continuous GPS tracking. Know exactly where your shipment is at all times."
+      },
+      "b5": {
+        "title": "Flexible Payments",
+        "desc": "Pay via cash on delivery, bank transfer (CBE, Dashen), or Telebirr mobile money. Choose what works for you."
+      },
+      "b6": {
+        "title": "Fast Matching",
+        "desc": "Get matched with nearby drivers within seconds. Our system finds verified drivers within 1km radius of your pickup location."
+      }
+    },
+    "steps": {
+      "title": "How to Ship Your Cargo",
+      "sub": "Get started in minutes with our simple 6-step process.",
+      "s1": {
+        "title": "Download the App",
+        "desc": "Get the DTC app from Google Play or App Store. Register with your phone number and verify via OTP."
+      },
+      "s2": {
+        "title": "Post Your Shipment",
+        "desc": "Enter pickup location, destination, cargo details, vehicle type, and preferred dates. Set a budget or let drivers bid."
+      },
+      "s3": {
+        "title": "Receive Bids",
+        "desc": "Nearby verified drivers will bid on your shipment. Compare prices, ratings, and vehicle details."
+      },
+      "s4": {
+        "title": "Select Driver",
+        "desc": "Choose the best offer and confirm. The driver will pick up your cargo at the scheduled time."
+      },
+      "s5": {
+        "title": "Track in Real-time",
+        "desc": "Follow your cargo on the live map as it moves from pickup to destination."
+      },
+      "s6": {
+        "title": "Confirm & Rate",
+        "desc": "Confirm delivery, make payment, and rate your driver to help other shippers."
+      }
+    },
+    "payments": {
+      "title": "Payment Options",
+      "sub": "Choose the payment method that works best for you.",
+      "m1": { "title": "Cash on Delivery", "desc": "Pay the driver directly when your cargo arrives" },
+      "m2": { "title": "Bank Transfer", "desc": "CBE, Dashen, and other Ethiopian banks" },
+      "m3": { "title": "Telebirr", "desc": "Mobile money for quick digital payments" }
+    },
+    "call": {
+      "title": "Prefer Phone Booking?",
+      "sub": "Do not have the app? No problem. Call our support center and our operators will create your shipment request for you. Available during business hours.",
+      "support": "Contact Support"
+    },
+    "cta": {
+      "title": "Ready to Ship Your Cargo?",
+      "sub": "Download the app, post your first shipment, and get competitive bids from verified drivers within minutes.",
+      "download": "Download App",
+      "pricing": "View Pricing"
+    }
+  },
+  "ForQueueOrgs": {
+    "hero": {
+      "badge": "For Queue Operators & Loading Places",
+      "title": "Digitize Your Loading Queue",
+      "sub": "Automatic FIFO rotation, geofenced driver check-in, and fair dispatch — no more paper lists, no more arguments at the gate.",
+      "demo": "Request a Demo",
+      "console": "Open Queue Console",
+      "misc": {
+        "liveBoard": "Live Dispatch Board",
+        "queueRunning": "Queue running",
+        "nextOrder": "Next order → offered to driver #1"
+      }
+    },
+    "features": {
+      "title": "What the Queue Console Does",
+      "sub": "Purpose-built for ports, customs yards, factories, cement plants, and depots that fight driver chaos every day.",
+      "f1": {
+        "title": "Automatic FIFO Rotation",
+        "desc": "Every driver that checks in joins a fair first-in-first-out line for their vehicle type. The front waiting driver gets the next order — no favoritism, no arguments."
+      },
+      "f2": {
+        "title": "3-Minute Offer Window",
+        "desc": "An order is offered to the front driver with a short accept window. A decline or timeout moves the order to the next driver in line, keeping turnaround fast."
+      },
+      "f3": {
+        "title": "Open for Bidding",
+        "desc": "Need a competitive price instead of a queue? Open any order for bidding — up to 5 drivers bid per vehicle slot and you pick the winner."
+      },
+      "f4": {
+        "title": "Geofenced Check-In",
+        "desc": "Drivers confirm they are physically at your loading place with GPS. Virtual queues stay honest, and loading staff stay in control."
+      },
+      "f5": {
+        "title": "Create Orders for Shippers",
+        "desc": "Walk-in shippers without the app? Queue staff create the order on their behalf in seconds and it enters your dispatch line immediately."
+      },
+      "f6": {
+        "title": "Refusal & Conduct Rules",
+        "desc": "Too many refusals sends a driver to the back of the line. Ratings and conduct history keep every driver accountable."
+      }
+    },
+    "how": {
+      "title": "A Fair Line, Every Time",
+      "sub": "From check-in to completion, the system removes the disputes that cost loading places hours every day.",
+      "h1": {
+        "title": "Order Enters the Queue",
+        "desc": "A job linked to your loading place (port, customs, factory, cement plant, depot) enters your dispatch queue. Staff can create it for walk-in shippers."
+      },
+      "h2": {
+        "title": "Drivers Check In by GPS",
+        "desc": "Drivers check in at the site and join the FIFO line for their vehicle type, verified by geofence."
+      },
+      "h3": {
+        "title": "Front Driver Gets the Order",
+        "desc": "The order is offered to the front waiting driver. Decline or timeout → next in line. Open for bidding if you prefer."
+      },
+      "h4": {
+        "title": "Load, Track, Complete",
+        "desc": "The driver loads, runs the journey with live GPS, and the order closes. Your queue stats update automatically."
+      },
+      "banner": "Queue staff run the live dispatch board online, from any device.",
+      "console": "Open Queue Console"
+    },
+    "demo": {
+      "title": "Try It at Your Loading Place",
+      "sub": "We can run a free pilot at your site. Your drivers check in on the app, your staff dispatches from the console, and you see the difference within days — not months.",
+      "point1": "Free 30-day pilot at your loading place",
+      "point2": "Onboarding for your queue staff",
+      "point3": "Driver check-in via GPS",
+      "point4": "No paper lists, no gate arguments",
+      "call": "Or call us directly",
+      "successTitle": "Request Received!",
+      "successText": "Thank you for your interest. Our team will contact you to schedule your queue demo.",
+      "again": "Submit Another Request",
+      "orgName": "Loading Place / Organization Name *",
+      "yourName": "Your Name *",
+      "phone": "Phone *",
+      "email": "Email",
+      "vehicles": "Trucks per day (approx.)",
+      "message": "Anything else?",
+      "submit": "Request Demo",
+      "sending": "Sending...",
+      "finePrint": "No commitment. We simply run a free pilot and show you the numbers."
+    },
+    "cta": {
+      "title": "Ready to End the Chaos at Your Gate?",
+      "sub": "Digitize your queue, keep your drivers fair, and cut wasted time for everyone. Start with a free pilot.",
+      "demo": "Request a Demo",
+      "how": "See How It Works"
+    }
+  },
+  "ForAssociations": {
+    "hero": {
+      "badge": "For Transport Associations & Companies",
+      "title": "Transport Association Partnership",
+      "sub": "Onboard all your drivers at once. Manage fleet, dispatch, and compliance from one dashboard — bid on big loads as a company, assign member drivers, and track every truck.",
+      "partner": "Partner With Us",
+      "portal": "Open Company Portal",
+      "misc": {
+        "wonBatch": "Won Batch",
+        "vehicles": "15 vehicles",
+        "routeBar": "Addis Ababa → Djibouti Port · 15 vehicle slots"
+      }
+    },
+    "features": {
+      "title": "Why Associations Choose DTC",
+      "sub": "Big loads, clean records, and a fair share for every member.",
+      "f1": {
+        "title": "Batch Bidding",
+        "desc": "When a shipper posts a load of more than 10 vehicles, your association places ONE bid for the entire batch — no member fighting over pieces."
+      },
+      "f2": {
+        "title": "Member & Fleet Management",
+        "desc": "Register your member drivers and their vehicles. Approve, verify documents, and keep one clean record for the whole association."
+      },
+      "f3": {
+        "title": "Driver Assignment",
+        "desc": "Win a batch? Assign your drivers to vehicle slots automatically or manually from the portal. Each driver confirms the assignment."
+      },
+      "f4": {
+        "title": "Fair Load Distribution",
+        "desc": "Rotate loads among members so everyone earns consistently. No favorites, no one-person-takes-all."
+      },
+      "f5": {
+        "title": "Per-Slot GPS Tracking",
+        "desc": "Track every assigned truck from loading to delivery. Know where each vehicle is at all times."
+      },
+      "f6": {
+        "title": "Batch & Payment Records",
+        "desc": "Complete payment and delivery history per member. Clean books for the association, transparent earnings for drivers."
+      }
+    },
+    "how": {
+      "title": "From Bid to Delivery",
+      "sub": "The full association workflow — win, assign, track, settle.",
+      "h1": {
+        "title": "Association Joins",
+        "desc": "Your association registers and adds your certified drivers and vehicles member by member."
+      },
+      "h2": {
+        "title": "Large Loads Come to You",
+        "desc": "Shipper batches over 10 vehicles are shown to verified companies like yours. You bid once per batch."
+      },
+      "h3": {
+        "title": "Won Bid → Assign the Fleet",
+        "desc": "When accepted, you assign your drivers to the vehicle slots. They confirm and head to the loading place."
+      },
+      "h4": {
+        "title": "Track & Settle",
+        "desc": "Follow the whole convoy live, complete each slot, and keep clean records per member."
+      },
+      "banner": "See your fleet dashboard, bids, and batches right now.",
+      "portal": "Open Company Portal"
+    },
+    "partner": {
+      "title": "Partner With Us",
+      "sub": "We onboard associations and transport companies onto the portal so their members can start bidding on batches. Free during our launch period.",
+      "point1": "Register your members and vehicles as a fleet",
+      "point2": "Bid on large shipper batches (10+ vehicles)",
+      "point3": "Assign drivers and track every slot live",
+      "point4": "Clean earnings and payment records per member",
+      "call": "Or call us directly",
+      "successTitle": "Inquiry Received!",
+      "successText": "Thank you for reaching out. Our team will contact you about onboarding your association.",
+      "again": "Submit Another Inquiry",
+      "assocName": "Association / Company Name *",
+      "yourName": "Your Name *",
+      "phone": "Phone *",
+      "email": "Email",
+      "memberCount": "Approx. member count",
+      "message": "Anything else?",
+      "submit": "Send Partnership Inquiry",
+      "sending": "Sending...",
+      "note": "No subscription required during launch. We onboard you free."
+    },
+    "cta": {
+      "title": "Bring Your Fleet to the Platform",
+      "sub": "Turn your member fleet into a competitive force on big loads — and keep every driver in the loop.",
+      "partner": "Partner With Us",
+      "queueOps": "Queue Operators"
+    }
+  },
+  "Pricing": {
+    "hero": {
+      "title": "Transparent Pricing",
+      "sub": "Free during launch. No hidden fees. Shippers pay drivers directly and only when cargo is delivered."
+    },
+    "strip": {
+      "launchLabel": "During Launch",
+      "launchFree": "Free.",
+      "launchText": "Drivers keep 100% of earnings. No commission, no hidden fees.",
+      "afterLabel": "After Launch",
+      "afterText": "A transparent commission on completed loads — the exact rate will be announced and published here before any fee is introduced. No subscription fees for shippers. No listing fees.",
+      "shippersLabel": "For Shippers",
+      "shippersText": "Post loads for free. Pay only when a load is matched and delivered. No platform commission on your side."
+    },
+    "shippers": {
+      "title": "For Shippers",
+      "bidTitle": "Competitive Bidding",
+      "bidDesc": "Post your shipment and receive multiple bids from verified drivers. There is no fixed price—you choose the best offer based on price, driver ratings, and vehicle type.",
+      "f1": { "title": "No Platform Fees", "desc": "Shippers do not pay any platform fees to use DTC" },
+      "f2": { "title": "Competitive Bidding", "desc": "Set your budget or let drivers compete for the best price" },
+      "f3": { "title": "Pay the Driver Directly", "desc": "Payment goes straight to the driver, with no platform commission during launch" },
+      "f4": { "title": "Free to Post", "desc": "Post unlimited shipment requests at no cost" },
+      "cta": "Start Shipping"
+    },
+    "drivers": {
+      "title": "For Drivers",
+      "freeTitle": "Free During Launch",
+      "freeDesc": "DTC is currently free — no commission is deducted. Drivers keep 100% of their earnings while we launch. We will announce a transparent commission structure before any change.",
+      "example": "Example:",
+      "cost": "Shipping Cost",
+      "commission": "Commission",
+      "receives": "Driver Receives",
+      "trial": "New drivers get a free 1-month trial of the full platform. Subscription plans are optional during launch.",
+      "cta": "Start Driving"
+    },
+    "plans": {
+      "title": "Driver Subscription Plans",
+      "sub": "Choose the plan that fits your driving schedule. All plans include full platform access.",
+      "newDrivers": "New Drivers",
+      "features": {
+        "1": "Full platform access",
+        "2": "Receive shipment requests",
+        "3": "Place bids on loads",
+        "4": "GPS tracking enabled",
+        "5": "24/7 support access",
+        "6": "Priority support",
+        "7": "Best value"
+      },
+      "p1": { "name": "Free Trial", "duration": "1 month", "savings": "700 ETB value", "note": "Available once per driver" },
+      "p2": { "name": "Monthly", "duration": "30 days", "note": "Best for flexibility" },
+      "p3": { "name": "Quarterly", "duration": "90 days", "savings": "Save 300 ETB", "note": "Best for regular drivers" },
+      "p4": { "name": "Annual", "duration": "365 days", "savings": "Save 2,400 ETB", "note": "Best for committed drivers" }
+    },
+    "payment": {
+      "title": "Payment Methods",
+      "sub": "Multiple payment options for your convenience.",
+      "m1": { "name": "Cash on Delivery", "desc": "Shipper pays driver directly upon delivery completion" },
+      "m2": { "name": "Bank Transfer", "desc": "CBE, Dashen, and other Ethiopian banks" },
+      "m3": { "name": "Telebirr / Mobile Money", "desc": "Quick digital payments via mobile" }
+    },
+    "faq": {
+      "title": "Pricing FAQ",
+      "q1": { "q": "How is the shipping price determined?", "a": "Prices are determined through competitive bidding. When you post a shipment, drivers submit their proposed prices. You can set a budget or leave it open for drivers to bid freely. Choose the best offer based on price, ratings, and vehicle type." },
+      "q2": { "q": "What is the platform commission?", "a": "DTC is currently free — no commission is charged. Drivers keep 100% of their earnings during the launch period. We will announce a transparent commission structure before introducing any fees." },
+      "q3": { "q": "Are there any hidden fees for shippers?", "a": "No. Shippers do not pay any platform fees. You only pay the agreed shipping cost to the driver. Driver subscriptions are optional during launch." },
+      "q4": { "q": "Can I negotiate the price?", "a": "The bidding system is your negotiation tool. You can review multiple bids and choose the one that fits your budget. If no bids meet your expectations, you can repost with a different budget." },
+      "q5": { "q": "What happens if I don't have a subscription?", "a": "Drivers need an active subscription to receive shipment requests. When your subscription expires, your status changes to 'Inactive - No Subscription' and you won't receive new job notifications until you renew." }
+    },
+    "cta": {
+      "title": "Get Started Today",
+      "sub": "Join shippers and drivers using DTC to move goods across Ethiopia and Djibouti.",
+      "ship": "Ship Your Cargo",
+      "drive": "Become a Driver"
+    }
+  },
+  "ContainerTransport": {
+    "hero": {
+      "cta": "Post a Container Load",
+      "download": "Download Shipper App",
+      "capacityTitle": "Container capacity by type"
+    },
+    "vehicles": {
+      "v1": { "name": "20ft Container Truck", "bestFor": "One 20ft ISO container (cassoni)" },
+      "v2": { "name": "2×20ft Container Truck", "bestFor": "Two 20ft ISO containers on one chassis" },
+      "v3": { "name": "40ft Container Truck", "bestFor": "One 40ft ISO container" },
+      "v4": { "name": "40ft Low-Bed Truck", "bestFor": "Over-dimensional and heavy container loads" }
+    },
+    "routes": {
+      "title": "Container Routes We Cover",
+      "sub": "Move containers between Ethiopia's key dry ports, warehouses, and Djibouti Port.",
+      "view": "View route"
+    },
+    "how": {
+      "title": "How It Works",
+      "s1": { "title": "Post Load", "desc": "Enter pickup, destination, container size, and weight." },
+      "s2": { "title": "Match", "desc": "Container drivers bid. Compare price, rating, and vehicle." },
+      "s3": { "title": "Track", "desc": "Follow your container on GPS from gate to delivery." },
+      "s4": { "title": "Deliver & Pay", "desc": "Confirm delivery, rate the driver, pay directly." }
+    },
+    "faq": {
+      "title": "Container Transport FAQ",
+      "f1": { "q": "What container sizes can DTC move?", "a": "We move 20ft, 2×20ft, and 40ft ISO containers with purpose-built container trucks. Choose the right configuration when you post your load and drivers with the correct chassis will bid." },
+      "f2": { "q": "Do you handle cross-border container moves to Djibouti?", "a": "Yes. Containers move from Addis Ababa, Modjo Dry Port, and Dire Dawa to Djibouti Port. Customs clearance is handled by your clearing agent; DTC matches you with verified drivers for the haul." },
+      "f3": { "q": "How do I book a container truck?", "a": "Post a load from the app or website with your pickup, destination, container size, and cargo weight. Verified container drivers bid on it and you pick the best offer." }
+    },
+    "cta": {
+      "title": "Book a Container Truck Now",
+      "sub": "Post your container load and receive bids from verified drivers — free during launch, no commission.",
+      "post": "Post a Load",
+      "drive": "Drive for DTC"
+    }
+  },
+  "Blog": {
+    "badge": "Freight Guides & Rates",
+    "title": "Freight & Shipping Blog",
+    "sub": "Practical route guides, cost breakdowns, and customs tips written for Ethiopian shippers and drivers.",
+    "read": "Read the full guide →",
+    "post1": {
+      "title": "How to Ship Cargo from Addis Ababa to Djibouti (2026 Guide)",
+      "excerpt": "The complete 2026 guide to the Addis Ababa–Djibouti corridor, the route carrying ~95% of Ethiopia's trade. Documentation, truck types, transit times, and haulage costs.",
+      "category": "Route Guide",
+      "readTime": "9 min read"
+    },
+    "updates": {
+      "title": "Route & Rates Updates",
+      "sub": "Get new route guides in your inbox weekly. Unsubscribe anytime.",
+      "emailAria": "Email",
+      "subscribe": "Subscribe"
+    }
+  },
+  "BlogPost": {
+    "crumb": "Blog",
+    "crumbSep": "/",
+    "routeGuide": "Route Guide",
+    "title": "How to Ship Cargo from Addis Ababa to Djibouti (2026 Guide)",
+    "date": "January 15, 2026",
+    "readTime": "9 min read",
+    "intro": "The Addis Ababa–Djibouti corridor is the artery of Ethiopia's trade, carrying roughly 95% of the country's imports and exports. Here's everything you need to ship cargo on it in 2026 — without surprises.",
+    "doc": {
+      "title": "Step 1 — Prepare Your Documentation",
+      "sub": "Before any truck rolls, your cargo needs to clear customs. Have these ready:",
+      "d1": { "title": "Customs declaration", "text": "Filed by your licensed clearing agent against the cargo value and HS code." },
+      "d2": { "title": "Commercial invoice", "text": "Details goods, quantity, value, and the buyer/seller. Keep a copy in the truck." },
+      "d3": { "title": "Packing list", "text": "Weight, dimensions, and contents of each package — used for physical inspection and truck matching." },
+      "d4": { "title": "Transit document", "text": "For containers moving onward to Djibouti Port, confirm the transit declaration (bond) so cargo doesn't sit at the border." }
+    },
+    "trucks": {
+      "title": "Step 2 — Choose Your Truck Type",
+      "sub": "The right vehicle keeps your per-quintal cost low and matches the cargo. Rates quoted per quintal (100 kg).",
+      "t1": { "name": "Light Truck", "note": "Small batches, quick Kadis transfers" },
+      "t2": { "name": "Medium Truck", "note": "Bulk cargo, regional distribution" },
+      "t3": { "name": "Heavy / Extra Heavy", "note": "Heavy bulk or single 20ft container" },
+      "t4": { "name": "Container Truck", "note": "2×20ft or single 40ft ISO container" }
+    },
+    "post": {
+      "title": "Step 3 — Post Your Load & Get Bids",
+      "text": "Post your shipment on the DTC app or website with pickup, destination, weight, and vehicle type. Verified drivers bid on your load — you compare quotes, ratings, and vehicles, then pick the best offer. No platform commission; you pay the driver directly only on delivery."
+    },
+    "costs": {
+      "title": "What It Costs",
+      "sub": "Rates below are typical per-quintal ranges after a competitive bid — posted rates are agreed with the driver, never set by DTC.",
+      "c1": { "cat": "Light / Medium truck (≤100 q)", "rate": "contact for quote" },
+      "c2": { "cat": "Heavy truck (125–175 q)", "rate": "contact for quote" },
+      "c3": { "cat": "Extra heavy (176–250 q)", "rate": "contact for quote" },
+      "c4": { "cat": "Single 20ft container", "rate": "contact for quote" },
+      "c5": { "cat": "40ft / 2×20ft container", "rate": "contact for quote" },
+      "footnote": "Post a load now to receive exact bids — free during launch, no hidden fees."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "f1": { "q": "How long does it take to ship from Addis Ababa to Djibouti?", "a": "Road freight typically takes 2–3 days, while the Addis Ababa–Djibouti railway (Addis–Djibouti Standard Gauge) moves containers in about 12 hours. Road is more flexible for door-to-door and non-container cargo." },
+      "f2": { "q": "What documents do I need to clear cargo in Djibouti?", "a": "You need a full customs declaration, commercial invoice, packing list, and for many shipments a Certificate of Origin. Registered clearing agents handle the process for you; DTC matches you with verified drivers once loaded." },
+      "f3": { "q": "What is the current Djibouti corridor rate?", "a": "Rates fluctuate with diesel prices and season. Trucks typically charge roughly 3,000–7,000 ETB per quintal depending on vehicle class. Post your load on DTC and get competing bids from verified drivers — rates are agreed with the driver, never set by us." }
+    },
+    "cta": {
+      "title": "Post Your Load Free",
+      "sub": "Getting started on the corridor takes 2 minutes. Post a load and compare verified driver bids — pay only on delivery.",
+      "post": "Post a Load",
+      "download": "Download the App"
     }
   }
 }
