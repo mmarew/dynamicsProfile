@@ -59,5 +59,78 @@
       "company": "Company",
       "resources": "Resources"
     }
+  },
+  "HowItWorks": {
+    "hero": {
+      "title": "How DTC Works",
+      "sub": "Post one job and let the system match it the right way. Small loads go to individual drivers, big loads go to transport companies, and loading places run their own queues."
+    },
+    "ways": {
+      "title": "Four Ways to Operate the System",
+      "sub": "Shippers and drivers use the mobile apps; loading places and companies use the web consoles."
+    },
+    "apps": {
+      "shipper": {
+        "desc": "Post cargo, receive bids, track shipments"
+      },
+      "driver": {
+        "desc": "Check in, bid, and run your journeys"
+      },
+      "queue": {
+        "desc": "FIFO & bidding dispatch at loading places"
+      },
+      "company": {
+        "desc": "Company & association fleet bidding"
+      }
+    },
+    "step1": {
+      "title": "The Shipper Posts a Job",
+      "sub": "Every shipment starts the same way — from the shipper app."
+    },
+    "s1": {
+      "1": {
+        "title": "Describe your cargo",
+        "desc": "Enter the item, quantity (in quintals), pickup and destination locations, and your preferred dates."
+      },
+      "2": {
+        "title": "Choose your vehicle",
+        "desc": "Pick the vehicle you need — from light trucks up to 35 quintals to multi-container rigs up to 400 quintals."
+      },
+      "3": {
+        "title": "Set the number of vehicles",
+        "desc": "Tell us how many trucks your job needs. This decides how your load is matched."
+      }
+    },
+    "step2": {
+      "title": "The Load Size Decides the Matching Path",
+      "sub": "The number of vehicles your job needs routes it to the right bidders."
+    },
+    "ind": {
+      "badge": "10 or fewer vehicles",
+      "title": "Individual Drivers",
+      "desc": "Your job is opened to verified individual drivers. Up to 5 bids per vehicle slot; you pick the best one for each slot.",
+      "b1": "Up to 5 bids per vehicle slot",
+      "b2": "You choose the driver per slot",
+      "b3": "Works for small & medium loads"
+    },
+    "comp": {
+      "badge": "More than 10 vehicles",
+      "title": "Transport Companies",
+      "desc": "Your job becomes a company batch. Verified companies bid on the whole batch; one bid per company; they assign fleet & drivers.",
+      "b1": "One bid per company for the batch",
+      "b2": "Company assigns fleet & drivers",
+      "b3": "Great for big fleets & full convoys"
+    },
+    "step3": {
+      "title": "Then the Job Flows",
+      "sub": "Individual, company, and queue flows — plus street pickup and call center help when you need them."
+    },
+    "tab": {
+      "individual": "Individual",
+      "company": "Company",
+      "queue": "Queue",
+      "street": "Street",
+      "call": "Call"
+    }
   }
 }

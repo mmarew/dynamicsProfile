@@ -20,7 +20,8 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Languages, Menu } from "lucide-react";
+import {
+Menu } from "lucide-react";
 import { cn } from "@/lib/utils"
 import { changeLanguage, getSavedLanguage, type LangCode } from "@/lib/i18n";
 
@@ -84,7 +85,7 @@ const mobileLinkClass = (active: boolean) =>
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
-  const [langState, setLangState] = useState<LangCode>(() => getSavedLanguage() ?? "en");
+  const [langState, setLangState] = useState<LangCode>("en");
   useEffect(() => {
     const onLangChange = () => setLangState(getSavedLanguage() ?? "en");
     window.addEventListener("dtc:lang-change", onLangChange);

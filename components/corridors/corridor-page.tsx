@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/seo/json-ld"
 import { Button } from "@/components/ui/button"
 import {
   MapPin,
-  Clock,
+  
   CheckCircle,
   Phone,
   ArrowRight,

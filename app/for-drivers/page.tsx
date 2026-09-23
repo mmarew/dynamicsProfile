@@ -16,8 +16,8 @@ import {
   CheckCircle,
   Bell,
   CreditCard,
-  Shield,
-  Clock,
+  
+  
   Truck
 } from "lucide-react"
 

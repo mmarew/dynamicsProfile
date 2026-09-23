@@ -4,7 +4,7 @@ import { canonical } from "@/lib/seo"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { CheckCircle2, ArrowRight, FileText, Building2, Truck, Package } from "lucide-react"
+import {  ArrowRight, FileText, Building2, Truck, Package } from "lucide-react"
 
 export const metadata: Metadata = {
   ...canonical('/blog/addis-djibouti-shipping-guide-2026'),
