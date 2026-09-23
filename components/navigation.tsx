@@ -94,6 +94,7 @@ export function Navigation() {
   const [langState, setLangState] = useState<LangCode>("en");
   useEffect(() => {
     const onLangChange = () => setLangState(getSavedLanguage() ?? "en");
+    onLangChange();
     window.addEventListener("dtc:lang-change", onLangChange);
     return () => window.removeEventListener("dtc:lang-change", onLangChange);
   }, []);

@@ -1122,7 +1122,8 @@
       "misc": {
         "liveBoard": "የቀጥታ ማከፋፈያ ሰሌዳ",
         "queueRunning": "ወረፋ በስራ ላይ",
-        "nextOrder": "የሚቀጥለው ትዕዛዝ → ለሹፌር #1 ቀርቧል"
+        "nextOrder": "የሚቀጥለው ትዕዛዝ → ለሹፌር #1 ቀርቧል",
+        "liveNote": "ይህ የማከፋፈያ ሰሌዳ ዛሬ በ queue.dynamicsroute.tech ላይ በቀጥታ ይሰራል"
       }
     },
     "features": {

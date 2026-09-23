@@ -141,6 +141,10 @@ export default function ForQueueOrgsPage() {
                       <T k="ForQueueOrgs.hero.misc.nextOrder" />
                     </div>
                   </div>
+                  <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                    <T k="ForQueueOrgs.hero.misc.liveNote" />
+                  </div>
                 </div>
               </div>
             </div>

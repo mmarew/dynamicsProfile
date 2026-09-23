@@ -1122,7 +1122,8 @@
       "misc": {
         "liveBoard": "Live Dispatch Board",
         "queueRunning": "Queue running",
-        "nextOrder": "Next order → offered to driver #1"
+        "nextOrder": "Next order → offered to driver #1",
+        "liveNote": "This dispatch board runs live today at queue.dynamicsroute.tech"
       }
     },
     "features": {
