@@ -3,6 +3,7 @@ import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { JsonLd } from "@/components/seo/json-ld"
+import { SeoText } from "@/components/seo/seo-text"
 import { Button } from "@/components/ui/button"
 import {
   MapPin,
@@ -99,6 +100,11 @@ export function CorridorPage({ data }: { data: CorridorData }) {
                   {data.h1}
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed">{data.intro}</p>
+                <SeoText tag="h2">
+                  Transport and logistics on the {data.corridorName} route — {data.distance},
+                  typical transit {data.transitTime}. Book a verified truck for truck freight, cargo,
+                  and container transport between {data.endpoints.from} and {data.endpoints.to}.
+                </SeoText>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground h-12 px-8">
                     <Link href="/for-shippers">

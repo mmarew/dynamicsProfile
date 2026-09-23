@@ -25,13 +25,6 @@ export const metadata: Metadata = {
   ...canonical('/'),
   keywords: ['freight', 'logistics', 'Ethiopia', 'Djibouti', 'truck', 'shipping', 'cargo', 'transport', 'marketplace', 'freight connector', 'digital transport cargo'],
   authors: [{ name: SITE_NAME }],
-  icons: {
-    icon: [
-      { url: '/app-icon-driver.png', type: 'image/png' },
-      { url: '/app-icon-shipper.png', type: 'image/png' },
-    ],
-    apple: '/app-icon-driver.png',
-  },
   openGraph: {
     title: 'DTC - Move goods. Move fast. Move smart.',
     description: 'Freight transportation marketplace connecting shippers with verified truck drivers across Ethiopia and Djibouti.',
@@ -41,24 +34,18 @@ export const metadata: Metadata = {
     url: SITE_URL,
     images: [
       {
-        url: '/app-icon-driver.png',
-        width: 480,
-        height: 480,
-        alt: 'Dynamics Driver app icon',
-      },
-      {
-        url: '/app-icon-shipper.png',
-        width: 480,
-        height: 480,
-        alt: 'Dynamics Shipper app icon',
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'DTC - Dynamics Transport Commission | Freight Marketplace Ethiopia & Djibouti',
       },
     ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'DTC - Dynamics Transport Commission',
     description: 'Move goods across Ethiopia and Djibouti with verified truck drivers.',
-    images: ['/app-icon-driver.png', '/app-icon-shipper.png'],
+    images: ['/opengraph-image'],
   },
 }
 

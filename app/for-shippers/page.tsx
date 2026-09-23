@@ -6,6 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { T } from "@/components/i18n/text"
+import { SeoText } from "@/components/seo/seo-text"
 import { 
   Package, 
   TrendingUp, 
@@ -71,6 +72,11 @@ export default function ForShippersPage() {
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                   <T k="ForShippers.hero.sub" />
                 </p>
+                <SeoText tag="h2">
+                  Ship freight in Ethiopia with competitive truck bidding — post your load free, get
+                  bids from verified drivers across Addis Ababa, Modjo, Adama, and Djibouti, and track
+                  your cargo live with GPS.
+                </SeoText>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground h-12 px-8">
                     <Link href="/download"><T k="ForShippers.hero.download" /></Link>

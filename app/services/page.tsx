@@ -6,6 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { T } from "@/components/i18n/text"
+import { SeoText } from "@/components/seo/seo-text"
 import { 
   Package, 
   MapPin, 
@@ -73,6 +74,11 @@ export default function ServicesPage() {
                 <T k="Services.hero.sub" />
               </p>
             </div>
+            <SeoText tag="h2">
+              Transport and logistics services and freight vehicles: light, medium, heavy, and extra
+              heavy open flatbed trucks for bulk cargo, plus 20ft and 40ft container trucks and
+              low-bed rigs — from 35 to 400 quintals across Ethiopia and Djibouti.
+            </SeoText>
           </div>
         </section>
 

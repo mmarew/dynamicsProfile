@@ -23,9 +23,7 @@ const routes = [
   "/addis-to-hawassa",
   "/container-transport",
   "/blog",
-  "/blog/addis-djibouti-shipping-guide-2026",
-  "/google-business-profile",
-  "/directory-listings",
+  "/blog/addis-to-djibouti-shipping-guide-2026",
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

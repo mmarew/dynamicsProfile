@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer"
 import { JsonLd } from "@/components/seo/json-ld"
 import { Button } from "@/components/ui/button"
 import { T } from "@/components/i18n/text"
+import { SeoText } from "@/components/seo/seo-text"
 import { containerTransportData } from "@/lib/corridors"
 import { canonical, siteUrl } from "@/lib/seo"
 import { ArrowRight, CheckCircle, Truck, Package, MapPin } from "lucide-react"
@@ -106,6 +107,10 @@ export default function ContainerTransportPage() {
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                   {containerTransportData.intro}
                 </p>
+                <SeoText tag="h2">
+                  Container transport across Ethiopia and Djibouti — 20ft, 2×20ft, and 40ft container
+                  trucking for import and export cargo, ports, factories, and dry ports.
+                </SeoText>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground h-12 px-8">
                     <Link href="/for-shippers">
